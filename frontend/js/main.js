@@ -1,1 +1,1 @@
-// Template loader utility
+// js/main.js
