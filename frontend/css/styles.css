@@ -157,19 +157,29 @@ body.landing-page {
     margin-top: 90px;
 }
 
+.cloud-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .cloud {
     position: absolute;
+    left: 0;
+    top: 0;
     background-image: url('../assets/clouds/intro-cloud.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 450px; 
-    height: 160px; 
+    width: clamp(180px, 28vw, 450px);
+    height: clamp(64px, 10vw, 160px);
     pointer-events: none;
     z-index: 1;
-    top: 0;
-    left: 0;
+    opacity: 0;
     will-change: transform;
+    transform-origin: center;
 }
 
 /* Hero Content */
@@ -312,7 +322,7 @@ body.landing-page {
     right: -20px;
     width: 500px;
     height: 300px;
-    background-image: url('../assets/clouds/intro-cloud.png');
+    background-image: url('../assets/clouds/Cloud\ for\ Mascot.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
