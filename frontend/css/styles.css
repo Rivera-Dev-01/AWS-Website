@@ -1,1 +1,625 @@
 /* Main stylesheet */
+
+/* Header Styles */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(65, 125, 180, 0.75) 0%, rgba(90, 145, 210, 0.65) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    height: 90px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Logo Section */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    gap: 2px;
+}
+
+.logo-main {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.logo-aws {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 20px;
+    color: #F2AF00;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.logo-learning {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 20px;
+    color: #1C3466;
+    font-weight: 500;
+}
+
+.logo-chapter {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 13px;
+    color: #1C3466;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* Navigation */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.45);
+    border-radius: 60px;
+    padding: 6px 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 700px;
+    height: 52px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding: 0 20px;
+    height: 100%;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+    border: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-item:not(:last-child)::after {
+    display: none;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    background: transparent;
+    color: #FFFFFF;
+}
+
+.nav-item.active .nav-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.nav-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* Header Button */
+.header-button {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    padding: 11px 34px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.header-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.65);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Landing Page Gradient Background */
+body.landing-page {
+    background: linear-gradient(
+        to bottom,
+        #4A90E2 0%,      /* Top blue */
+        #87CEEB 25%,     /* Sky blue */
+        #E8F4F8 40%,     /* Light blue/white */
+        #FFF8DC 50%,     /* Cream/beige */
+        #E8F4F8 60%,     /* Light blue/white */
+        #87CEEB 75%,     /* Sky blue */
+        #4A90E2 100%     /* Bottom blue */
+    );
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section - 60/40 Layout */
+.hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: calc(100vh - 90px);
+    padding: 120px 140px 80px 180px;
+    text-align: left;
+    overflow: visible;
+    gap: 100px;
+    margin-top: 40px;
+}
+
+/* Cloud Graphics - Background decorative clouds */
+.cloud {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cloud-1 {
+    width: 150px;
+    height: 73px;
+    background-image: url('../assets/clouds/cloud1.png');
+    left: 5%;
+    top: 15%;
+}
+
+.cloud-2 {
+    width: 120px;
+    height: 59px;
+    background-image: url('../assets/clouds/cloud2.png');
+    left: 45%;
+    top: 10%;
+}
+
+.cloud-3 {
+    width: 100px;
+    height: 49px;
+    background-image: url('../assets/clouds/cloud3.png');
+    right: 15%;
+    top: 8%;
+}
+
+.cloud-4 {
+    width: 180px;
+    height: 88px;
+    background-image: url('../assets/clouds/cloud4.png');
+    right: 2%;
+    bottom: 10%;
+}
+
+.cloud-5 {
+    width: 90px;
+    height: 44px;
+    background-image: url('../assets/clouds/cloud5.png');
+    right: 25%;
+    top: 12%;
+}
+
+/* Hero Content - 55% width for better balance */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 55%;
+    max-width: 55%;
+}
+
+.hero-heading {
+    margin-bottom: 40px;
+}
+
+/* IT'S ALWAYS - Line 1 */
+.hero-title-line1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 1.2;
+    text-align: center;
+    color: #1C3466;
+    -webkit-text-fill-color: #1C3466;
+    -webkit-text-stroke: 6px #F2AF00;
+    paint-order: stroke fill;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.25);
+    margin: 0 0 10px 0;
+    padding: 0;
+    transform: translateX(-150px);
+}
+
+/* DAY ONE. - Line 2 */
+.hero-title-line2 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 1.2;
+    text-align: center;
+    color: #F2AF00;
+    -webkit-text-fill-color: #F2AF00;
+    -webkit-text-stroke: 6px #1C3466;
+    paint-order: stroke fill;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    padding: 0;
+    transform: translateX(200px);
+}
+
+.hero-description {
+    font-family: 'Lexend', sans-serif;
+    font-size: 38px;
+    line-height: 1.5;
+    color: #121212;
+    margin: 0 auto 50px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero-description .highlight {
+    color: #F2AF00;
+    font-weight: 600;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: #F2AF00;
+    color: #1C3466;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #E09F00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(242, 175, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: #E5E5E5;
+    color: #1C3466;
+    padding: 16px 32px;
+    border: 4px solid #1C3466;
+    border-radius: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #D5D5D5;
+    transform: translateY(-2px);
+}
+
+/* Mascot Container - 45% width for better balance */
+.hero-mascot-container {
+    position: relative;
+    z-index: 3;
+    flex: 0 0 45%;
+    max-width: 45%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 60px;
+    margin-top: -60px;
+}
+
+/* Cloud under mascot */
+.mascot-cloud {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 220px;
+    background-image: url('../assets/clouds/Cloud for Mascot.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 1;
+}
+
+/* Mascot Image */
+.hero-mascot-img {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    margin-bottom: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .hero-section {
+        padding: 60px 80px;
+        gap: 40px;
+    }
+    
+    .hero-title-line1,
+    .hero-title-line2 {
+        font-size: 80px;
+        line-height: 96px;
+    }
+    
+    .hero-description {
+        font-size: 30px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        font-size: 24px;
+        padding: 14px 28px;
+    }
+    
+    .mascot-cloud {
+        width: 350px;
+        height: 130px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-section {
+        padding: 50px 60px;
+        gap: 30px;
+    }
+    
+    .hero-title-line1,
+    .hero-title-line2 {
+        font-size: 70px;
+        line-height: 84px;
+        -webkit-text-stroke: 2.5px;
+    }
+    
+    .hero-description {
+        font-size: 24px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        font-size: 20px;
+        padding: 12px 24px;
+    }
+    
+    .cloud-1, .cloud-2 {
+        width: 120px;
+        height: 59px;
+    }
+    
+    .cloud-3, .cloud-5 {
+        width: 80px;
+        height: 39px;
+    }
+    
+    .cloud-4 {
+        width: 140px;
+        height: 68px;
+    }
+    
+    .mascot-cloud {
+        width: 300px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 30px;
+        text-align: center;
+        min-height: auto;
+        gap: 40px;
+    }
+    
+    .hero-content {
+        flex: 1;
+        max-width: 100%;
+        order: 2;
+    }
+    
+    .hero-mascot-container {
+        flex: 1;
+        max-width: 100%;
+        order: 1;
+    }
+    
+    .hero-title-line1,
+    .hero-title-line2 {
+        font-size: 50px;
+        line-height: 60px;
+        -webkit-text-stroke: 2px;
+    }
+    
+    .hero-description {
+        font-size: 18px;
+        max-width: 90%;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+    
+    .hero-mascot-img {
+        max-width: 350px;
+    }
+    
+    .mascot-cloud {
+        width: 280px;
+        height: 100px;
+        bottom: -40px;
+    }
+    
+    .cloud {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 30px 20px;
+    }
+    
+    .hero-title-line1,
+    .hero-title-line2 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 24px;
+        justify-content: center;
+    }
+    
+    .hero-mascot-img {
+        max-width: 280px;
+    }
+    
+    .mascot-cloud {
+        width: 220px;
+        height: 80px;
+        bottom: -30px;
+    }
+    
+    .cloud-1 {
+        width: 100px;
+        height: 49px;
+        left: 3%;
+        top: 12%;
+    }
+    
+    .cloud-2 {
+        width: 80px;
+        height: 39px;
+        left: 40%;
+        top: 8%;
+    }
+    
+    .cloud-3, .cloud-5 {
+        display: none;
+    }
+    
+    .cloud-4 {
+        width: 120px;
+        height: 59px;
+        right: 0;
+        bottom: 8%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-line1,
+    .hero-title-line2 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+    }
+    
+    .hero-mascot-img {
+        max-width: 220px;
+    }
+    
+    .mascot-cloud {
+        width: 180px;
+        height: 65px;
+        bottom: -25px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

@@ -6,13 +6,84 @@
     <meta name="description" content="AWS Learning Club - Join us to learn and grow with AWS">
     <title>AWS Learning Club - Home</title>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lexend+Deca:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Motley Forces Font -->
+    <link href="https://db.onlinewebfonts.com/c/5588b8b3ece60b034f966fc004a290bd?family=Motley+Forces" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    <div id="header-placeholder"></div>
+<body class="landing-page">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="header-logo">
+                <img src="../assets/icons/AWS LOGO.png" alt="AWS Logo" class="logo-img">
+                <div class="logo-text">
+                    <div class="logo-main">
+                        <span class="logo-aws">AWS</span>
+                        <span class="logo-learning">Learning Club</span>
+                    </div>
+                    <div class="logo-chapter">- JRU Chapter</div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="header-nav">
+                <a href="index.html" class="nav-item active">
+                    <img src="../assets/icons/home.png" alt="Home" class="nav-icon">
+                    <span>HOME</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <img src="../assets/icons/info.png" alt="About" class="nav-icon">
+                    <span>ABOUT US</span>
+                </a>
+                <a href="events.html" class="nav-item">
+                    <img src="../assets/icons/calendar.png" alt="Events" class="nav-icon">
+                    <span>EVENTS</span>
+                </a>
+                <a href="members.html" class="nav-item">
+                    <img src="../assets/icons/members.png" alt="Members" class="nav-icon">
+                    <span>MEMBERS</span>
+                </a>
+            </nav>
+        </div>
+    </header>
     
     <main>
-        <!-- Landing page content -->
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- Cloud Graphics -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+            <div class="cloud cloud-5"></div>
+            
+            <div class="hero-content">
+                <div class="hero-heading">
+                    <h1 class="hero-title-line1">IT'S ALWAYS</h1>
+                    <h1 class="hero-title-line2">DAY ONE.</h1>
+                </div>
+                <p class="hero-description">
+                    Where in AWS, <span class="highlight">It's Always Day One</span>, the moment ambition meets action the single step that transforms a distant dream into your daily reality."
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        Get Started →
+                    </button>
+                    <button class="btn-secondary">Learn More</button>
+                </div>
+            </div>
+            
+            <!-- Mascot Image with Cloud -->
+            <div class="hero-mascot-container">
+                <div class="mascot-cloud"></div>
+                <img src="../assets/src/graphic-designs/mascot/hero icon.png" alt="AWS Learning Club Mascot" class="hero-mascot-img">
+            </div>
+        </section>
     </main>
     
     <div id="footer-placeholder"></div>
