@@ -423,3 +423,102 @@ body.landing-page {
         justify-content: center;
     }
 }
+
+/* About Page Body */
+body.about-page{
+    background-image: url('../assets/web.png'); 
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* About Page Content*/
+.about-us-header{
+    text-align: center;
+    color: #1C3466;
+    -webkit-text-fill-color: #1C3466;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.about-us-header-container{
+    background-color: #f2ad0073;
+    border-radius: 30px;
+    margin: 10px auto;
+    padding-left: 20px;
+    padding-bottom: 3px;
+    padding-right: 20px;
+    padding-top: 3px;
+    width: fit-content;
+
+}
+
+.about-us-title{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 1.1;
+    color: #F2AF00;
+    -webkit-text-fill-color: #F2AF00;
+    -webkit-text-stroke: 4px #1C3466;
+    paint-order: stroke fill;
+    text-shadow: 4px 6px 0px rgba(0, 0, 0, 0.15);
+    margin: 0 0 0 25px;
+    padding: 0;
+}
+
+.about-us-description{
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 23px;
+    line-height: 1.4;
+    color: #111;
+    margin: 15px auto 0 auto;
+    font-weight: 600;
+    max-width: 510px;
+}
+
+.about-us-cards{
+    background-color: #1C3466;
+    width: 190px;
+    height: 254px;
+    margin-top: 10px;
+    padding: 150px 30px 30px 30px;
+    border-radius: 0px 70px 0px 70px;
+}
+
+.card-information span{
+    color: #FFFFFF;
+    font-size: 30px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-information p{
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Lexend', sans-serif;
+}
+
+.about-us-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 10px;
+    gap: 33px;
+}
+
+
+
