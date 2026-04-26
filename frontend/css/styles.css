@@ -723,12 +723,13 @@ main {
 .events-card-holder{
     display: flex;
     text-align: left;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    flex-direction: column;
-    background-color: #5a85e8;
+    flex-direction: row;
+    background-color: #ffffff;
     border-color: #1C3466;
-    border: 1px solid;
+    border: 2px solid #1c3466;
     border-radius: 30px 30px 30px 30px;
     clip-path: polygon(0 0, 70% 0, 80% 20%, 100% 20%, 100% 100%, 14% 100%, 0 100%);
     padding: 10px 10px;
@@ -748,6 +749,7 @@ main {
     font-family: 'Lexend', sans-serif;
     font-weight: bold;
     font-size: 25px;
+    color: #1c3466;
 }
 
 .events-card-description{
@@ -763,7 +765,74 @@ main {
 
 .view-event-btn {
     position: absolute;
-    top: 0px;
+    top: -18px;
     right: 0px;
+    background-color: #ffffff;
+    color: #1c3466;
+    padding: 8px 20px;
+    border: 2px solid #1c3466;
+    border-radius: 8px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.view-event-btn:hover {
+    background-color: #f2af00;
+}
+.events-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+}
+
+.events-mascot {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    flex-shrink: 0;
+    align-self: flex-end;
+}
+
+.events-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.meta-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.card-reverse .events-card-holder {
+    flex-direction: row-reverse;
+    clip-path: polygon( 0 20%, 20% 20%, 30% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.card-reverse .view-event-btn {
+    right: auto;
+    left: 0px;
+}
+
+.view-event-btn {
+    background-color: #ffffff;
+    color: #1c3466;
+    padding: 8px 20px;
+    border: 2px solid #1c3466;
+    border-radius: 8px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-event-btn:hover {
+    background-color: #f2af00;
+    transform: translateY(-2px);
+}
