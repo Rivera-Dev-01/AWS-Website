@@ -6,7 +6,7 @@ const events = [
       date: "Date",
       time: "Time",
       location: "Location",
-      mascot: "../assets/src/graphic-designs/mascot/hero icon.png"
+      mascot: "assets/src/graphic-designs/mascot/hero icon.png"
     },
 
     { 
@@ -15,7 +15,7 @@ const events = [
       date: "Date",
       time: "Time",
       location: "Location",
-      mascot: "../assets/src/graphic-designs/mascot/hero icon.png"
+      mascot: "assets/src/graphic-designs/mascot/hero icon.png"
     },
 
     { 
@@ -24,7 +24,7 @@ const events = [
       date: "Date",
       time: "Time",
       location: "Location",
-      mascot: "../assets/src/graphic-designs/mascot/hero icon.png"
+      mascot: "assets/src/graphic-designs/mascot/hero icon.png"
     },
 ];
 
