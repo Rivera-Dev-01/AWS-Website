@@ -12,22 +12,18 @@ document.getElementById('header-placeholder').innerHTML = `
             <div class="logo-chapter">- JRU Chapter</div>
           </div>
         </div>
-
+        
         <nav class="header-nav">
           <a href="../index.html" class="nav-item active">
-            <img src="../assets/icons/home.png" alt="Home" class="nav-icon" />
             <span>HOME</span>
           </a>
           <a href="about.html" class="nav-item">
-            <img src="../assets/icons/info.png" alt="About" class="nav-icon" />
             <span>ABOUT US</span>
           </a>
           <a href="events.html" class="nav-item">
-            <img src="../assets/icons/calendar.png" alt="Events" class="nav-icon" />
             <span>EVENTS</span>
           </a>
           <a href="members.html" class="nav-item">
-            <img src="../assets/icons/members.png" alt="Members" class="nav-icon" />
             <span>MEMBERS</span>
           </a>
         </nav>
