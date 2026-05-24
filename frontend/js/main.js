@@ -24,6 +24,9 @@ function loadComponent(elementId, filePath) {
 
 }
 
+// Expose to window scope so that standard script tags like nav.js can call it
+window.loadComponent = loadComponent;
+
 /* function loadComponent(elementId, filePath) {
     fetch(filePath)
         .then(response => response.text())

@@ -1,7 +1,7 @@
 // Navigation component
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadComponent('header-component', 'html/components/header.html')
+  loadComponent('header-placeholder', '../components/header.html')
     .then(() => {
       highlightActiveLink();
     });
@@ -14,10 +14,20 @@ function highlightActiveLink() {
 
   navItems.forEach(item => {
     const href = item.getAttribute('href');
+    if (!href) return;
 
-    if (href && (currentPath.endsWith(href) || (currentPath === '/' && href ===
-      'index.html'))) {
+    // Extract file names for comparison
+    const currentPageName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const targetPageName = href.substring(href.lastIndexOf('/') + 1);
+
+    // Standardize Home matching (handles index.html, landingPage.html, or root /)
+    const isCurrentHome = currentPageName === '' || currentPageName === 'index.html' || currentPageName === 'landingPage.html';
+    const isTargetHome = targetPageName === 'index.html' || targetPageName === 'landingPage.html';
+
+    if ((isCurrentHome && isTargetHome) || currentPageName === targetPageName) {
       item.classList.add('active');
+    } else {
+      item.classList.remove('active');
     }
-  })
+  });
 }
