@@ -1,106 +1,156 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Learn about AWS Learning Club - Our team, mission, and vision"
-    />
-    <title>AWS Learning Club - About</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <body class="about-page">
-    <div id="header-placeholder"></div>
 
-    <main>
-      <!-- About page content -->
-      <section class="about-hero">
-        <div class="hero-container">
-          <img
-            src="../assets/milcon_2025.png"
-            alt="Milcon 2025"
-            class="milcon-pic"
-          />
-          <div class="hero-top-text">
-            <p>Build the future with</p>
-            <h1>
-              AWS CLOUD <br />
-              TECHNOLOGY
-            </h1>
-          </div>
-          <div class="hero-bottom-text">
-            <p>A community driven by</p>
-            <h2>INNOVATORS</h2>
-            <p>Where Rizalian architects the FUTURE</p>
-            <button>Learn More</button>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about AWS Learning Club - Our team, mission, and vision" />
+  <title>AWS Learning Club - About</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body class="about-page">
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- About page content -->
+    <section class="about-hero">
+      <div class="hero-container">
+        <img src="../assets/milcon_2025.png" alt="Milcon 2025" class="milcon-pic" />
+        <div class="hero-top-text">
+          <p>Build the future with</p>
+          <h1>
+            AWS CLOUD <br />
+            TECHNOLOGY
+          </h1>
         </div>
-      </section>
-
-      <!-- Container - Cards - Information -->
-
-      <div class="PDA-container">
-        <h1>Purpose-Driven Actions</h1>
-      </div>
-
-      <div class="vision-mission-container">
-        <div class="vision-card">
-          <div class="vision-card-header">
-            <img
-              src="../assets/vision_icon.jpg"
-              alt="vision-icon"
-              class="vision-icon"
-            />
-            <h1>Vision</h1>
-          </div>
-          <p>
-            As a student organization focused on Amazon Web Services (AWS) and
-            cloud computing, we envision a dynamic and long-standing community
-            of passionate learners from various universities nationwide. We aim
-            to foster innovation and harness the power of AWS to drive
-            technological advancements and industry transformation.
-          </p>
-        </div>
-
-        <div class="mission-card">
-          <div class="mission-card-header">
-            <img
-              src="../assets/mission_icon.jpg"
-              alt="mission-icon"
-              class="mission-icon"
-            />
-            <h1>Mission</h1>
-          </div>
-          <p>
-            We are dedicated to fostering a culture of learning, volunteerism,
-            and social impact. Through active community service, we culivate a
-            well-rounded perspective on the importance of giving back to
-            society. Our goal is to empower students by providing inclusive
-            educational initiatives, hands-on workshops, and networking
-            opportunities. By equipping students with essential AWS and cloud
-            compuing skills, we prepare them to thrive in the digital economy
-            and contribute meaningfully to technological progress.
-          </p>
+        <div class="hero-bottom-text">
+          <p>A community driven by</p>
+          <h2>INNOVATORS</h2>
+          <p>Where Rizalian architects the FUTURE</p>
+          <button>Learn More</button>
         </div>
       </div>
+    </section>
 
-      <div class="goal container">
-        <div class="goal-header">
-          <h1>GOAL</h1>
-          <p>
-            To effectively achieve our vision and mission, we establish clear,
-            pragmatic goals that empower students <br> technical expertise,
-            inclusive community building, and direct industry engagement.
-          </p>
+    <!-- Container - Cards - Information -->
+
+    <div class="PDA-container">
+      <h1>Purpose-Driven Actions</h1>
+    </div>
+
+    <div class="vision-mission-container">
+      <div class="vision-card">
+        <div class="vision-card-header">
+          <img src="../assets/icons/icon_vision.svg" alt="vision-icon" class="vision-icon" />
+          <h1>Vision</h1>
         </div>
+        <p>
+          As a student organization focused on Amazon Web Services (AWS) and
+          cloud computing, we envision a dynamic and long-standing community
+          of passionate learners from various universities nationwide. We aim
+          to foster innovation and harness the power of AWS to drive
+          technological advancements and industry transformation.
+        </p>
       </div>
-    </main>
 
-    <div id="footer-placeholder"></div>
+      <div class="mission-card">
+        <div class="mission-card-header">
+          <img src="../assets/icons/icon_mission.svg" alt="mission-icon" class="mission-icon" />
+          <h1>Mission</h1>
+        </div>
+        <p>
+          We are dedicated to fostering a culture of learning, volunteerism,
+          and social impact. Through active community service, we culivate a
+          well-rounded perspective on the importance of giving back to
+          society. Our goal is to empower students by providing inclusive
+          educational initiatives, hands-on workshops, and networking
+          opportunities. By equipping students with essential AWS and cloud
+          compuing skills, we prepare them to thrive in the digital economy
+          and contribute meaningfully to technological progress.
+        </p>
+      </div>
+    </div>
 
-    <script type="module" src="../js/main.js"></script>
-    <script src="../js/nav.js"></script>
-  </body>
+    <div class="goal container">
+      <div class="goal-header">
+        <h1>GOAL</h1>
+        <p>
+          To effectively achieve our vision and mission, we establish clear,
+          pragmatic goals that empower students through technical expertise,
+          inclusive community building, and direct industry engagement.
+        </p>
+      </div>
+      
+      <div class="goal-grid" id="goal-grid"></div>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script type="module" src="../js/main.js"></script>
+  <script src="../js/nav.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const goalGrid = document.getElementById("goal-grid");
+      if (!goalGrid) return;
+
+      const cardsData = [
+        {
+          title: "EDUCATION &amp; SKILL DEVELOPMENT",
+          desc: "We empower students with AWS expertise and cloud architecture skills to build innovative solutions effectively.",
+          icon: "../assets/icons/education_and_skill_development.svg"
+        },
+        {
+          title: "INDUSTRY ENGAGEMENT",
+          desc: "We bridge academia and industry by connecting students with AWS professionals and internships to provide real-world insights and career growth.",
+          icon: "../assets/icons/industry_and_engagement.svg"
+        },
+        {
+          title: "INNOVATION &amp; PROJECTS",
+          desc: "We foster innovation by encouraging students to solve real-world problems and develop AWS-based projects.",
+          icon: "../assets/icons/innovations_and_projects.svg"
+        },
+        {
+          title: "NATION<br>COMMUNITY BUILDING",
+          desc: "We foster a nationwide, inclusive AWS community through events and forums, encouraging knowledge sharing and networking among students.",
+          icon: "../assets/icons/nationcommunitybuilding.svg"
+        },
+        {
+          title: "STUDENT-CENTRIC APPROACH",
+          desc: "We put students first, providing an inclusive environment for skill development and career preparation through mentorship and leadership opportunities.",
+          icon: "../assets/icons/studentapproachcentric.svg"
+        },
+        {
+          title: "UNIVERSITY CHAPTERS &amp; COLLABORATION",
+          desc: "Supporting university chapters promotes collaboration and growth, creating an empowered network of learners and industry-connected innovators.",
+          icon: "../assets/icons/university_and_chapterscollaboration.svg"
+        }
+      ];
+
+      fetch("../components/card.html")
+        .then(response => {
+          if (!response.ok) throw new Error("Failed to load modular card component.");
+          return response.text();
+        })
+        .then(templateHtml => {
+          const renderedCards = cardsData.map(data => {
+            return templateHtml
+              .replace("{{ICON}}", `<img src="${data.icon}" class="goal-card-svg" alt="${data.title}" />`)
+              .replace("{{TITLE}}", data.title)
+              .replace("{{DESC}}", data.desc);
+          }).join("");
+
+          goalGrid.innerHTML = renderedCards;
+        })
+        .catch(error => console.error("Component Rendering Error:", error));
+    });
+  </script>
+
+
+</body>
+
 </html>
