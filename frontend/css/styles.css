@@ -1,78 +1,57 @@
 /* Main stylesheet */
 
 /* Header Styles */
+#header-placeholder {
+    display: block;
+    min-height: 126px;
+}
+
 .site-header {
     position: fixed;
-    top: 20px;
-    left: 2.5%;
-    right: 2.5%;
-    width: 95%;
-    max-width: 1600px;
-    margin: 0 auto;
-    height: 90px;
+    top: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #ff6f08;
+    border-radius: 24px;
+    box-shadow: 0 0 51.3px 2px rgba(0, 106, 255, 0.1);
+    height: 100px;
     z-index: 1000;
-    display: flex;
-    align-items: center;
-    padding: 0 45px;
-
-    background: rgba(122, 186, 255, 0.45);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    border-radius: 50px;
-    border: 2.5px solid #FF9900;
-
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25),
-        inset 0 1px 2px rgba(255, 255, 255, 0.4);
-    transition: all 0.3s ease;
+    padding: 0 30px;
+    width: 1242px;
+    max-width: 95%;
 }
 
 .header-container {
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
 }
 
 /* Logo Section */
 .header-logo {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     flex-shrink: 0;
 }
 
 .logo-img {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.15;
-}
-
-.logo-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 800;
-    color: #FFFFFF;
-    letter-spacing: 0.5px;
-    margin: 0;
-    text-shadow: 2px 2px 0px rgba(28, 52, 102, 0.4);
-}
-
-.logo-subtitle {
-    font-family: 'Motley Forces', 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: #FFFFFF;
-    letter-spacing: 2px;
-    margin: 0;
-    opacity: 0.95;
-    text-shadow: 1px 1px 0px rgba(28, 52, 102, 0.4);
+    line-height: 1.2;
+    gap: 2px;
 }
 
 .logo-main {
@@ -82,70 +61,69 @@
 }
 
 .logo-aws {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     color: #F2AF00;
     font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 .logo-learning {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     color: #1C3466;
     font-weight: 500;
 }
 
 .logo-chapter {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
     color: #1C3466;
     font-weight: 400;
-    letter-spacing: 0.3px;
 }
 
 /* Navigation */
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
-    color: #FF9000;
-    transition: all 0.25s ease;
+    border-radius: 50px;
+    transition: all 0.3s ease;
     white-space: nowrap;
-    position: relative;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.nav-item span {
+    background: linear-gradient(to bottom, #fbe502 27.956%, #fe9206 82.759%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1.2px;
+}
+
+.nav-item.active span {
+    background: linear-gradient(to bottom, #0162ff 0%, #0e27ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-item:hover {
-    color: #FFFFFF;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-    transform: translateY(-1px);
-}
-
-.nav-item.active {
-    background: transparent;
-    color: #FFFFFF;
-}
-
-.nav-icon {
-    color: #FFFFFF;
-}
-
-.nav-item.active::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #FFFFFF;
-    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 body.landing-page {
