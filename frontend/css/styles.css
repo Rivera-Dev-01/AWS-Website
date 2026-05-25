@@ -869,6 +869,7 @@ main {
     transform: translateY(-2px);
 }
 
+/*== ABOUT PAGE HERO SECTION ==*/
 .hero-container {
     position: relative;
     height: 100%;
@@ -973,4 +974,93 @@ main {
 
 .hero-bottom-text button:active {
     background: #fef08a;
+}
+
+/*== ABOUT PAGE VISION MISSION SECTION ==*/
+
+.PDA-container{
+    background: linear-gradient(180deg, #ffd500, #ff9100);
+    padding: 70px;
+    padding-top: 5px;
+    margin: 0 auto; 
+    margin-top: 60px;
+    max-width: 1200px;    
+}
+
+.PDA-container h1{
+    text-align: center;
+    background: linear-gradient(180deg, #002fff, #010741);
+    font-size: 60px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.07em;
+}
+
+.vision-mission-container{
+    margin: -80px auto; 
+    max-width: 1200px;    
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.vision-mission-container p, .vision-mission-container h1{
+    color: #ffffff;
+    font-family: sans-serif;
+    letter-spacing: 0.07em;
+    text-align: justify;
+}
+
+.vision-mission-container h1{
+    font-size: 40px;
+    text-align: right;
+}
+
+.vision-card, .mission-card{
+    flex: 1;
+}
+
+.vision-card, .mission-card{
+    background: linear-gradient(176deg, #00aeff, #0244d3);  
+    border-radius: 30px;   
+    padding: 20px; 
+}
+
+.mission-card{
+    margin-top: 40px;
+}
+
+.vision-icon, .mission-icon{
+    width: 50px;
+    height: 45px;
+    border-radius: 200px;
+}
+
+.vision-card-header, .mission-card-header{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+/*== ABOUT PAGE GOAL SECTION ==*/
+
+.goal-header h1{
+    text-align: center;
+    margin-top: 200px;
+    color: #002061;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 75px;
+    letter-spacing: 0.07em;
+}
+
+.goal-header p{
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    color: #002061;
+    font-family: sans-serif;
+    font-weight: bold;
 }
