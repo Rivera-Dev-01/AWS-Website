@@ -1267,3 +1267,116 @@ main {
         min-height: auto;
     }
 }
+
+/* SKILL BUILDER DEPARTMENTS & OFFICES SECTION */
+
+.skill-builder-container{
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 30px;
+    max-width: 1200px;
+    height: 250px;
+    overflow: hidden;
+    position: relative; 
+    background: linear-gradient(to bottom, #64b8f0 0%, #080b36 100%);
+    margin-bottom: 50px;
+}
+
+.skill-builder-cards-container, .offices-cards-container{
+    display: flex;
+    align-items: center;
+    perspective: 1200px;  
+    gap: 0;
+    margin-top: 60px;
+}
+
+.skill-builder-cards, .offices-cards{
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transform: rotateX(-70deg);
+    transform: rotateY(60deg);
+    transform-origin: left center;
+    margin-right: -260px;    
+    transition: transform 0.3s; 
+    border-radius: 20px;
+    height: 190px;
+    width: 300px;
+    padding: 15px;  
+    text-align: right;   
+    overflow: hidden;
+}
+
+.skill-builder-cards h2, .offices-cards h2{
+    text-align: left;
+    color: #010741;
+    font-family: 'Poppins', sans-serif;
+}
+
+.offices-cards p{
+    color: #010741;
+}
+
+.skill-builder-cards p, .offices-cards p{
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    letter-spacing: 0.08em;
+}
+
+.skill-builder-container h1{
+    text-shadow: #474646;
+    background: linear-gradient(to bottom, #ffd000 0%, #ff7300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Poppins', sans-serif;
+}
+
+.offices-container{
+    margin: 0 auto;
+    height: 250px;
+    padding: 40px;
+    border-radius: 30px;
+    max-width: 1200px;
+    height: 250px;
+    overflow: hidden;
+    position: relative; 
+    background: linear-gradient(to bottom, #ffdd46 0%, #ff7300 100%);
+    margin-bottom: 50px;
+}
+
+.offices-container h1{
+    text-shadow: #474646;
+    background: linear-gradient(to bottom, #0099ff 0%, #080b36 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.skill-builder-cards:hover, .offices-cards:hover{
+    cursor: pointer;
+}
+
+.skill-builder-cards:active, .offices-cards:active{
+    background: rgba(12, 3, 92, 0.459);
+}
+
+/* BUILD YOUR FUTURE SECTION */
+
+.future-header-container h1, .future-header-container p{
+    text-align: right;
+    margin-right: 150px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #4363a6 0%, #1C3466 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.future-header-container{
+    margin-bottom: 50px;
+}
+
