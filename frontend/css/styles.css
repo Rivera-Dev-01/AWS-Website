@@ -117,7 +117,7 @@
 }
 
 .nav-item.active span {
-    background: linear-gradient(to bottom, #0162ff 0%, #0e27ff 100%);
+    background: linear-gradient(to bottom, #FBB515 0%, #f2af00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
