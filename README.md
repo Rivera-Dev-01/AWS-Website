@@ -7,14 +7,17 @@ Welcome to the AWS Learning Club website project! This is a beginner-friendly we
 ```
 AWS-Website/
 ├── frontend/                 # All frontend files
-│   ├── html/                # HTML pages
-│   │   ├── components/      # Reusable components (header, footer, card)
+│   ├── pages/               # HTML pages
 │   │   ├── index.html       # Landing page
 │   │   ├── about.html       # About page
 │   │   ├── events.html      # Events page
 │   │   ├── partners.html    # Partners page
 │   │   ├── achievements.html # Achievements page
 │   │   └── contact.html     # Contact page
+│   ├── components/          # Reusable components (header, footer, card)
+│   │   ├── header.html      # Header component
+│   │   ├── footer.html      # Footer component
+│   │   └── card.html        # Card component
 │   ├── css/                 # Stylesheets
 │   │   └── styles.css       # Main CSS file
 │   ├── js/                  # JavaScript files
@@ -76,20 +79,20 @@ Before you start, make sure you have installed:
    The backend will start at `http://localhost:8000`
 
 4. **Open the frontend**
-   - Open `frontend/html/index.html` in your browser
+   - Open `frontend/pages/index.html` in your browser
    - Or use a local server (recommended):
      ```bash
      cd frontend
      python -m http.server 3000
      ```
-   - Then visit `http://localhost:3000/html/index.html`
+   - Then visit `http://localhost:3000/pages/index.html`
 
 ## 📝 How to Work on This Project
 
 ### For Frontend Developers
 
 **Working on HTML pages:**
-1. Open any HTML file in `frontend/html/`
+1. Open any HTML file in `frontend/pages/`
 2. Add your content inside the `<main>` tags
 3. Save and refresh your browser to see changes
 
