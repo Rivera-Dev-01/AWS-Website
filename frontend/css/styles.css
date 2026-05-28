@@ -2,150 +2,6 @@
 
 /* Main stylesheet */
 
-/* Header Styles */
-#header-placeholder {
-    display: block;
-    min-height: 126px;
-}
-
-.site-header {
-    position: fixed;
-    top: 26px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 2px solid #ff6f08;
-    border-radius: 24px;
-    box-shadow: 0 0 51.3px 2px rgba(0, 106, 255, 0.1);
-    height: 100px;
-    z-index: 1000;
-    padding: 0 40px;
-    width: 1242px;
-    max-width: 95%;
-}
-
-.header-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-/* Logo Section */
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-shrink: 0;
-}
-
-.logo-img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-    gap: 2px;
-}
-
-.logo-main {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-}
-
-.logo-aws {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    color: #F2AF00;
-    font-weight: 600;
-}
-
-.logo-learning {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    color: #1C3466;
-    font-weight: 500;
-}
-
-.logo-chapter {
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    color: #1C3466;
-    font-weight: 400;
-}
-
-/* Navigation */
-.header-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    border-radius: 50px;
-    transition: background 0.45s ease;
-    white-space: nowrap;
-    background: transparent;
-    border: 1px solid transparent;
-    -webkit-animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-}
-
-.nav-item span {
-    background: linear-gradient(to bottom, #fbe502 27.956%, #fe9206 82.759%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -1.2px;
-}
-
-.nav-item.active span {
-    background: linear-gradient(to bottom, #FBB515 0%, #f2af00 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.nav-item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes slide-fwd-center {
-  0% { -webkit-transform: scale(1); transform: scale(1); }
-  100% { -webkit-transform: scale(1.1); transform: scale(1.1); }
-}
-@keyframes slide-fwd-center {
-  0% { -webkit-transform: scale(1); transform: scale(1); }
-  100% { -webkit-transform: scale(1.1); transform: scale(1.1); }
-}
-@-webkit-keyframes slide-bck-center {
-  0% { -webkit-transform: scale(1.1); transform: scale(1.1); }
-  100% { -webkit-transform: scale(1); transform: scale(1); }
-}
-@keyframes slide-bck-center {
-  0% { -webkit-transform: scale(1.1); transform: scale(1.1); }
-  100% { -webkit-transform: scale(1); transform: scale(1); }
-}
-
 body.landing-page {
     background-image: url('../assets/web.png');
     background-size: cover;
@@ -379,14 +235,6 @@ body.landing-page {
 }
 
 @media (max-width: 1024px) {
-    .site-header {
-        padding: 0 20px;
-    }
-
-    .header-nav {
-        display: none;
-    }
-
     .hero-section {
         flex-direction: column;
         padding: 60px 30px;
@@ -1131,7 +979,7 @@ main {
 
 
 .goal-card-inner {
-    background: rgba(255, 255, 255, 0.38);
+    background: rgba(237, 244, 255, 0.35);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.5);
