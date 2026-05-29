@@ -71,39 +71,28 @@
 
 .footer-social-icons {
     display: flex;
-    gap: 14px;
+    gap: 26px;
     margin-top: 10px;
-    transform: translate(10px);
+    transform: translate(7px, 5px);
 }
 
-.social-icon-fb,
-.social-icon-li {
+.social-icon {
     width: 50px;
     height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12.9px);
-    -webkit-backdrop-filter: blur(12.9px);
-    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
     text-decoration: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    position: relative;
-    background:
-        linear-gradient(186.43deg, #F2AF00 46.54%, #FF6F08 96.04%),
-        rgba(61, 59, 59, 0.17);
-    background-clip: text, padding-box;
-    -webkit-background-clip: text, padding-box;
-    background-blend-mode: normal, normal;
-    color: transparent;
 }
 
-.social-icon-fb:hover,
-.social-icon-li:hover {
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.social-icon:hover {
     transform: scale(1.1);
     opacity: 0.9;
 }
@@ -192,5 +181,107 @@
 
     .footer-nav-col {
         margin-top: 10px;
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 40px 20px 0;
+        background: url('../assets/Mobile-Footer-Background.png') no-repeat center center;
+        background-size: cover;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-logo img {
+        width: 100px;
+        height: 100px;
+        transform: none;
+    }
+
+    .footer-brand-name {
+        justify-content: center;
+    }
+
+    .brand-name {
+        font-size: 20px;
+        transform: none;
+    }
+
+    .brand-chapter {
+        font-size: 12px;
+        transform: none;
+    }
+
+    .footer-description {
+        font-size: 12px;
+        max-width: 100%;
+        transform: none;
+        text-align: center;
+    }
+
+    .footer-social-icons {
+        justify-content: center;
+        transform: none;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-contact h4 {
+        font-size: 16px;
+        text-align: center;
+        transform: none;
+    }
+
+    .footer-contact p {
+        font-size: 14px;
+        justify-content: center;
+        transform: none;
+    }
+
+    .footer-nav-col {
+        transform: none;
+        text-align: center;
+    }
+
+    .footer-nav-col h4 {
+        font-size: 16px;
+    }
+
+    .footer-nav-col ul li a {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        margin: 0 -20px;
+        padding: 12px 15px;
+    }
+
+    .footer-bottom p {
+        font-size: 10px;
     }
 }
