@@ -1,0 +1,6 @@
+{
+  "rootDirectory": "frontend",
+  "rewrites": [
+    { "source": "/", "destination": "/pages/landingPage.html" }
+  ]
+}
