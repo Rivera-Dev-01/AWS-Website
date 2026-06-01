@@ -21,23 +21,45 @@
       <!-- About page content -->
       <section class="about-hero">
         <div class="hero-container">
+          <!-- Desktop Version -->
           <img
             src="../assets/milcon_2025.png"
             alt="Milcon 2025"
-            class="milcon-pic"
+            class="milcon-pic desktop-only"
           />
-          <div class="hero-top-text">
+          <div class="hero-top-text desktop-only">
             <p>Build the future with</p>
             <h1>
               AWS CLOUD <br />
               TECHNOLOGY
             </h1>
           </div>
-          <div class="hero-bottom-text">
+          <div class="hero-bottom-text desktop-only">
             <p>A community driven by</p>
             <h2>INNOVATORS</h2>
             <p>Where Rizalian architects the FUTURE</p>
             <button>Learn More</button>
+          </div>
+
+          <!-- Mobile Version (Slideshow, Arc, Logo, and Gradient Text) -->
+          <div class="about-hero-slideshow mobile-only">
+            <img src="../assets/milcon_2025.png" alt="Milcon 2025" class="slide active" />
+            <img src="../assets/web.png" alt="Coding Session" class="slide" />
+            <img src="../assets/Who-Are-We-Background.png" alt="JRU Chapter" class="slide" />
+          </div>
+          
+          <img src="../assets/Vector-97.png" alt="Curved Arc Overlay" class="hero-arc-overlay mobile-only" />
+          
+          <div class="hero-logo-badge mobile-only">
+            <img src="../assets/icons/AWS LOGO.png" alt="AWS Learning Club Logo" />
+          </div>
+          
+          <div class="hero-mobile-content mobile-only">
+            <h3>Build the future with</h3>
+            <h1 class="hero-title-gradient">AWS CLOUD<br>TECHNOLOGY</h1>
+            <p>Master industry-standard tools and launch your career in tech alongside driven peers.</p>
+            <button class="btn-learn-more">Learn More</button>
+            <div class="mobile-pda-text mobile-only">PURPOSE-DRIVEN ACTION</div>
           </div>
         </div>
       </section>
@@ -45,11 +67,12 @@
       <!-- Container - Cards - Information -->
 
       <div class="PDA-container">
-        <h1>Purpose-Driven Actions</h1>
+        <h1 class="desktop-only">Purpose-Driven Actions</h1>
       </div>
 
       <div class="vision-mission-container">
-        <div class="vision-card">
+        <!-- Vision Card -->
+        <div id="vision-card" class="vision-card active" onclick="selectCard('vision')">
           <div class="vision-card-header">
             <img
               src="../assets/icons/icon_vision.svg"
@@ -58,16 +81,20 @@
             />
             <h1>Vision</h1>
           </div>
-          <p>
+          <p class="desktop-only">
             As a student organization focused on Amazon Web Services (AWS) and
             cloud computing, we envision a dynamic and long-standing community
             of passionate learners from various universities nationwide. We aim
             to foster innovation and harness the power of AWS to drive
             technological advancements and industry transformation.
           </p>
+          <p class="mobile-only">
+            A thriving network of student innovators driving technological progress and shaping the future of the industry.
+          </p>
         </div>
 
-        <div class="mission-card">
+        <!-- Mission Card -->
+        <div id="mission-card" class="mission-card inactive" onclick="selectCard('mission')">
           <div class="mission-card-header">
             <img
               src="../assets/icons/icon_mission.svg"
@@ -76,7 +103,7 @@
             />
             <h1>Mission</h1>
           </div>
-          <p>
+          <p class="desktop-only">
             We are dedicated to fostering a culture of learning, volunteerism,
             and social impact. Through active community service, we culivate a
             well-rounded perspective on the importance of giving back to
@@ -85,6 +112,9 @@
             opportunities. By equipping students with essential AWS and cloud
             compuing skills, we prepare them to thrive in the digital economy
             and contribute meaningfully to technological progress.
+          </p>
+          <p class="mobile-only">
+            To empower the next generation of cloud enthusiasts through meaningful learning, collaboration, and community impact.
           </p>
         </div>
       </div>
@@ -109,7 +139,7 @@
 
       <div class="skill-builder-container">
         <h1>SKILL BUILDER DEPARTMENTS</h1>
-        <div class="skill-builder-cards-container">
+        <div class="skill-builder-cards-container desktop-only">
           <div class="skill-builder-cards">
             <h2>Software & Web Development</h2>
             <p>
@@ -163,11 +193,47 @@
             </p>
           </div>
         </div>
+
+        <!-- Mobile Double-Column Drawer Layout (Side-by-Side) -->
+        <div class="skill-builder-mobile-drawer mobile-only">
+          <div class="depts-drawer-slots">
+            <div class="dept-slot active" onclick="selectDept('software-web')">
+              <span>Soft & Web</span>
+            </div>
+            <div class="dept-slot" onclick="selectDept('data-analytics')">
+              <span>Data Analytics</span>
+            </div>
+            <div class="dept-slot" onclick="selectDept('security')">
+              <span>Security</span>
+            </div>
+            <div class="dept-slot" onclick="selectDept('cloud-computing')">
+              <span>Cloud Computing</span>
+            </div>
+            <div class="dept-slot" onclick="selectDept('ml-ai')">
+              <span>ML & AI</span>
+            </div>
+            <div class="dept-slot" onclick="selectDept('adv-infra')">
+              <span>Adv Infrastructure</span>
+            </div>
+          </div>
+          
+          <div class="depts-detail-sheet">
+            <div class="dept-detail-card" id="dept-detail-card">
+              <div class="dept-detail-header">
+                <div class="dept-detail-icon-circle">
+                  <img id="dept-detail-icon" src="../assets/icons/Mobile-Department-Logo.png" alt="Dept Icon" />
+                </div>
+                <h2 id="dept-detail-title">Software & Web Development</h2>
+              </div>
+              <p id="dept-detail-desc">Focuses on building technical proficiency in web and application development while enhancing coding skills through personal projects.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="offices-container">
         <h1>OFFICES</h1>
-        <div class="offices-cards-container">
+        <div class="offices-cards-container desktop-only">
           <div class="offices-cards">
             <h2>Executive</h2>
             <p>
@@ -230,6 +296,52 @@
               Driving technical skill-building through hands-on training,
               workshops, and support.
             </p>
+          </div>
+        </div>
+
+        <!-- Mobile Offices Layout -->
+        <div class="offices-mobile-layout mobile-only">
+          <div class="offices-mobile-grid">
+            <div class="office-mobile-btn" onclick="openOfficeDrawer('Executive')">
+              <span>Executive</span>
+            </div>
+            <div class="office-mobile-btn" onclick="openOfficeDrawer('Relations')">
+              <span>Relations</span>
+            </div>
+            <div class="office-mobile-btn" onclick="openOfficeDrawer('Operations')">
+              <span>Operations</span>
+            </div>
+            <div class="office-mobile-btn" onclick="openOfficeDrawer('Creatives')">
+              <span>Creatives</span>
+            </div>
+            <div class="office-mobile-btn" onclick="openOfficeDrawer('Marketing')">
+              <span>Marketing</span>
+            </div>
+            <div class="office-mobile-btn" onclick="openOfficeDrawer('Finance')">
+              <span>Finance</span>
+            </div>
+            <div class="office-mobile-btn" onclick="openOfficeDrawer('Media')">
+              <span>Media</span>
+            </div>
+            <div class="office-mobile-btn" onclick="openOfficeDrawer('Technology')">
+              <span>Technology</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Drawer Overlay for Mobile Offices -->
+        <div id="office-drawer-overlay" class="office-drawer-overlay mobile-only" onclick="closeOfficeDrawer()">
+          <div class="office-drawer" onclick="event.stopPropagation()">
+            <div class="drawer-handle"></div>
+            <div class="drawer-header">
+              <div class="drawer-icon-circle">
+                <img src="../assets/icons/Mobile-Offices-Logo.png" alt="Office Icon" />
+              </div>
+              <h2 id="office-drawer-title">Executive</h2>
+            </div>
+            <div class="drawer-divider"></div>
+            <p id="office-drawer-desc">The executive board governs the organization, efficiently executing its plans, programs, and policies.</p>
+            <button class="drawer-close-btn" onclick="closeOfficeDrawer()">Close</button>
           </div>
         </div>
       </div>

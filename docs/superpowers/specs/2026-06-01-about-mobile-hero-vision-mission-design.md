@@ -2,94 +2,51 @@
 
 **Date:** 2026-06-01  
 **Figma Ref:** `jsBVat13FyjCaUryNd7vGM` node `209-709`  
-**Files to edit:** `frontend/css/styles.css` (mobile media query block, lines 1543–2124)
+**Files edited:** `frontend/css/styles.css`, `frontend/pages/about.html`
 
 ---
 
-## 1. Hero Gradient Card — Visible Text Content
+## 1. Hero Gradient Card — One Seamless Card
 
-**Problem:** The hero gradient card has HTML elements for "Build the future with", "AWS CLOUD TECHNOLOGY", description text, and "Learn More" button, but they lack visible styling or are clipped.
+The entire hero content area is one continuous gradient card (white → yellow → orange) with **sharp bottom corners** (0px radius). No separate Purpose-driven.png image.
 
-**Fix — CSS only (inside `@media max-width: 768px`):**
+### Gradient
+`linear-gradient(180deg, #FFFFFF 0%, #FFF8E1 25%, #FFDF6B 55%, #FBB515 80%, #FE9206 100%)`
 
-| Element | Selector | Style |
-|---|---|---|
-| Subtitle | `.hero-mobile-content h3` | 18px Poppins SemiBold, color `#1C3466`, margin `0 0 8px 0` |
-| Title | `.hero-mobile-content .hero-title-gradient` | 42px Montserrat 900, `linear-gradient(180deg, #FF8C00, #FF6600)` background-clip text, no stroke, line-height 1.05 |
-| Description | `.hero-mobile-content p` | 14px Poppins 400, color `#333`, line-height 1.6, max-width 280px, centered |
-| Button | `.hero-mobile-content .btn-learn-more` | 85% width, 12px vertical padding, 2px solid `#F2AF00` border, rounded 12px, transparent bg, `#F2AF00` text |
+### Content Stack (top to bottom)
+1. **"Build the future with"** — 18px Poppins SemiBold, navy `#1C3466`
+2. **"AWS CLOUD TECHNOLOGY"** — 42px Montserrat 900, gradient text `#FF6F09 → #FFB700`
+3. **Description** — 14px Poppins 500, `#333`, max-width 340px (two lines)
+4. **"Learn More" button** — filled orange gradient bg (`#FFB700 → #FF6F09`), **white text**, 85% width
+5. **"PURPOSE-DRIVEN ACTION"** — 28px Poppins 800, navy gradient text (`#4363A6 → #1C3466`), letter-spacing 1px, 32px top padding / 40px bottom padding
 
-These styles already exist in the current CSS but may be overridden by parent styles (inherited desktop `.hero-top-text h1` stroke/fill properties). The fix is to add explicit `!important` overrides on `-webkit-text-stroke: 0 !important` and `-webkit-text-fill-color: transparent !important` on the gradient title.
-
----
-
-## 2. Purpose-driven.png — Full-Width Flush Bottom Banner
-
-**Problem:** Image should span the entire width of the gradient card, edge-to-edge, flush at the bottom.
-
-**Figma specs:** 430×122px frame at y=872, gradient `linear-gradient(-2deg, #FBB515, #FDDD01)`.
-
-**Fix — CSS only:**
-
-| Property | Value |
-|---|---|
-| `display` | `block` |
-| `width` | `calc(100% + 48px)` (bleeds past 24px padding on each side) |
-| `margin` | `24px -24px 0 -24px` (negative margins to go edge-to-edge) |
-| `height` | `auto` |
-| `border-bottom-left-radius` | `24px` (matches card) |
-| `border-bottom-right-radius` | `24px` (matches card) |
-| `object-fit` | `cover` |
-
-No HTML changes needed — the `<img class="mobile-pda-img">` element is already in place.
+### Bottom Corners
+`border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;`
 
 ---
 
-## 3. Vision/Mission Cards — Tighter Icon+Label, Bigger Cards, Lower Mission
+## 2. Vision/Mission Cards
 
-**Problem:** Icon and label text have too much gap. Cards are slightly small. Mission needs more vertical offset.
+### Icon + Label
+- Gap reduced from 10px → **6px** (icon right beside text)
+- Font size increased from 26px → **28px** (matching Figma `style_NFYAQS`)
+- Added `text-shadow: 0px 4px 5px rgba(0,0,0,0.25)` per Figma
 
-### 3a. Icon + Label Tighter Layout
+### Card Size
+- Width: 55% → **58%**
+- Min-height: 180px → **220px**
 
-**Current:** `gap: 10px` between icon and label.  
-**New:** `gap: 6px` between icon and label.
-
-**Figma spec:** Icon is 38×38px. Label is 28px Poppins ExtraBold 800. Text-shadow `0px 4px 5px rgba(0,0,0,0.25)`.
-
-```css
-.vision-card-header,
-.mission-card-header {
-    gap: 6px !important;  /* was 10px */
-}
-
-.vision-card-header h1,
-.mission-card-header h1 {
-    font-size: 28px !important;  /* was 26px */
-    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25) !important;
-}
-```
-
-### 3b. Bigger Cards
-
-**Current:** `width: 55%`, `min-height: 180px`.  
-**New:** `width: 58%`, `min-height: 220px`.
-
-### 3c. Lower Mission Offset
-
-**Current offsets:**
-- Mission inactive: `translateY(55px)`
-- Vision inactive: `translateY(55px)`
-
-**New offsets:**
-- Mission inactive (bottom-right): `translateX(75px) translateY(75px) scale(0.9)`
-- Vision inactive (bottom-left): `translateX(-15px) translateY(75px) scale(0.9)`
-
-This creates more vertical breathing room between the active card and the inactive card behind it.
+### Mission Lower Offset
+- Inactive translateY: 55px → **75px** (more vertical separation)
 
 ---
 
-## 4. Scope & Constraints
+## 3. HTML Change
 
-- **CSS only** — no HTML or JS changes
-- **All changes inside `@media (max-width: 768px)`** — desktop untouched
-- **File:** `frontend/css/styles.css`, specifically the mobile responsive block starting at line 1543
+Replaced `<img src="Purpose-driven.png">` with `<div class="mobile-pda-text">PURPOSE-DRIVEN ACTION</div>` in about.html line 62.
+
+---
+
+## 4. Constraints
+- All mobile styles inside `@media (max-width: 768px)` — desktop untouched
+- CSS-only changes except the single HTML element swap
