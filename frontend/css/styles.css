@@ -1051,6 +1051,10 @@ main {
     pointer-events: none;
 }
 
+.goal-card-btn {
+    background-color: #fafe00;
+}
+
 .goal-card-icon-container {
     margin-top: 20px;
     background: linear-gradient(to bottom, #4363A6 0%, #1C3466 100%);
