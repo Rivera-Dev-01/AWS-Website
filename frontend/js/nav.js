@@ -67,14 +67,14 @@ const mobileDeptData = {
 };
 
 const mobileOfficeData = {
-  'Executive': 'The Executive Committee provides overall direction, coordination, and oversight for the organization. Due to limited availability of senior officers, executive roles are primarily supervisory, documentation-focused, and approval-based.',
-  'Relations': 'Driving organizational growth and protecting its digital integrity by leading initiatives in resource acquisition, engaging content creation, strategic partnerships, professional correspondence, cybersecurity, and meticulous agreement alignment.',
-  'Operations': 'Manages the Cloud Club\'s Operations and Events Office by directing strategic planning, resource allocation, event execution, quality assurance, risk mitigation, and team leadership to ensure seamless daily functioning and successful club experiences.',
-  'Creatives': 'Driving its visual identity and audience engagement by managing visual content creation, media enhancement, project documentation, and impactful presentations.',
-  'Marketing': 'Amplifying the organization\'s online influence and community engagement through social media management, strategic publication materials, brand protection, and proactive security measures.',
-  'Finance': 'Safeguarding the organization\'s assets and ensuring university compliance by managing budgets, monitoring expenditures, and conducting financial forecasting to support strategic planning.',
-  'Media': 'Handles event photography and videography, coordinate officer pictorials, and organize media files. By delivering high-quality visual assets, they provide essential support to the creatives and marketing teams for post-event publicity.',
-  'Technology': 'Key tasks include managing the AWS Skill Builder Program, training officers, and facilitating hands-on technical seminars. The committee also provides event technical support, proposes future tech initiatives, and recruits volunteers to maintain the website.'
+  'Executive': { title: 'Executive', desc: 'The Executive Committee provides overall direction, coordination, and oversight for the organization. Due to limited availability of senior officers, executive roles are primarily supervisory, documentation-focused, and approval-based.', icon: '../assets/icons/Exec.png' },
+  'Relations': { title: 'Relations', desc: 'Driving organizational growth and protecting its digital integrity by leading initiatives in resource acquisition, engaging content creation, strategic partnerships, professional correspondence, cybersecurity, and meticulous agreement alignment.', icon: '../assets/icons/Relations.png' },
+  'Operations': { title: 'Operations', desc: 'Manages the Cloud Club\'s Operations and Events Office by directing strategic planning, resource allocation, event execution, quality assurance, risk mitigation, and team leadership to ensure seamless daily functioning and successful club experiences.', icon: '../assets/icons/Operations.png' },
+  'Creatives': { title: 'Creatives', desc: 'Driving its visual identity and audience engagement by managing visual content creation, media enhancement, project documentation, and impactful presentations.', icon: '../assets/icons/Creatives.png' },
+  'Marketing': { title: 'Marketing', desc: 'Amplifying the organization\'s online influence and community engagement through social media management, strategic publication materials, brand protection, and proactive security measures.', icon: '../assets/icons/Marketing.png' },
+  'Finance': { title: 'Finance', desc: 'Safeguarding the organization\'s assets and ensuring university compliance by managing budgets, monitoring expenditures, and conducting financial forecasting to support strategic planning.', icon: '../assets/icons/Finance.png' },
+  'Media': { title: 'Media', desc: 'Handles event photography and videography, coordinate officer pictorials, and organize media files. By delivering high-quality visual assets, they provide essential support to the creatives and marketing teams for post-event publicity.', icon: '../assets/icons/Mediaa.png' },
+  'Technology': { title: 'Technology', desc: 'Key tasks include managing the AWS Skill Builder Program, training officers, and facilitating hands-on technical seminars. The committee also provides event technical support, proposes future tech initiatives, and recruits volunteers to maintain the website.', icon: '../assets/icons/Technology.png' }
 };
 
 function slideDetailCard(cardId, titleId, descId, dataObj, newKey, clickedEl, iconId) {
@@ -108,6 +108,14 @@ function slideDetailCard(cardId, titleId, descId, dataObj, newKey, clickedEl, ic
       } else {
         titleEl.textContent = dataObj[newKey].title;
         descEl.textContent = dataObj[newKey].desc;
+        
+        // Dynamically shrink ONLY the two specific massive titles as requested
+        if (dataObj[newKey].title === 'Advanced Network & Infrastructure' || dataObj[newKey].title === 'Software & Web Development') {
+          titleEl.classList.add('shrink-long-title');
+        } else {
+          titleEl.classList.remove('shrink-long-title');
+        }
+
         if (iconEl && dataObj[newKey].icon) {
           iconEl.src = dataObj[newKey].icon;
         }
@@ -129,7 +137,7 @@ function selectMobileDept(deptId) {
 window.selectMobileDept = selectMobileDept;
 
 function selectMobileOffice(officeId) {
-  slideDetailCard('mobile-office-detail-card', 'mobile-office-detail-title', 'mobile-office-detail-desc', mobileOfficeData, officeId, event.currentTarget);
+  slideDetailCard('mobile-office-detail-card', 'mobile-office-detail-title', 'mobile-office-detail-desc', mobileOfficeData, officeId, event.currentTarget, 'mobile-office-detail-icon');
 }
 window.selectMobileOffice = selectMobileOffice;
 

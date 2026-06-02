@@ -1764,9 +1764,9 @@ main {
         display: flex !important;
         flex-direction: row !important;
         width: 100% !important;
-        gap: 25px !important; /* Huge 25px gap as requested */
+        gap: 15px !important; /* Shrunk gap from 25px for zoomed out look */
         align-items: stretch !important;
-        min-height: 400px !important;
+        min-height: 320px !important;
     }
 
     .master-list-container {
@@ -1782,16 +1782,16 @@ main {
     .master-list-card {
         position: relative !important;
         background: #6079a3 !important;
-        border: 12px solid #23395d !important; /* Increased thickness from 8px to 12px */
+        border: 8px solid #23395d !important; /* Shrunk from 12px for a neater scale */
         color: #ffffff !important;
         font-family: 'Poppins', sans-serif !important;
-        padding: 8px 10px 10px 10px !important;
-        border-radius: 24px !important; /* Increased to make it rounder */
+        padding: 6px 8px 8px 8px !important; /* Maximized inner space by reducing padding */
+        border-radius: 16px !important; /* Shrunk from 24px */
         text-align: center !important;
         cursor: pointer !important;
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
         box-shadow: 0 -4px 12px rgba(0,0,0,0.15) !important;
-        height: 180px !important; /* Fixed square height */
+        height: 140px !important; /* Zoomed out from 180px */
         overflow: hidden !important;
         display: flex !important;
         flex-direction: column !important;
@@ -1799,11 +1799,15 @@ main {
     }
 
     .master-list-title {
-        font-size: 24px !important; /* Increased again to a massive fixed size */
+        font-size: clamp(18px, 5vw, 26px) !important; /* Increased font size */
         font-weight: 700 !important;
         display: block !important;
         margin-bottom: 10px !important; /* Increased to 10px as requested */
         line-height: 1.1 !important;
+        word-break: normal !important; /* Clean word wrap */
+        -webkit-hyphens: none !important; /* Disable hyphenation to prevent sliced text */
+        hyphens: none !important;
+        overflow-wrap: break-word !important;
     }
 
     .master-list-desc {
@@ -1815,13 +1819,13 @@ main {
         text-align: left !important;
     }
 
-    /* ── OVERLAPPING STACK LOGIC (Roof Shingles) ── */
+    /* ── OVERLAPPING STACK LOGIC (Zoomed Out) ── */
     .master-list-card:nth-child(1) { z-index: 1 !important; margin-top: 0 !important; }
-    .master-list-card:nth-child(2) { z-index: 2 !important; margin-top: -132px !important; }
-    .master-list-card:nth-child(3) { z-index: 3 !important; margin-top: -132px !important; }
-    .master-list-card:nth-child(4) { z-index: 4 !important; margin-top: -132px !important; }
-    .master-list-card:nth-child(5) { z-index: 5 !important; margin-top: -132px !important; }
-    .master-list-card:nth-child(6) { z-index: 6 !important; margin-top: -132px !important; }
+    .master-list-card:nth-child(2) { z-index: 2 !important; margin-top: -96px !important; }
+    .master-list-card:nth-child(3) { z-index: 3 !important; margin-top: -96px !important; }
+    .master-list-card:nth-child(4) { z-index: 4 !important; margin-top: -96px !important; }
+    .master-list-card:nth-child(5) { z-index: 5 !important; margin-top: -96px !important; }
+    .master-list-card:nth-child(6) { z-index: 6 !important; margin-top: -96px !important; }
     .master-list-card:nth-child(7) { z-index: 7 !important; margin-top: -132px !important; }
     .master-list-card:nth-child(8) { z-index: 8 !important; margin-top: -132px !important; }
 
@@ -1855,10 +1859,10 @@ main {
 
     .detail-slide-card {
         background: #EDF4FF !important; /* Match Skill Builder active card background */
-        border-radius: 24px !important; /* Match stack card rounding */
-        padding: 24px 20px 28px 20px !important;
+        border-radius: 16px !important; /* Shrunk from 24px */
+        padding: 16px 12px 20px 12px !important; /* Maximized inner space */
         width: 100% !important;
-        min-height: 420px !important; /* Made the box much longer vertically */
+        min-height: 350px !important; /* Zoomed out from 420px */
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important; /* Pushes title to the top */
@@ -1866,7 +1870,7 @@ main {
         transform: translateY(0) !important;
         transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease !important;
         overflow: hidden !important;
-        border: 12px solid #D9D9D9 !important; /* Match Skill Builder active card border */
+        border: 8px solid #D9D9D9 !important; /* Shrunk from 12px */
     }
 
     /* No accent bar */
@@ -1891,34 +1895,43 @@ main {
     /* Header: icon + title side by side */
     .detail-slide-header {
         display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 10px !important;
+        flex-direction: row !important; /* Anchor icon to the left */
+        align-items: flex-start !important; /* Lock to the top so it doesn't move vertically */
+        justify-content: space-between !important; /* Icon on far left, Title on far right */
+        gap: 12px !important;
         padding: 0 !important;
         margin-bottom: 18px !important;
-        justify-content: flex-start !important; /* Align left */
+        width: 100% !important; /* Full width to guarantee consistent anchor */
     }
 
     .detail-slide-header h2 {
         font-family: 'Poppins', sans-serif !important;
-        font-size: clamp(18px, 5vw, 24px) !important; /* Increased responsive scaling */
+        font-size: clamp(17px, 5.2vw, 25px) !important; /* Shrunk by 1px as requested for Spotlight Cards */
         font-weight: 800 !important; /* Made bolder to match */
         color: #1C3466 !important;
         margin: 0 !important;
         line-height: 1.3 !important;
-        text-align: left !important; /* Align left */
-        word-break: keep-all !important;
+        text-align: right !important; /* Title text is aligned right */
+        flex: 1 !important; /* Perfectly fill remaining space without overflowing */
+        word-break: normal !important; /* Clean word wrap */
+        -webkit-hyphens: none !important; /* Disable hyphenation to prevent sliced text */
+        hyphens: none !important;
+        overflow-wrap: break-word !important;
     }
 
-    /* Circle icon container */
+    .detail-slide-header h2.shrink-long-title,
+    #mobile-office-detail-title.shrink-long-title {
+        font-size: clamp(12px, 3.8vw, 18px) !important; /* Shrunk further to fit perfectly on all screens */
+    }
+
     .detail-slide-icon {
-        width: 42px !important;
-        height: 42px !important;
+        width: 38px !important; /* Shrunk the bulky white circle down to look neater */
+        height: 38px !important;
         border-radius: 50% !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        flex-shrink: 0 !important;
+        flex-shrink: 0 !important; /* Prevents icon from getting squished by a long title */
         background: #ffffff !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
         border: 1px solid rgba(0, 0, 0, 0.05) !important;
@@ -1931,8 +1944,8 @@ main {
     }
 
     .detail-slide-icon img {
-        width: 22px !important;
-        height: 22px !important;
+        width: 28px !important; /* Increased the physical icon size inside the circle */
+        height: 28px !important;
         object-fit: contain !important;
     }
 
@@ -1951,12 +1964,12 @@ main {
 
     .detail-slide-card p {
         font-family: 'Poppins', sans-serif !important;
-        font-size: 16px !important; /* Increased description font size */
+        font-size: clamp(12px, 3.5vw, 16px) !important; /* Fluid description scaling */
         font-weight: 400 !important;
         color: #333333 !important;
         line-height: 1.65 !important;
         margin: 0 !important;
-        text-align: left !important; /* Align left */
+        text-align: left !important; /* Changed to left align to fix ugly spacing gaps */
     }
     
     /* ── Offices Section Mobile ── */
@@ -1971,7 +1984,7 @@ main {
 
     .offices-container .skill-builder-mobile-drawer {
         flex-direction: row-reverse !important;
-        gap: 25px !important; /* Huge 25px gap to match Skill Builder */
+        gap: 15px !important; /* Shrunk from 25px */
     }
 
     .offices-container h1 {
@@ -1989,10 +2002,15 @@ main {
     /* ── Offices Detail Card (Left Side) ── */
     #mobile-office-detail-card {
         background: #ffffff !important; /* White detail card matches Offices active card */
-        border: 12px solid #F5F6F8 !important; /* Match Offices active card border */
-        border-radius: 24px !important; /* Match Offices active card border radius */
+        border: 8px solid #F5F6F8 !important; /* Shrunk from 12px */
+        border-radius: 16px !important; /* Shrunk from 24px */
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
-        padding: 24px 20px 28px 20px !important;
+        padding: 16px 12px 20px 12px !important; /* Maximized inner space */
+    }
+
+    #mobile-office-detail-card .detail-slide-header {
+        flex-direction: row !important; /* Anchor icon to the left for Offices */
+        justify-content: flex-start !important; /* Pack against the left edge */
     }
 
     #mobile-office-detail-card .detail-slide-icon {
@@ -2005,11 +2023,14 @@ main {
     #mobile-office-detail-title {
         color: #E86016 !important; /* Specific brand orange */
         text-align: left !important; /* Align left */
-        width: 100% !important;
-        font-size: clamp(18px, 5vw, 24px) !important; /* Responsive scaling */
+        flex: 1 !important; /* Perfectly fill remaining space without overflowing */
+        font-size: clamp(17px, 5.2vw, 25px) !important; /* Shrunk by 1px to perfectly match Spotlight Card sibling */
         font-weight: 800 !important;
         margin-bottom: 8px !important;
-        word-break: keep-all !important; /* Prevent mid-word breaking */
+        word-break: normal !important; /* Clean word wrap */
+        -webkit-hyphens: none !important; /* Disable hyphenation to prevent sliced text */
+        hyphens: none !important;
+        overflow-wrap: break-word !important;
         white-space: normal !important; /* Let it wrap if narrow */
     }
 
@@ -2036,26 +2057,26 @@ main {
 
     .offices-container .master-list-card.active {
         background: #ffffff !important; /* Entire inner area turns white when active */
-        border: 12px solid #F5F6F8 !important; /* Increased grey outer border thickness */
-        padding: 16px !important; /* Breathing room for active card */
-        border-radius: 24px !important; /* Match inactive border-radius */
+        border: 6px solid #F5F6F8 !important; /* Reduced thickness */
+        padding: 12px !important; /* Breathing room for active card */
+        border-radius: 20px !important; /* Match inactive border-radius */
     }
 
-    /* Tighter vertical compression for Offices */
-    .offices-container .master-list-card:nth-child(2) { margin-top: -146px !important; }
-    .offices-container .master-list-card:nth-child(3) { margin-top: -146px !important; }
-    .offices-container .master-list-card:nth-child(4) { margin-top: -146px !important; }
-    .offices-container .master-list-card:nth-child(5) { margin-top: -146px !important; }
-    .offices-container .master-list-card:nth-child(6) { margin-top: -146px !important; }
-    .offices-container .master-list-card:nth-child(7) { margin-top: -146px !important; }
-    .offices-container .master-list-card:nth-child(8) { margin-top: -146px !important; }
+    /* Tighter compression for mobile offices to fit zooming */
+    .offices-container .master-list-card:nth-child(2) { margin-top: -106px !important; }
+    .offices-container .master-list-card:nth-child(3) { margin-top: -106px !important; }
+    .offices-container .master-list-card:nth-child(4) { margin-top: -106px !important; }
+    .offices-container .master-list-card:nth-child(5) { margin-top: -106px !important; }
+    .offices-container .master-list-card:nth-child(6) { margin-top: -106px !important; }
+    .offices-container .master-list-card:nth-child(7) { margin-top: -106px !important; }
+    .offices-container .master-list-card:nth-child(8) { margin-top: -106px !important; }
 
     .offices-container .master-list-title {
         color: #1C3466 !important; /* Navy text */
         text-align: center !important;
         width: 100% !important;
         font-weight: 800 !important;
-        font-size: clamp(16px, 5vw, 22px) !important; /* Increased responsive scaling */
+        font-size: clamp(20px, 5.5vw, 28px) !important; /* Increased font size by 2px */
         display: block !important;
         word-break: keep-all !important; /* Prevent awkward breaks */
         white-space: nowrap !important; /* Force single line */
@@ -2098,5 +2119,61 @@ main {
     .future-card-desc {
         font-size: 14px !important;
         text-align: left !important;
+    }
+}
+
+/* ── ULTRA NARROW SCREEN REFINEMENTS (e.g., iPhone SE) ── */
+@media (max-width: 450px) {
+    .skill-builder-mobile-drawer, 
+    .offices-container .skill-builder-mobile-drawer {
+        gap: 6px !important; /* Extremely tight gap to save horizontal space */
+    }
+    .master-list-container,
+    .detail-panel-container {
+        width: calc(50% - 3px) !important; /* Math for 6px gap */
+    }
+    .master-list-card {
+        border-width: 8px !important; /* Match the new global zoomed border */
+        border-radius: 16px !important; 
+        padding: 12px 6px !important; 
+    }
+    .detail-slide-card,
+    #mobile-office-detail-card {
+        border-width: 8px !important; 
+        border-radius: 16px !important; 
+        padding: 16px 8px 20px 8px !important; 
+    }
+    .master-list-title {
+        word-break: normal !important; 
+        -webkit-hyphens: none !important;
+        hyphens: none !important;
+        overflow-wrap: break-word !important;
+        font-size: clamp(13px, 4.2vw, 18px) !important; /* Scaled down slightly to fit cleanly on narrowest screens */
+    }
+    .offices-container .master-list-title {
+        word-break: normal !important; 
+        -webkit-hyphens: none !important;
+        hyphens: none !important;
+        overflow-wrap: break-word !important;
+        font-size: clamp(15px, 4.8vw, 20px) !important; /* Increased font size by 2px for Offices titles */
+    }
+    .detail-slide-header h2 {
+        word-break: normal !important;
+        -webkit-hyphens: none !important;
+        hyphens: none !important;
+        overflow-wrap: break-word !important;
+        font-size: clamp(12px, 3.8vw, 18px) !important; /* Scaled down slightly to fit cleanly on narrowest screens */
+    }
+    #mobile-office-detail-title {
+        word-break: normal !important;
+        -webkit-hyphens: none !important;
+        hyphens: none !important;
+        overflow-wrap: break-word !important;
+        font-size: clamp(12px, 3.8vw, 18px) !important; /* Scaled down slightly to fit cleanly on narrowest screens */
+    }
+    .detail-slide-header h2.shrink-long-title,
+    #mobile-office-detail-title.shrink-long-title {
+        font-size: clamp(10.5px, 3.3vw, 13px) !important; /* Extremely neat size for long titles so they NEVER overflow or slice */
+        line-height: 1.2 !important;
     }
 }
