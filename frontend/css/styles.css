@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Lexend:wght@300;400;500;600;700&family=Lexend+Deca:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 /* Main stylesheet */
+:root {
+    --primary-color: #2E67A8;
+    --secondary-color: #1C3466;
+    --gold-color: #FFC72C;
+    --dark-blue-color: #0A1931;
+    --light-blue-color: #2563EB;
+    --white-color: #FFFFFF;
+    --off-white-color: #F5F5F5;
+    --dark-gray-color: #333333;
+    --text-primary: #111;
+    --card-border-gradient: conic-gradient(from 93deg, #fafe00 3%, #ff6f08 14%, #006AFF 31%, #1500FF 42%, #006AFF 50%, #1500FF 59%, #006AFF 71%, #FAFE00 98%);
+}
 
 body.landing-page {
     background-image: url('../assets/web.png');
@@ -970,33 +982,86 @@ main {
     max-width: 1300px;
     margin: 0 auto;
     padding: 62px;
-
 }
 
 .goal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    max-height: 359px;
-    max-width: 333px;
-    min-height: 267px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* Translucent glass background */
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    padding: 12px;
+    padding: 16px;
+    border: none; 
 }
 
-.goal-card::before {
+/* Keep your existing ::before style */
+/* .goal-card::before {
     content: "";
     position: absolute;
-        top: 6%;
-        bottom: 6%;
-        left: 6%;
-        right: 6%;
+    top: 6%;
+    bottom: 6%;
+    left: 6%;
+    right: 6%;
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0 ,0 ,0 ,0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.19);
+    pointer-events: none;
+} */
+
+/* The hollowed-out gradient border */
+.goal-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit; /* Inherits the 16px border-radius */
+    pointer-events: none;
+    
+    /* 2. Create the border width and set the gradient background */
+    border: 2px solid transparent; 
+    background: var(--card-border-gradient) border-box;
+    
+    
+    /* 3. Mask out the center so it is completely hollow and transparent */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0.25;
+}
+
+.inner-goal-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    pointer-events: none;
+}
+
+.goal-card-icon-container {
+    margin-top: 20px;
+    background: linear-gradient(to bottom, #4363A6 0%, #1C3466 100%);
+    border-radius: 50%;
+    width: fit-content;
+}
+
+.goal-card-icon {
+    width: clamp(2rem, 4.4vw, 3rem);
+    height: auto;
+    filter: drop-shadow(0px 3px 4px rgba(227, 204, 73, 0.25));
 }
 
 .header-card {
@@ -1425,7 +1490,7 @@ main {
     display: none !important;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
 
     /* Show mobile, hide desktop */
     .mobile-only {
