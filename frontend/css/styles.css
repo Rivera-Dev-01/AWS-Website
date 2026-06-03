@@ -12,6 +12,10 @@
     --dark-gray-color: #333333;
     --text-primary: #111;
     --card-border-gradient: conic-gradient(from 93deg, #fafe00 3%, #ff6f08 14%, #006AFF 31%, #1500FF 42%, #006AFF 50%, #1500FF 59%, #006AFF 71%, #FAFE00 98%);
+    --font-poppins: 'Poppins', sans-serif;
+    --font-lexend: 'Lexend', sans-serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+    
 }
 
 body.landing-page {
@@ -1066,7 +1070,24 @@ main {
 }
 
 .goal-card-btn {
-    background-color: #fafe00;
+    display: inline-block;
+    pointer-events: auto;
+    background: linear-gradient(135deg, rgba(250, 254, 0, 0.1) 0%, rgba(255, 111, 8, 0.1) 100%);
+    backdrop-filter: blur(14.1px);
+    -webkit-backdrop-filter: blur(14.1px);
+    padding: 13px 36px;
+    margin-top: 15px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.88);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    color: #1C3466;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+
 }
 
 .goal-card-icon-container {
