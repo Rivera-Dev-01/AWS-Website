@@ -899,7 +899,7 @@ main {
     color: #ffffff;
 }
 
-.desktop-desc {
+.desktop-only {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -908,7 +908,7 @@ main {
     margin: 0;
 }
 
-.mobile-desc{
+.mobile-only{
     display: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -1015,6 +1015,8 @@ main {
     -webkit-backdrop-filter: blur(5px);
     padding: 16px;
     border: none; 
+    height: 308px;
+    width: 300px;
 }
 
 /* Keep your existing ::before style */
@@ -1059,7 +1061,7 @@ main {
 .inner-goal-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -1075,23 +1077,25 @@ main {
     background: linear-gradient(135deg, rgba(250, 254, 0, 0.1) 0%, rgba(255, 111, 8, 0.1) 100%);
     backdrop-filter: blur(14.1px);
     -webkit-backdrop-filter: blur(14.1px);
-    padding: 13px 36px;
-    margin-top: 15px;
+    padding: 10px 10px;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.88);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     color: #1C3466;
     font-family: var(--font-poppins);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 10px;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.5px;
-
+    align-self: flex-end;
+    margin-top: auto;
+    margin-right: 16px;
+    margin-bottom: 16px;
 }
 
 .goal-card-icon-container {
-    margin-top: 20px;
+    margin-top: 30px;
     background: linear-gradient(to bottom, #4363A6 0%, #1C3466 100%);
     border-radius: 50%;
     width: fit-content;
@@ -1104,18 +1108,20 @@ main {
 }
 
 .header-card {
+    margin-top: 10px;
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-size: 1.3rem;
-    color:#2e3486;
+    color:#093A9E;
 }
 
 .card-info {
     text-align: center;
     font-family: "Poppins", sans-serif;
-    font-size: 1em;
+    font-size: 12px;
+    margin-top: -25px;
     font-weight: medium;
-    color: #2e3486;
+    color: #123A90;
     padding: 12px;
     box-sizing: border-box;
 }
