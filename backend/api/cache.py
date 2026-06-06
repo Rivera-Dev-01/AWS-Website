@@ -1,7 +1,7 @@
 import time
 from collections import OrderedDict
 
-from . import config
+import config
 
 
 class TTLCache:

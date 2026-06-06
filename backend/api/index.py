@@ -6,10 +6,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
-from . import chatbot
-from . import config
-from . import rate_limiter
-from . import cache
+import chatbot
+import config
+import rate_limiter
+import cache
 
 app = FastAPI(title="Cumulus Helm Chatbot API")
 
