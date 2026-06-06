@@ -12,6 +12,10 @@
     --dark-gray-color: #333333;
     --text-primary: #111;
     --card-border-gradient: conic-gradient(from 93deg, #fafe00 3%, #ff6f08 14%, #006AFF 31%, #1500FF 42%, #006AFF 50%, #1500FF 59%, #006AFF 71%, #FAFE00 98%);
+    --font-poppins: 'Poppins', sans-serif;
+    --font-lexend: 'Lexend', sans-serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+    
 }
 
 body.landing-page {
@@ -23,6 +27,10 @@ body.landing-page {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+html {
     overflow-x: hidden;
 }
 
@@ -891,7 +899,17 @@ main {
     color: #ffffff;
 }
 
-.vision-mission-container p {
+.desktop-only {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: justify;
+    margin: 0;
+}
+
+.mobile-only{
+    display: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -997,6 +1015,8 @@ main {
     -webkit-backdrop-filter: blur(5px);
     padding: 16px;
     border: none; 
+    height: 308px;
+    width: 300px;
 }
 
 /* Keep your existing ::before style */
@@ -1041,7 +1061,7 @@ main {
 .inner-goal-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -1052,11 +1072,30 @@ main {
 }
 
 .goal-card-btn {
-    background-color: #fafe00;
+    display: inline-block;
+    pointer-events: auto;
+    background: linear-gradient(135deg, rgba(250, 254, 0, 0.1) 0%, rgba(255, 111, 8, 0.1) 100%);
+    backdrop-filter: blur(14.1px);
+    -webkit-backdrop-filter: blur(14.1px);
+    padding: 10px 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.88);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    color: #1C3466;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    align-self: flex-end;
+    margin-top: auto;
+    margin-right: 16px;
+    margin-bottom: 16px;
 }
 
 .goal-card-icon-container {
-    margin-top: 20px;
+    margin-top: 30px;
     background: linear-gradient(to bottom, #4363A6 0%, #1C3466 100%);
     border-radius: 50%;
     width: fit-content;
@@ -1069,18 +1108,20 @@ main {
 }
 
 .header-card {
+    margin-top: 10px;
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-size: 1.3rem;
-    color:#2e3486;
+    color:#093A9E;
 }
 
 .card-info {
     text-align: center;
     font-family: "Poppins", sans-serif;
-    font-size: 1em;
+    font-size: 12px;
+    margin-top: -25px;
     font-weight: medium;
-    color: #2e3486;
+    color: #123A90;
     padding: 12px;
     box-sizing: border-box;
 }
@@ -1109,7 +1150,7 @@ main {
     height: 250px;
     overflow: hidden;
     position: relative; 
-    background: linear-gradient(to bottom, #64b8f0 0%, #080b36 100%);
+    background: linear-gradient(to bottom, #8FBEFF 0%, #1A79FF 50%, #040A50 95%);
     margin-bottom: 50px;
 }
 
@@ -1483,6 +1524,73 @@ main {
     }
 }
 
+/* MOBILE LAYOUT - Header */
+@media (max-width: 768px) {
+  .site-header {
+    display: none;
+  }
+}
+
+/* MOBILE LAYOUT - Vision & Mission Section */
+@media (max-width: 768px) {
+  .vision-mission-container{
+    margin: 0 auto;
+  }
+
+  .vision-mission-container p{
+    font-size: 15px;
+  }
+
+  .vision-card-header h1, .mission-card-header h1{
+    font-size: 25px;
+  }
+
+  .vision-icon, .mission-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .vision-card, .mission-card{
+    width: 400px;
+    height: 300px;
+  }
+
+  .desktop-desc{
+    display: none;
+  }
+
+  .mobile-desc{
+    display: block;
+    text-align: center;
+  }
+}
+
+/* MOBILE LAYOUT - Goal Section */
+@media (max-width: 768px) {
+  .goal-header h1{
+    font-size: 40px;
+  }
+
+  .goal-header p{
+    font-size: 11px;
+  }
+}
+
+/* MOBILE LAYOUT - Future Section */
+@media (max-width: 768px) {
+    .future-header-container h1{
+        text-align: left;
+        font-size: 26px;
+    }
+    .future-header-container p{
+        text-align: left;
+        font-size: 13px;
+    }
+}
+
+
+
+
 /* No Footer Styles in styles.css — see footer.css */
 
 /* ============================================================
@@ -1648,6 +1756,7 @@ main {
         display: inline-block !important;
         padding: 4px 32px !important;
         width: 340px !important;
+        max-width: 90% !important;
         border: 4px solid #F2AF00 !important;
         border-radius: 8px !important;
         background: transparent !important;
@@ -1667,8 +1776,9 @@ main {
 
     .mobile-pda-text {
         display: block !important;
-        width: calc(100% + 48px) !important;
-        margin: 0 -24px !important; 
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important; 
         font-family: 'Poppins', sans-serif !important;
         font-size: 26px !important; 
         font-weight: 800 !important;
@@ -1788,25 +1898,156 @@ main {
         margin-bottom: 30px !important;
     }
 
-    .goal-card-outer {
-        background: rgba(255, 255, 255, 0.12) !important;
-        border: 1px solid rgba(255, 255, 255, 0.22) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
+    /* ── Goals 2x3 Grid Layout ── */
+    .aws-club-goals {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        column-gap: 12px !important;
+        row-gap: 16px !important;
+        padding: 24px 12px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
     }
 
-    .goal-card-desc {
-        max-height: 0px !important;
-        opacity: 0 !important;
-        overflow: hidden !important;
-        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                    opacity 0.3s ease !important;
-        margin: 0 !important;
+    /* ── Outer Box (Frosted Glass — Thick Frame with Deep Refraction) ── */
+    .goal-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(12px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        box-shadow:
+            0 10px 30px rgba(31, 38, 135, 0.04),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.05) !important;
+        padding: 16px !important;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        height: auto !important;
     }
 
-    .goal-card-outer.expanded .goal-card-desc {
-        max-height: 200px !important;
+    /* Disable desktop gradient border overlay on mobile */
+    .goal-card::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* ── Inner Box (Heavy Frosted Glassmorphic Panel) ── */
+    .inner-goal-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        background: rgba(255, 255, 255, 0.38) !important;
+        backdrop-filter: blur(20px) saturate(200%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(200%) !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(255, 255, 255, 0.45) !important;
+        box-shadow:
+            0 4px 16px rgba(0, 0, 0, 0.02),
+            inset 0 1.5px 0 rgba(255, 255, 255, 0.45),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+            inset 1px 0 0 rgba(255, 255, 255, 0.1),
+            inset -1px 0 0 rgba(255, 255, 255, 0.1) !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 16px 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ── Goal Card Icon (Blue Circle Badge with Glass Ring) ── */
+    .goal-card-icon-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: linear-gradient(135deg, #4363A6 0%, #1C3466 100%) !important;
+        border-radius: 50% !important;
+        width: 44px !important;
+        height: 44px !important;
+        margin-top: 0 !important;
+        margin-bottom: 12px !important;
+        flex-shrink: 0 !important;
+        box-shadow:
+            0 4px 14px rgba(28, 52, 102, 0.2),
+            0 0 0 3px rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .goal-card-icon {
+        width: 26px !important;
+        height: 26px !important;
+        object-fit: contain !important;
+    }
+
+    /* ── Goal Card Title (Poppins) ── */
+    .header-card {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        color: #1C3466 !important;
+        text-align: center !important;
+        text-transform: uppercase !important;
+        margin: 0 0 10px 0 !important;
+        line-height: 1.35 !important;
+        letter-spacing: 0.2px !important;
+    }
+
+    /* ── Goal Card Description (Poppins — Always Visible) ── */
+    .card-info {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 10.5px !important;
+        font-weight: 500 !important;
+        color: #2E3486 !important;
+        text-align: center !important;
+        line-height: 1.45 !important;
+        padding: 0 !important;
+        margin: 0 0 16px 0 !important;
+        box-sizing: border-box !important;
+        max-height: none !important;
         opacity: 1 !important;
+        overflow: visible !important;
+        display: block !important;
+    }
+
+    /* ── Clean "More" Button (glass outline, inside inner card) ── */
+    .goal-card-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        align-self: center !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        color: #1C3466 !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        border-radius: 4px !important;
+        padding: 4px 14px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 10px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        box-shadow: none !important;
+        transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+        margin-top: auto !important;
+        width: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .goal-card-btn:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+        border-color: rgba(255, 255, 255, 0.7) !important;
+        transform: scale(1.03) !important;
+    }
+
+    .goal-card-btn:active {
+        transform: scale(0.97) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
     }
 
     /* ── Skill Builder Departments Mobile ── */
@@ -2040,7 +2281,7 @@ main {
         overflow: visible !important;
         padding: 24px 16px !important;
         margin-bottom: 30px !important;
-        background: linear-gradient(to bottom, #ffaf14, #ff6a00) !important;
+        background: linear-gradient(to bottom, #FFB700 0%, #F2AF00 30%, #FF6F08 78%) !important;
         border-radius: 20px !important; /* Keep it rounded */
     }
 
