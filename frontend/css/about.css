@@ -1494,7 +1494,10 @@ main {
         border-radius: 24px;
     }
     .future-card-cloud-icon {
-        position: relative;
+        position: absolute;
+        height: 120px;
+        width: 100px;
+        right: 0;
         left: auto !important;
         top: auto !important;
     }
@@ -1506,13 +1509,14 @@ main {
         text-align: left;
     }
     .future-card-accent-bar {
-        position: relative;
-        right: auto;
+        position: absolute;
         top: auto;
-        width: 40px;
-        height: 5px !important;
-        border-radius: 3px;
-        margin: 16px 0 0 0;
+        right: auto;
+        left: auto;
+        width: 7px;
+        height: 50% !important;
+        border-radius: 10px;
+        margin: 90px 0 0 0;
         display: block;
     }
 }
@@ -2388,6 +2392,10 @@ main {
         margin: 30px auto 60px auto !important;
     }
 
+    .future-card-header {
+        position: relative !important;
+    }
+
     .future-mascot-img {
         width: 180px !important;
         height: auto !important;
@@ -2401,12 +2409,14 @@ main {
 
     .future-card-title {
         font-size: 20px !important;
+        font-weight: bold !important;
         white-space: normal !important;
         text-align: left !important;
     }
 
     .future-card-desc {
         font-size: 14px !important;
+        margin-left: 20px !important;
         text-align: left !important;
     }
 }
