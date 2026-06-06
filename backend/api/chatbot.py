@@ -1,8 +1,8 @@
 from groq import Groq
 
-from . import config
-from . import prompts
-from . import guardrails
+import config
+import prompts
+import guardrails
 
 client = Groq(api_key=config.GROQ_API_KEY)
 

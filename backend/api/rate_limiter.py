@@ -1,7 +1,7 @@
 import time
 from collections import defaultdict
 
-from . import config
+import config
 
 
 class RateLimiter:
