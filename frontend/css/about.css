@@ -1294,7 +1294,7 @@ main {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
 }
 
 .future-header-container {
@@ -2390,7 +2390,7 @@ main {
 
     /* ── Future Section Mobile ── */
     .future-section {
-        padding: 30px 16px !important;
+        padding: 10px 16px !important;
         margin: 30px auto 60px auto !important;
     }
 
@@ -2402,6 +2402,7 @@ main {
         width: 180px !important;
         height: auto !important;
         margin-left: 0 !important;
+        display: none !important;
     }
 
     .future-card {
