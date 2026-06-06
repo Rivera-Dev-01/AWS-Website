@@ -72,6 +72,7 @@
     grid-column: 1 / -1;
     display: flex;
     gap: 26px;
+    padding-left: 20px;  /* push them right */
 }
 
     .social-icon {
@@ -98,6 +99,8 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 10px;
+    padding-left: 20px;
+    white-space: nowrap;
     color: white;
 }
 
@@ -109,6 +112,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    padding-left: 20px;  /* push them right */
 }
 
 .icon-email {
@@ -282,18 +286,20 @@
         height: 100%;
         object-fit: contain;
     }
-        
-    }
 
     /* Contact Us Section */
     .footer-contact {
         width: 100%;
         text-align: left;
-        padding-left: 48px;
+        padding-left: 26px;
         margin-bottom: 20px;
     }
 
-    .footer-contact h4 {
+.footer-contact {
+    grid-column: 1 / -1;
+}
+
+.footer-contact h4 {
         font-size: 16px;
         font-weight: 600;
         text-align: left;

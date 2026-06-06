@@ -1,5 +1,6 @@
 /* ===================================
-   HEADER STYLES - MOBILE FIRST
+   HEADER STYLES - CONSOLIDATED
+   Mobile-first with desktop overrides
    Based on Figma: PgsTeM4ex0EbDfCwS2ZIVn
    Mobile Node: 209:1514 (349x39px)
    =================================== */
@@ -18,7 +19,7 @@
     position: fixed;
     top: 104px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-55%);
     width: auto;
     max-width: calc(100% - 40px);
     height: auto;
@@ -45,62 +46,66 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    padding: 3px 7px;
+    gap: 4px;
+    padding: 3px 6px;
     height: auto;
     min-height: 32px;
     background: rgba(250, 254, 0, 0.05);
-    border: 2px solid rgba(250, 254, 0, 0.04);
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
     width: fit-content;
-    flex-wrap: nowrap;
+    max-width: 100%;
 }
 
+/* Mobile Nav Items */
 .nav-item {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    padding: 0 11px;
+    gap: 3px;
+    padding: 4px 8px;
     height: 22px;
-    background: rgba(250, 254, 0, 0.04);
-    border: 0.5px solid rgba(250, 254, 0, 0.04);
+    background: rgba(255, 255, 255, 0.12);
+    border: 0.1px solid rgba(255,255,255, 0.2);
     border-radius: 5px;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-size: 11px;
     font-weight: 500;
-    line-height: 9.57px;
+    line-height: 1;
     letter-spacing: -0.33px;
     color: #123A90;
     transition: all 0.2s ease;
     white-space: nowrap;
     flex-shrink: 0;
-    width: auto;
-    min-width: fit-content;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
+/* Mobile Nav Icons - override SVG inline width="100%" */
 .nav-icon {
-    width: 12px;
-    height: 12px;
+    height: 11px;
+    width: 13px !important;
     flex-shrink: 0;
     color: #123A90;
-    stroke-width: 1.5;
+    display: block;
 }
 
+/* Mobile Nav Text */
 .nav-item span {
     color: #123A90;
     font-size: 11px;
     font-weight: 500;
-    line-height: 9.57px;
+    line-height: 1;
     letter-spacing: -0.33px;
-    flex-shrink: 0;
+    display: block;
 }
 
+/* Mobile Hover/Active States */
 .nav-item:hover,
 .nav-item.active {
-    background: rgba(250, 254, 0, 0.08);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .nav-item:hover span,
@@ -114,11 +119,49 @@
 }
 
 /* ===================================
+   RESPONSIVE: Very Narrow Screens
+   =================================== */
+@media (max-width: 380px) {
+    .header-nav {
+        gap: 3px;
+        padding: 3px 4px;
+    }
+
+    .nav-item {
+        gap: 2px;
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+
+    .nav-icon {
+        height: 10px;
+    }
+
+    .nav-item span {
+        font-size: 10px;
+        letter-spacing: -0.4px;
+    }
+}
+
+/* Ultra-narrow fallback - Allow horizontal scroll */
+@media (max-width: 340px) {
+    .header-nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .header-nav::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* ===================================
    DESKTOP STYLES (769px and above)
    Desktop gets completely different styling
    =================================== */
 @media (min-width: 769px) {
-    /* Reset mobile styles */
+    /* Reset mobile placeholder */
     #header-placeholder {
         min-height: 120px;
     }
@@ -152,7 +195,7 @@
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
-        filter: drop-shadow(0 0 6px rgba(147, 180, 255, 0.4)) 
+        filter: drop-shadow(0 0 6px rgba(147, 180, 255, 0.4))
                 drop-shadow(0 0 16px rgba(201, 163, 255, 0.25));
     }
 
@@ -224,14 +267,6 @@
         border-radius: 0;
     }
 
-    /* Reset mobile specific widths */
-    .nav-item:nth-child(1),
-    .nav-item:nth-child(2),
-    .nav-item:nth-child(3),
-    .nav-item:nth-child(4) {
-        width: auto;
-    }
-
     .nav-item {
         padding: 10px 20px;
         height: auto;
@@ -244,10 +279,12 @@
         line-height: 29px;
         letter-spacing: -0.05em;
         gap: 0;
+        overflow: visible;
     }
 
+    /* Hide icons on desktop */
     .nav-icon {
-        display: none;
+        display: none !important;
     }
 
     .nav-item span {

@@ -16,11 +16,14 @@ function initChatbot() {
   const sendBtn = document.getElementById('chatbotSend');
   const input = document.getElementById('chatbotInput');
   const messages = document.getElementById('chatbotMessages');
-  const emptyState = document.getElementById('chatbotEmptyState');
+  const charCounter = document.getElementById('chatbotCharCounter');
 
   if (!trigger || !chatWindow) return;
 
   let isOpen = false;
+
+  // Add first bot greeting
+  addBotMessage('Hi there! 👋 Welcome aboard! Ask me anything about AWS, the cloud, or our community.');
 
   trigger.addEventListener('click', () => {
     if (isOpen) closeChat(); else openChat();
@@ -42,6 +45,14 @@ function initChatbot() {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
+    }
+  });
+
+  // Character counter
+  input?.addEventListener('input', () => {
+    if (charCounter) {
+      const len = input.value.length;
+      charCounter.textContent = `${len}/1000`;
     }
   });
 
@@ -75,21 +86,81 @@ function initChatbot() {
     trigger.style.animation = '';
   }
 
+  function addBotMessage(text) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'chatbot-message bot-message';
+
+    const author = document.createElement('div');
+    author.className = 'chatbot-message-author';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'chatbot-message-avatar';
+    const img = document.createElement('img');
+    img.src = '../assets/icons/AWS LOGO.png';
+    img.alt = 'Captain Hima';
+    avatar.appendChild(img);
+
+    const name = document.createElement('span');
+    name.className = 'chatbot-message-author-name';
+    name.textContent = 'Captain Hima';
+
+    author.appendChild(avatar);
+    author.appendChild(name);
+
+    const bubble = document.createElement('div');
+    bubble.className = 'chatbot-message-bubble';
+    bubble.textContent = text;
+
+    wrapper.appendChild(author);
+    wrapper.appendChild(bubble);
+    messages.appendChild(wrapper);
+    scrollToBottom();
+  }
+
   function sendMessage() {
     if (!input || !messages || input.disabled) return;
     const text = input.value.trim();
     if (!text) return;
 
-    addMessage(text, 'user');
+    // User message
+    const userWrapper = document.createElement('div');
+    userWrapper.className = 'chatbot-message user-message';
+    const userBubble = document.createElement('div');
+    userBubble.className = 'chatbot-message-bubble';
+    userBubble.textContent = text;
+    userWrapper.appendChild(userBubble);
+    messages.appendChild(userWrapper);
+
     input.value = '';
+    if (charCounter) charCounter.textContent = '0/1000';
     input.disabled = true;
     if (sendBtn) sendBtn.disabled = true;
     scrollToBottom();
 
-    const botMsg = document.createElement('div');
-    botMsg.className = 'chatbot-message bot-message';
-    emptyState?.classList.add('hidden');
-    messages.appendChild(botMsg);
+    // Bot message placeholder
+    const botWrapper = document.createElement('div');
+    botWrapper.className = 'chatbot-message bot-message';
+
+    const author = document.createElement('div');
+    author.className = 'chatbot-message-author';
+    const avatar = document.createElement('div');
+    avatar.className = 'chatbot-message-avatar';
+    const img = document.createElement('img');
+    img.src = '../assets/icons/AWS LOGO.png';
+    img.alt = 'Captain Hima';
+    avatar.appendChild(img);
+    const name = document.createElement('span');
+    name.className = 'chatbot-message-author-name';
+    name.textContent = 'Captain Hima';
+    author.appendChild(avatar);
+    author.appendChild(name);
+
+    const bubble = document.createElement('div');
+    bubble.className = 'chatbot-message-bubble';
+
+    botWrapper.appendChild(author);
+    botWrapper.appendChild(bubble);
+    messages.appendChild(botWrapper);
     scrollToBottom();
 
     const controller = new AbortController();
@@ -102,6 +173,7 @@ function initChatbot() {
     })
       .then(async (res) => {
         if (!res.ok) {
+          bubble.textContent = 'Sorry, I am having trouble connecting. Please try again later.';
           input.disabled = false;
           if (sendBtn) sendBtn.disabled = false;
           scrollToBottom();
@@ -121,7 +193,7 @@ function initChatbot() {
               const time = document.createElement('span');
               time.className = 'chatbot-message-time';
               time.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-              botMsg.appendChild(time);
+              botWrapper.appendChild(time);
               scrollToBottom();
               return;
             }
@@ -136,11 +208,11 @@ function initChatbot() {
                 const data = JSON.parse(part.slice(6));
                 if (data.token === '[DONE]') continue;
                 if (data.token) {
-                  botMsg.textContent += data.token;
+                  bubble.textContent += data.token;
                   scrollToBottom();
                 }
                 if (data.error) {
-                  botMsg.textContent = data.error;
+                  bubble.textContent = data.error;
                   scrollToBottom();
                 }
               } catch (_) {}
@@ -156,25 +228,10 @@ function initChatbot() {
         read();
       })
       .catch(() => {
-        botMsg.remove();
+        bubble.textContent = 'Sorry, I am having trouble connecting. Please try again later.';
         input.disabled = false;
         if (sendBtn) sendBtn.disabled = false;
       });
-  }
-
-  function addMessage(text, type) {
-    const msg = document.createElement('div');
-    msg.className = `chatbot-message ${type}-message`;
-    msg.textContent = text;
-
-    const time = document.createElement('span');
-    time.className = 'chatbot-message-time';
-    time.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    msg.appendChild(time);
-
-    emptyState?.classList.add('hidden');
-    messages.appendChild(msg);
-    scrollToBottom();
   }
 
   function scrollToBottom() {

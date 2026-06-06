@@ -250,6 +250,10 @@ body.landing-page {
     min-height: 250px;
 }
 
+.card-icon {
+    display: none;
+}
+
 .about-card:hover::after {
     content: '';
     position: absolute;
@@ -370,6 +374,19 @@ body.landing-page {
 }
 
 /* Cloud overlays */
+/* Mobile-only clouds - hidden on desktop */
+.cloud-card-wwd-upper,
+.cloud-fueling-btm-1,
+.cloud-fueling-btm-2,
+.cloud-fueling-btm-3,
+.cloud-fueling-btm-4,
+.cloud-fueling-btm-5,
+.cloud-fueling-btm-6,
+.cloud-offer-top-left,
+.cloud-offer-btm-right {
+    display: none;
+}
+
 .cloud-img {
     position: absolute;
     pointer-events: none;
@@ -1143,6 +1160,7 @@ body.landing-page {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
         padding: 0;
+        align-items: stretch;
     }
 
     .about-card {
@@ -1150,6 +1168,7 @@ body.landing-page {
         padding: 14px;
         border-radius: 0.1px;
         min-height: auto;
+        display: flex;
     }
 
     .about-card::before {
@@ -1197,49 +1216,56 @@ body.landing-page {
         -webkit-backdrop-filter: blur(2px);
         border: 1px solid rgba(255, 255, 255, 175);
         border-radius: 6px;
-        padding: 20px 8px;
-        min-height: 250px;
+        padding: 16px 8px;
+        height: 250px;
+        width: 100%;
         text-align: center;
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+        overflow: hidden;
+        box-sizing: border-box;
     }
 
     .card-icon {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         object-fit: contain;
-        margin: 0 auto 8px;
+        margin: 0;
         display: block;
+        transform: translateY(25px);
     }
 
     .about-card-inner h3 {
         font-family: 'Poppins', sans-serif;
         font-weight: 800;
-        font-size: 14px;
+        font-size: 16px;
         color: #1E376C;
         text-transform: uppercase;
         letter-spacing: 1px;
         text-align: center;
-        margin-bottom: 8px;
-        transform: none;
+        margin: 0;
+        transform: translateY(20px);
     }
 
     .about-card-inner p {
         font-family: 'Poppins', sans-serif;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 500;
         line-height: 1.6;
         color: #1E376C;
         text-align: center;
+        margin: 0;
+        transform: translateY(10px);
     }
 
     .what-we-do-section {
         padding: 60px 24px 80px;
         background: url('../assets/Mobile-WhatWeDo-Background.jpg') center/cover no-repeat;
         min-height: auto;
+        position: relative;
     }
 
     .what-we-do-section .cloud-img {
@@ -1248,62 +1274,94 @@ body.landing-page {
         position: absolute;
     }
 
-    .what-we-do-section .cloud-what-we-do-up {
-        top: -20px;
-        left: -10%;
-        width: 200px;
-        opacity: 0.8;
-        z-index: 0;
-    }
-
-    .what-we-do-section .cloud-what-we-do-down {
-        top: 160px;
-        left: 50%;
-        width: 180px;
-        opacity: 0.7;
-        z-index: 1;
-    }
-
-    .what-we-do-section .cloud-fueling-up {
-        top: 480px;
-        left: 60%;
-        width: 160px;
-        opacity: 0.8;
-        z-index: 1;
-    }
-
-    .what-we-do-section .cloud-fueling-down-1 {
-        top: 550px;
-        left: -5%;
-        width: 140px;
-        opacity: 0.7;
-        z-index: 0;
-    }
-
-    .what-we-do-section .cloud-fueling-down-2 {
-        top: 680px;
-        right: -10%;
+    .what-we-do-section .cloud-card-wwd-upper {
+        display: block;
+        top: 70px;
+        left: 5px;
         width: 150px;
-        opacity: 0.8;
-        z-index: 1;
+        opacity: 3;
+        z-index: 5;
     }
 
-    .what-we-do-section .cloud-offer-up {
-        top: 850px;
-        right: 5%;
-        width: 120px;
-        opacity: 0.6;
-        z-index: 0;
+    .what-we-do-section .cloud-fueling-btm-1 {
+        display: block;
+        top: 320px;
+        left: 2px;
+        width: 160px;
+        opacity: 3;
+        z-index: 2;
     }
 
-    .what-we-do-section .cloud-offer-down {
-        bottom: -30px;
-        right: -5%;
+    .what-we-do-section .cloud-fueling-btm-2 {
+        display: block;
+        bottom: 690px;
+        right: 10%;
+        width: 170px;
+        opacity: 5;
+        z-index: 3;
+    }
+
+    .what-we-do-section .cloud-fueling-btm-3 {
+        display: block;
+        bottom: 600px;
+        left: 0%;
+        width: 170px;
+        opacity: 5;
+        z-index: 5;
+    }
+
+    .what-we-do-section .cloud-fueling-btm-4 {
+        display: block;
+        bottom: 40%;
+        left: 35%;
+        width: 170px;
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .what-we-do-section .cloud-fueling-btm-5 {
+        display: block;
+        bottom: 38%;
+        left: 65%;
+        width: 140px;
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .what-we-do-section .cloud-fueling-btm-6 {
+        display: block;
+        bottom: 38%;
+        left: 20%;
         width: 200px;
-        opacity: 0.7;
-        z-index: 1;
+        opacity: 1;
+        z-index: 3;
     }
 
+    .what-we-do-section .cloud-offer-top-left {
+        display: block;
+        top: 65%;
+        left: 15%;
+        width: 150px;
+        opacity: 5;
+        z-index: 3;
+    }
+
+    .what-we-do-section .cloud-offer-btm-right {
+        display: block;
+        bottom: 5%;
+        right: -5%;
+        width: 140px;
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .what-we-do-section .cloud-what-we-do-up,
+    .what-we-do-section .cloud-what-we-do-down,
+    .what-we-do-section .cloud-fueling-up,
+    .what-we-do-section .cloud-fueling-down-1,
+    .what-we-do-section .cloud-fueling-down-2,
+    .what-we-do-section .cloud-offer-up,
+    .what-we-do-section .cloud-offer-down,
     .what-we-do-section .cloud-offer-fueling {
         display: none;
     }
@@ -1437,6 +1495,14 @@ body.landing-page {
         position: relative;
     }
 
+    /* Title + Mascot row */
+    .events-header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 -15px 0;
+    }
+
     /* Title */
     .events-section .events-title {
         font-family: 'Poppins', sans-serif;
@@ -1447,24 +1513,27 @@ body.landing-page {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        margin: 0 0 16px 0;
+        margin: 0;
         position: relative;
+        flex: 1;
+        min-width: 0;
     }
 
     /* Mascot/Icon */
     .events-mascot {
-        width: 100% !important;
-        height: 99px !important;
-        margin: 0 0 16px !important;
-        display: block !important;
+        flex-shrink: 0;
+        width: 70px;
+        height: 70px;
+        margin: 0 0 0 10px;
         z-index: 2;
+        transform: translateY(35px) scale(1.3);
     }
 
     .events-mascot img {
         display: block !important;
-        width: 99px !important;
-        height: 99px !important;
-        margin: 0 auto !important;
+        width: 70px !important;
+        height: 70px !important;
+        margin: 0 !important;
         object-fit: contain;
         mix-blend-mode: multiply;
         filter: brightness(1.1) contrast(1.05);
@@ -1861,21 +1930,21 @@ body.landing-page {
     }
 
     .about-card-inner {
-        padding: 18px 8px;
-        min-height: 240px;
+        padding: 14px 8px;
+        height: 250px;
     }
 
     .card-icon {
-        width: 35px;
-        height: 35px;
+        width: 45px;
+        height: 45px;
     }
 
     .about-card-inner h3 {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .about-card-inner p {
-        font-size: 9px;
+        font-size: 11px;
     }
 
     .events-title {
