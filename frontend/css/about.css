@@ -2466,6 +2466,11 @@ main {
 
     /* ── Offices Detail Card (Left Side) ── */
     #mobile-office-detail-card {
+        width: 303px !important;
+        height: 312px !important;
+        margin-left: 0 !important;
+        margin-right: 10px !important;
+        min-height: auto !important;
         background: #ffffff !important; /* White detail card matches Offices active card */
         border: 8px solid #F5F6F8 !important; /* Shrunk from 12px */
         border-radius: 16px !important; /* Shrunk from 24px */
@@ -2476,6 +2481,7 @@ main {
     #mobile-office-detail-card .detail-slide-header {
         flex-direction: row !important; /* Anchor icon to the left for Offices */
         justify-content: flex-start !important; /* Pack against the left edge */
+        margin-bottom: 8px !important;
     }
 
     #mobile-office-detail-card .detail-slide-icon {
@@ -2488,8 +2494,8 @@ main {
     #mobile-office-detail-title {
         color: #E86016 !important; /* Specific brand orange */
         text-align: left !important; /* Align left */
-        flex: 1 !important; /* Perfectly fill remaining space without overflowing */
-        font-size: clamp(17px, 5.2vw, 25px) !important; /* Shrunk by 1px to perfectly match Spotlight Card sibling */
+        flex: none !important; /* Fixed: Stops the text stretching to the right edge */
+        font-size: clamp(15px, 4.5vw, 20px) !important; /* Shrunk by 1px to perfectly match Spotlight Card sibling */
         font-weight: 800 !important;
         margin-bottom: 8px !important;
         word-break: normal !important; /* Clean word wrap */
@@ -2501,8 +2507,12 @@ main {
 
     #mobile-office-detail-desc {
         color: #E86016 !important;
-        text-align: left !important; /* Align left */
+        text-align: right !important; /* Restored clean left-aligned text */
         font-weight: 500 !important;
+        margin-top: 8px !important;
+        line-height: 1.3 !important;
+        font-size: 11.5px !important;
+
     }
 
     /* ── Offices Master List Stack (Right Side) ── */
