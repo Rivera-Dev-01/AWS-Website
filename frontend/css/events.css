@@ -1,0 +1,10 @@
+/** EVENTS HERO SECTION **/
+.events-hero-section{
+    position: relative;
+    margin: 0;
+}
+
+.Events-Hero-Background{
+    margin: 0;
+    z-index: 1;
+}
