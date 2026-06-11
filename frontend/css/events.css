@@ -556,9 +556,13 @@ body.events-page {
   }
 }
 
-/* Hiding wrap and img in mobile layout */
+/* Hiding elements in mobile version */
 @media(max-width: 768px){
     .event-card-img-desktop, .event-card-img-wrap-desktop{
+      display: none;
+    }
+
+    .event-card-btn-desktop{
       display: none;
     }
 }
@@ -642,12 +646,15 @@ body.events-page {
       align-items: center;
       justify-content: center;
       color: #1C3466;
+      background: rgba(255, 255, 255, 0.70);
+      border-color: #1C3466;
+      border: 2px solid;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); 
     }
 
     .event-card-btn{
       display: none;
     }
-
 
     .events-archives{
       height: 1800px;
