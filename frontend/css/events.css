@@ -758,6 +758,56 @@ body.events-page {
       margin: 0 auto;
       margin-top: 30px;
     }
+
+    .event-date-card-container{
+      background: rgb(255, 255, 255, 0.60);
+      width: 150px;
+      height: 215px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 5px;
+      position: absolute;
+      top: 20%;
+      left: 3%;
+    }
+
+    .event-date-card-detail{
+      margin-top: 20px;
+      text-align: center;
+      font-family: 'Poppins', 'sans-serif';
+      font-weight: bold;
+      color: #1C3466;
+    }
+
+    .event-date-month{
+      font-size: 25px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .event-date-day{
+      font-size: 55px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.1;
+    }
+
+    .event-date-year{
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+    }
+
+    .event-blue-bar-container{
+      background: rgba(8, 69, 141, 0.60);
+      margin-top: 30px;
+      width: 150px;
+      height: 90px;
+      border-radius: 5px;
+    }
 }
 
 /* Proactive Engagement Desktop Section */
