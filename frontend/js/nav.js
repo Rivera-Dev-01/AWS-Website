@@ -27,8 +27,9 @@ function highlightActiveLink() {
     // Standardize Home matching (handles index.html, landingPage.html, or root /)
     const isCurrentHome = currentPageName === '' || currentPageName === 'index.html' || currentPageName === 'landingPage.html';
     const isTargetHome = targetPageName === 'index.html' || targetPageName === 'landingPage.html';
+    const isCurrentEvents = currentPageName === 'event-detail.html' && targetPageName === 'events.html';
 
-    if ((isCurrentHome && isTargetHome) || currentPageName === targetPageName) {
+    if ((isCurrentHome && isTargetHome) || currentPageName === targetPageName || isCurrentEvents) {
       item.classList.add('active');
     } else {
       item.classList.remove('active');

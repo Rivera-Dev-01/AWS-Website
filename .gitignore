@@ -5,3 +5,8 @@ venv/
 .env.local
 .agents/
 .playwright-mcp/
+.kilo/
+kilo.json
+*.backup.*
+*-backup.*
+.vscode/settings.json

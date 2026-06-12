@@ -28,7 +28,11 @@ body.events-page {
   position: relative;
   width: 100%;
   min-height: 580px;
-  background: url('../assets/events/backgrounds/Desktop-Event-Hero-Bg.jpg') center top / contain no-repeat
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(255, 255, 255, 0.42), transparent 24%),
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.32), transparent 22%),
+    linear-gradient(180deg, rgba(224, 241, 253, 0.98), rgba(171, 210, 232, 0.94));
 }
 
 .events-hero-card {
@@ -733,10 +737,12 @@ body.events-page {
       top: 0;
       width: 400px;
       height: 385px;
+      z-index: 3;
     }
 
     .event-card{
       position: relative;
+      z-index: 2;
     }
 
     .tag-workshop, .tag-hackathon{
@@ -755,8 +761,17 @@ body.events-page {
 
     .cloud-icon{
       display: block;
-      margin: 0 auto;
+      width: 100vw;
+      margin-left: 50%;
+      transform: translateX(-50%);
       margin-top: 30px;
+      position: relative;
+      z-index: 0;
+    }
+
+    .events-archives{
+      position: relative;
+      z-index: 1;
     }
 
     .event-date-card-container{
