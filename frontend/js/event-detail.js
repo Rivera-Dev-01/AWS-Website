@@ -1,7 +1,7 @@
 const insightIcons = {
-  learn: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3.75h7.5L18 7.25v13H7a2 2 0 0 1-2-2v-12.5a2 2 0 0 1 2-2Z" stroke="#1c3466" stroke-width="1.8"/><path d="M14 4v4h4M9 12h6M9 15h6" stroke="#1c3466" stroke-width="1.8" stroke-linecap="round"/></svg>',
-  people: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16.5 11.25a4.5 4.5 0 1 0-9 0 4.5 4.5 0 0 0 9 0Z" stroke="#1c3466" stroke-width="1.8"/><path d="M4.75 20.25c1.2-3.6 4-5.5 7.25-5.5s6.05 1.9 7.25 5.5" stroke="#1c3466" stroke-width="1.8" stroke-linecap="round"/></svg>',
-  spark: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4.5 14.2 8.2l4.2.6-3 3 .7 4.2L12 13.8l-3.9 2.2.7-4.2-3-3 4.2-.6L12 4.5Z" stroke="#1c3466" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="6.5" stroke="#1c3466" stroke-width="1.4" stroke-dasharray="2 2"></circle></svg>'
+  learn: '<img src="../assets/events/icons/File.svg" alt="Key Takeaways Icon" style="width: 48px; height: 48px; object-fit: contain;">',
+  people: '<img src="../assets/events/icons/profile-2user.png" alt="Community Icon" style="width: 48px; height: 48px; object-fit: contain;">',
+  spark: '<img src="../assets/events/icons/radar-2.svg" alt="Outcomes Icon" style="width: 48px; height: 48px; object-fit: contain;">'
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -194,7 +194,9 @@ function renderGallery(root, event) {
 
     requestAnimationFrame(() => {
       const rowWidth = gallery.offsetWidth;
-      let startX = rowWidth;
+      // Start the images perfectly aligned with the left text (115px from the container edge)
+      const offset = Math.max(0, (window.innerWidth - 1920) / 2) + 115;
+      let startX = offset;
 
       items.forEach((item) => {
         item.x = startX;
