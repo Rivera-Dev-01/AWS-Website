@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const root = document.getElementById('event-detail-root');
   if (!root) return;
 
-  await loadComponent('event-detail-root', '../components/event-detail.html?v=20260613-05');
+  await loadComponent('event-detail-root', '../components/event-detail.html?v=20260613-08');
 
   if (!root.querySelector('.event-detail-hero')) return;
 
@@ -196,6 +196,8 @@ function createItem(item) {
 }
 
 function renderGallery(root, event) {
+  const isMobileGallery = window.innerWidth <= 480;
+  const galleryItemClasses = ['gallery-item-narrow', 'gallery-item-wide', 'gallery-item-full', 'gallery-item-narrow', 'gallery-item-wide'];
   const section = root.querySelector('[data-gallery-section]');
   const gallery = root.querySelector('[data-event-gallery]');
   if (!gallery) return;
@@ -229,9 +231,9 @@ function renderGallery(root, event) {
   let animId = null;
   let resizeTimer = null;
 
-  event.gallery.forEach((image) => {
+  event.gallery.forEach((image, index) => {
     const figure = document.createElement('figure');
-    figure.className = 'event-detail-gallery-item';
+    figure.className = `event-detail-gallery-item ${isMobileGallery ? galleryItemClasses[index % galleryItemClasses.length] : ''}`;
 
     const img = document.createElement('img');
     img.src = image;
@@ -241,6 +243,8 @@ function renderGallery(root, event) {
     figure.appendChild(img);
     gallery.appendChild(figure);
   });
+
+  if (isMobileGallery) return;
 
   function destroyGalleryAnimation() {
     if (animId) {

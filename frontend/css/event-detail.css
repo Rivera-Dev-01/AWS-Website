@@ -35,6 +35,8 @@ body.event-detail-page {
   padding-bottom: 200px; /* Adapts automatically to the flow height */
 }
 
+.event-detail-mobile-bg { display: none; }
+
 /* ── Back Button ── */
 .event-detail-back {
   position: fixed;
@@ -968,6 +970,26 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     background: linear-gradient(180deg, #ebf5fd 0%, #cbf2ff 87.5%);
   }
 
+  .event-detail-mobile-bg {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1201px;
+    background: url('../assets/events/backgrounds/MobileEvent-Loader-BG.jpg') center top / 100% auto no-repeat;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .event-detail-hero-mobile,
+  .event-detail-insights,
+  .event-detail-gallery-section,
+  .event-detail-related-section {
+    position: relative;
+    z-index: 1;
+  }
+
   .event-detail-shell {
     padding: 0;
     min-height: auto;
@@ -977,9 +999,41 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
 
   .event-detail-back {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 62px;
+    left: 37px;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #1C3466;
     z-index: 1001;
+    cursor: pointer;
+  }
+
+  .event-detail-back * { display: block; }
+
+  .event-detail-back > span:last-child { display: none; }
+
+  .event-detail-back-icon {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .event-detail-back-icon::before {
+    content: '‹';
+    position: absolute;
+    left: -0.8px;
+    top: -7.3px;
+    width: 16px;
+    height: 16px;
+    color: #FFFFFF;
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 100;
   }
 
   /* ── Hide desktop hero on mobile ── */
@@ -991,8 +1045,8 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     position: relative;
     width: 362px;
     height: 648px;
-    margin: 115px auto 0;
-    left: 7px;
+    margin: 75px auto 0;
+    left: 0px;
     border-radius: 10px;
     background: linear-gradient(180deg, #250f53 26.9%, #372759 41.1%, #250f53 59.3%);
     box-shadow: 0px 10px 7px 0px rgba(0,0,0,0.3);
@@ -1181,21 +1235,43 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
   }
 
   .mobile-meta-circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 32.02px;
     height: 32.02px;
     border-radius: 50%;
     margin-bottom: 4px;
   }
 
-  .mobile-meta-circle-1 { background: linear-gradient(180deg, #e3c5e3 0%, #e26fe2 100%); }
-  .mobile-meta-circle-2 { background: linear-gradient(180deg, #f4c9f4 0%, #e26fe2 100%); }
-  .mobile-meta-circle-3 { background: linear-gradient(180deg, #fcd4fc 0%, #e26fe2 100%); }
+  .mobile-meta-badge {
+    position: relative;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    pointer-events: none;
+    transform: scale(1.2);
+  }
+
+  .mobile-meta-circle-1,
+  .mobile-meta-circle-2,
+  .mobile-meta-circle-3 {
+    background: linear-gradient(180deg, rgba(226, 111, 226, 0.2) 0%, rgba(37, 15, 83, 0.2) 100%);
+    box-shadow: 0px 3.60694px 3.60694px rgba(0, 0, 0, 0.25);
+  }
 
   .mobile-meta-label {
+    margin-top: 8px;
     font-size: 7.463px;
     font-weight: 200;
     line-height: 1.094;
     color: #FFFFFF;
+  }
+
+  .mobile-meta-circle-1 .mobile-meta-badge {
+  transform: translateY(2px) scale(1.5);
   }
 
   .mobile-meta-value {
@@ -1212,10 +1288,11 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     font-size: 6.312px;
     font-weight: 300;
     line-height: 1.094;
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(226,111,226,0.35) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #FFFFFF;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: #FFFFFF;
   }
 
   /* ── Summary ── */
@@ -1377,13 +1454,13 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
   .event-detail-insight-icon { display: none; }
 
   .event-detail-insight-card h2 {
-    margin: 0;
-    padding: 4px 0 0 22.6px;
+    margin-right: 0px;
+    padding: 4px 0 0 26px;
     font-family: 'Poppins', sans-serif;
     font-size: 17.696px;
     font-weight: 900;
     font-style: italic;
-    text-align: left;
+    text-align: right;
     white-space: nowrap;
     background: none;
     -webkit-background-clip: unset;
@@ -1393,6 +1470,17 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     color: #1C3466;
     letter-spacing: 0.03em;
     position: relative;
+  }
+
+  .event-detail-insight-card[data-insight-card="left"] h2 {
+    margin-right: 0;
+    padding: 4px 0 0 22.6px;
+    text-align: left;
+  }
+
+  .event-detail-insight-card[data-insight-card="right"] h2 {
+    padding: 4px 22.6px 0 0;
+    text-align: right;
   }
 
   .event-detail-insight-card[data-insight-card="left"] h2::after {
@@ -1409,7 +1497,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     position: relative;
     left: auto;
     right: auto;
-    top: auto;
+    top: -17px;
     height: auto;
     margin: 0;
     padding: 5px 0 0 22px;
@@ -1542,7 +1630,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     position: relative;
     width: 100%;
     margin: 0;
-    padding: 0 16px;
+    padding: 0 0 28px;
   }
 
   .event-detail-gallery-border {
@@ -1554,54 +1642,139 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
   }
 
   .event-detail-gallery-header {
-    flex-direction: column;
-    padding: 20px 16px;
-    gap: 12px;
-  }
-
-  .gallery-header-left { padding-left: 16px; }
-  .gallery-header-left::before { width: 6px; }
-  .gallery-heading-small { font-size: 16px; }
-  .gallery-heading-large { font-size: 28px; }
-  .gallery-event-title { font-size: 32px; }
-
-  .gallery-header-right {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding-left: 16px;
-    margin-right: 0;
+    height: 72px;
+    margin: 0 0 16px;
+    padding: 10px 0;
+    gap: 10px;
+    border-radius: 0;
+    background: #004099;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
   }
 
-  .gallery-header-right::before { height: 40px; width: 6px; }
-  .gallery-header-right p { font-size: 14px; width: 100%; text-align: left; }
+  .event-detail-gallery-header::after {
+    content: 'MEDIA';
+    flex: none;
+    width: 120px;
+    height: 52px;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 34.5036px;
+    line-height: 52px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    text-shadow: 3.78698px 1.6831px 1.6831px #315D8A, 6.73242px 4.20776px 1.6831px #031844;
+    transform: translateX(-22px);
+  }
+
+  .gallery-heading-small,
+  .gallery-heading-large,
+  .gallery-event-title,
+  .gallery-header-right { display: none; }
 
   .event-detail-gallery {
     position: relative;
     left: auto;
     width: 100%;
-    height: 200px;
-    overflow: hidden;
-    margin-top: 8px;
+    height: auto;
+    overflow: visible;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 54px;
+    gap: 8px;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
 
   .event-detail-gallery-item {
-    width: 200px;
-    height: 200px;
+    position: relative;
+    top: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    border: 1.5px solid rgba(255,255,255,0.6);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.56);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
   }
+
+  .gallery-item-narrow { grid-column: span 1; grid-row: span 3; }
+  .gallery-item-wide { grid-column: span 2; grid-row: span 3; }
+  .gallery-item-full { grid-column: 1 / -1; grid-row: span 3; }
 
   .event-detail-related-section {
     position: relative;
     width: 100%;
-    margin-top: 24px;
-    padding: 0 16px;
+    margin-top: 20px;
+    padding: 0 16px 40px;
+  }
+
+  .event-detail-section-heading {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .event-detail-section-heading h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 17.696px;
+    line-height: 27px;
+    letter-spacing: 0.03em;
+    color: #1C3466;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: #1C3466;
   }
 
   .event-detail-related-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
   }
 
-  .event-detail-related-card { width: 100%; max-width: 400px; min-height: auto; }
-  .event-detail-related-card-img { width: calc(100% - 40px); height: 200px; margin-top: 20px; }
+  .event-detail-related-card {
+    width: 158.96px;
+    height: 150.84px;
+    min-height: 150.84px;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    flex: none;
+    background: rgba(255,255,255,0.56);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .event-detail-related-card::before,
+  .event-detail-related-card h3,
+  .event-detail-related-card > p,
+  .event-detail-related-action {
+    display: none;
+  }
+
+  .event-detail-related-card-img {
+    width: 158.96px;
+    height: 150.84px;
+    margin: 0;
+    border-radius: 15px;
+    object-fit: cover;
+    display: block;
+  }
 
 }
