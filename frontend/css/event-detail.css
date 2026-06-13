@@ -29,49 +29,36 @@ body.event-detail-page {
 /* ── Shell ── */
 .event-detail-shell {
   position: relative;
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
   margin: 0 auto;
-  min-height: 4000px;
+  padding-bottom: 200px; /* Adapts automatically to the flow height */
 }
 
 /* ── Back Button ── */
 .event-detail-back {
-  position: absolute;
-  left: 42px;
-  top: 76px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px 10px 14px;
+  position: fixed;
+  width: 57px;
+  height: 57px;
+  left: calc(50vw - 621px - 140px); /* 621px is half the navbar max-width. 140px is gap + button size (moved left by 60px total) */
+  top: calc(6vh + 21px); /* Centers it vertically with the 100px tall navbar */
   border: none;
-  border-radius: 999px;
-  color: var(--detail-blue-dark);
-  background: rgba(255,255,255,0.52);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
+  background: url('../assets/events/back-button.png') left center / auto 100% no-repeat;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: background 180ms ease, transform 180ms ease;
-  z-index: 10;
-}
-
-.event-detail-back-icon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border: 1.5px solid currentColor;
-  border-left: 0;
-  border-bottom: 0;
-  border-radius: 2px;
-  transform: rotate(-135deg);
+  z-index: 1001; /* Above the navbar which is 1000 */
+  padding: 0;
+  color: transparent;
+  box-shadow: none;
+  transition: transform 180ms ease;
+  border-radius: 50%;
 }
 
 .event-detail-back:hover {
-  background: rgba(255,255,255,0.78);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+}
+
+.event-detail-back * {
+  display: none;
 }
 
 /* ═══════════════════════════════════════════
@@ -79,20 +66,56 @@ body.event-detail-page {
    ═══════════════════════════════════════════ */
 .event-detail-hero {
   position: absolute;
-  left: 114px;
-  top: 177px;
-  width: 1686px;
-  height: 632px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(6vh);
+  width: 90%;
+  max-width: 1686px;
+  height: 580px;
   border-radius: 20px;
-  overflow: hidden;
+  display: flex;
+  gap: 0;
 }
 
-/* Hero image — fills full hero, gradient border via padding */
+/* ── Container Layout ── */
+.event-detail-hero-left {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    url('../assets/events/backgrounds/kiro-clouds-transparent.png') center / cover no-repeat,
+    linear-gradient(150.36deg, rgba(255, 255, 255, 0.3) 23.68%, rgba(8, 74, 141, 0.3) 57.13%);
+  backdrop-filter: blur(10px);
+}
+
+.event-detail-hero-right {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.event-detail-hero-left-content {
+  width: 100%;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── Image Wrapper ── */
 .event-detail-hero-image {
   position: absolute;
   inset: 0;
-  padding: 3px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(8,74,141,0.3) 100%);
+  padding: 0;
   border-radius: 20px;
   z-index: 1;
 }
@@ -100,7 +123,7 @@ body.event-detail-page {
 .event-detail-hero-image .img-wrap {
   width: 100%;
   height: 100%;
-  border-radius: 17px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -109,89 +132,73 @@ body.event-detail-page {
   height: 100%;
   object-fit: cover;
   object-position: var(--event-hero-image-position, center);
-  opacity: 5;
   display: block;
+  transform: scale(1.04);
 }
 
-/* ── Text overlay — direct children of hero ──
-   Coordinates relative to hero (page - hero offset 114):
-     category: centered at x=124 (page 238), y=132 (page 309)
-     title:    left=63 (page 177), top=153 (page 330), w=658
-     subtitle: left=63 (page 177), top=258 (page 435), w=733
-     quote:    left=63 (page 177), top=469 (page 646), w=766
-*/
-.event-detail-hero > .event-detail-kicker {
-  position: absolute;
-  left: 124px;
-  top: 132px;
-  transform: translateX(-50%);
-  text-align: center;
+/* ── Text Styles ── */
+.event-detail-hero .event-detail-kicker {
+  display: block;
   font-size: 24px;
   font-weight: 500;
   font-style: italic;
   line-height: 109.41%;
   color: rgba(28,52,102,0.7);
-  z-index: 3;
-  pointer-events: none;
+  margin-bottom: 20px;
 }
 
-.event-detail-hero[data-event-slug="byte-forward-hackathon"] > .event-detail-kicker {
-  left: 66px;
-  top: 192px;
-  width: 133px;
-  transform: none;
-  text-align: left;
-}
-
-.event-detail-hero[data-event-slug="byte-forward-hackathon"] > h1 {
-  position: absolute;
-  left: 63px;
-  top: 153px;
-  width: 658px;
-  height: 120px;
-  margin: 0;
-  font-size: 80px;
+.event-detail-hero h1 {
+  margin: 0 0 20px 0;
+  font-size: clamp(40px, 4vw, 64px);
   font-weight: 700;
-  line-height: 120px;
+  line-height: 1.1;
   background: linear-gradient(179deg, #EFF459 1.2%, #FF6F08 96.6%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   text-shadow: 2px 4px 7px rgba(0,0,0,0.25);
-  z-index: 3;
-  pointer-events: none;
 }
 
-.event-detail-hero > .event-detail-subtitle {
-  position: absolute;
-  left: 63px;
-  top: 258px;
-  width: 733px;
-  height: 132px;
-  margin: 0;
+.event-detail-hero .event-detail-subtitle {
+  margin: 0 0 20px 0;
   color: var(--detail-blue-dark);
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 600;
-  line-height: 44px;
-  z-index: 3;
-  pointer-events: none;
+  line-height: 1.2;
 }
 
-.event-detail-hero > .event-detail-quote {
-  position: absolute;
-  left: 63px;
-  top: 469px;
-  width: 766px;
-  height: 33px;
+.event-detail-hero .event-detail-quote {
   margin: 0;
   color: var(--detail-blue-dark);
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
   font-style: italic;
-  line-height: 33px;
-  z-index: 3;
-  pointer-events: none;
+  line-height: 1.2;
+}
+
+/* ── Event Specific Overrides ── */
+.event-detail-hero[data-event-slug="byte-forward-hackathon"] h1 {
+  font-size: 64px;
+}
+
+/* ── Kiro Workshop Specific Hero Styles ── */
+
+
+.event-detail-hero[data-event-slug="kiro-workshop"] .event-detail-hero-image .img-wrap {
+  background-color: var(--detail-blue-dark);
+}
+
+.event-detail-hero[data-event-slug="kiro-workshop"] .event-detail-kicker {
+  color: var(--detail-blue-dark);
+}
+
+.event-detail-hero[data-event-slug="kiro-workshop"] .event-detail-subtitle {
+  color: var(--detail-blue-dark);
+}
+
+.event-detail-hero[data-event-slug="kiro-workshop"] .event-detail-quote {
+  color: var(--detail-blue-dark);
 }
 
 /* ═══════════════════════════════════════════
@@ -220,13 +227,30 @@ body.event-detail-page {
 .event-detail-cloud-decoration span:nth-child(4) { left: 620px; top: 260px; width: 220px; height: 220px; opacity: 0.38; }
 
 /* ═══════════════════════════════════════════
+   MID BACKGROUND — spans summary to insights
+   ═══════════════════════════════════════════ */
+.event-detail-mid-background {
+  position: absolute;
+  top: calc(6vh + 580px); /* Starts just below the hero section */
+  left: 0;
+  width: 100%;
+  height: 1540px; /* Reaches exactly to where the Gallery section starts (2120px) */
+  background: url('../assets/events/backgrounds/mid-bg-frame.png') center / 100% 100% no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
    SUMMARY — x=345, y=871, w=1270, h=322
    ═══════════════════════════════════════════ */
 .event-detail-summary {
   position: absolute;
-  left: 345px;
-  top: 871px;
-  width: 1270px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  transform-origin: top center;
+  top: calc(6vh + 680px); /* 580px hero + 100px gap */
+  width: 90%;
+  max-width: 1270px;
   height: 322px;
   z-index: 2;
 }
@@ -285,10 +309,14 @@ body.event-detail-page {
    ═══════════════════════════════════════════ */
 .event-detail-meta {
   position: absolute;
-  left: 345px;
-  top: 1240px;
-  width: 1270px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  transform-origin: top center;
+  top: calc(6vh + 1010px); /* 680px + (322 * 0.9) height + 40px gap */
+  width: 90%;
+  max-width: 1270px;
   display: flex;
+  justify-content: center;
   gap: 43px;
   z-index: 3;
 }
@@ -346,14 +374,32 @@ body.event-detail-page {
 }
 
 /* ═══════════════════════════════════════════
+   DIVIDER — between meta and insights
+   ═══════════════════════════════════════════ */
+.event-detail-divider {
+  position: absolute;
+  width: 543px;
+  height: 41px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(6vh + 1205px); /* 1010px + (105 * 0.9) + 100px padding */
+  z-index: 2;
+  object-fit: contain;
+}
+
+/* ═══════════════════════════════════════════
    INSIGHTS — three cards at y=1519
    ═══════════════════════════════════════════ */
 .event-detail-insights {
   position: absolute;
-  left: 115px;
-  top: 1519px;
-  width: 1686px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  transform-origin: top center;
+  top: calc(6vh + 1346px); /* 1205px + 41px + 100px padding */
+  width: 90%;
+  max-width: 1686px;
   display: flex;
+  justify-content: center;
   gap: 48px;
   z-index: 2;
 }
@@ -422,7 +468,7 @@ body.event-detail-page {
   right: 36px;
   top: 205px;
   height: 502px;
-  padding: 61px 19px 61px 58px;
+  padding: 20px 19px 61px 58px;
   font-size: 29px;
   line-height: 50px;
   list-style-position: outside;
@@ -435,7 +481,7 @@ body.event-detail-page {
   top: 205px;
   height: 502px;
   margin: 0;
-  padding: 61px 24px;
+  padding: 20px 24px 61px 24px;
   list-style: none;
   text-align: center;
   background: rgba(237, 244, 255, 0.35);
@@ -457,7 +503,7 @@ body.event-detail-page {
   right: 36px;
   top: 205px;
   height: 502px;
-  padding: 41px 19px 41px 58px;
+  padding: 20px 19px 41px 58px;
   font-size: 26px;
   line-height: 45px;
   list-style-position: outside;
@@ -503,17 +549,37 @@ body.event-detail-page {
   line-height: 1.3;
 }
 
+[data-event-slug="byte-forward-hackathon"] .event-detail-insight-card[data-insight-card="left"] .event-detail-insight-list {
+  font-size: 22px;
+  line-height: 1.5;
+  padding: 20px 19px 50px 58px;
+}
+
+[data-event-slug="byte-forward-hackathon"] .event-detail-insight-card[data-insight-card="right"] .event-detail-insight-list {
+  font-size: 21px;
+  line-height: 1.5;
+  padding: 20px 19px 40px 58px;
+}
+
 /* ═══════════════════════════════════════════
    MASCOT — x=42, y=2032
    ═══════════════════════════════════════════ */
 .event-detail-mascot {
   position: absolute;
-  left: 42px;
-  top: 2032px;
   width: 280px;
   height: 280px;
   pointer-events: none;
   z-index: 3;
+}
+
+.left-mascot {
+  left: -110px; /* Pushed significantly further left */
+  bottom: -38px;
+}
+
+.right-mascot {
+  right: -110px; /* Pushed significantly further right */
+  bottom: -38px;
 }
 
 .event-detail-mascot img { width: 100%; height: 100%; object-fit: contain; }
@@ -521,17 +587,121 @@ body.event-detail-page {
 /* ═══════════════════════════════════════════
    GALLERY — y=2368, w=1987, h=546
    ═══════════════════════════════════════════ */
+.event-detail-gallery-spacer {
+  width: 100%;
+  height: calc(6vh + 2121px); /* Safely preserves the space for all absolute elements above */
+}
+
 .event-detail-gallery-section {
+  position: relative;
+  width: 100%; /* Scales safely with screen size */
+  z-index: 2;
+}
+
+.event-detail-gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 40px 115px 40px; /* added top padding so it doesn't touch the top border */
+  gap: 40px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.gallery-header-left {
+  position: relative;
+  padding-left: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gallery-header-left::before {
+  content: '';
   position: absolute;
   left: 0;
-  top: 2368px;
-  width: 1920px;
-  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 13px;
+  background: linear-gradient(180deg, rgba(255, 183, 0, 0.95) 0%, rgba(242, 175, 0, 0.95) 30.29%, rgba(255, 111, 8, 0.95) 78.37%);
+}
+
+.gallery-heading-small {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.5;
+  background: linear-gradient(71.48deg, #1C3466 15.53%, #1C3466 27.65%, #3868CC 105.23%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gallery-heading-large {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 57px;
+  line-height: 1.2;
+  background: linear-gradient(76.24deg, #1C3466 16.65%, #1C3466 26.31%, #3868CC 88.12%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gallery-event-title {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.3;
+  margin: 0;
+  padding-bottom: 10px; /* prevents descenders from getting cut off */
+  padding-right: 15px; /* prevents italic lean from getting cut off on the right */
+  background: linear-gradient(180deg, rgba(255, 183, 0, 0.95) 0%, rgba(242, 175, 0, 0.95) 30.29%, rgba(255, 111, 8, 0.95) 78.37%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gallery-header-right {
+  position: relative;
+  padding-left: 50px; /* Exact 50px gap between the blue line and the text */
+  width: 839px; /* 789px text width + 50px padding */
+  display: flex;
+  align-items: center;
+  margin-right: -65px; /* Pulls it right so it sits EXACTLY 50px from the screen edge (115px padding - 65px) */
+}
+
+.gallery-header-right::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 88px;
+  background: linear-gradient(76.24deg, #1C3466 16.65%, #1C3466 26.31%, #3868CC 88.12%);
+}
+
+.gallery-header-right p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.73;
+  text-align: right;
+  width: 789px; /* Exact Figma width */
+  color: #1C3466;
+  margin: 0;
 }
 
 .event-detail-gallery-border {
   margin: 0;
-  height: 546px;
+  height: auto;
+  min-height: 546px;
+  padding-bottom: 50px;
   border: 5px solid var(--detail-yellow-dark);
   border-left: none;
   border-radius: 0 15px 15px 0;
@@ -541,12 +711,12 @@ body.event-detail-page {
 }
 
 .event-detail-gallery {
-  position: absolute;
+  position: relative;
   left: 115px;
-  top: 28px;
-  width: 1688px;
+  width: calc(100% - 115px); /* Automatically scales within the 100% section width */
   height: 489px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .event-detail-gallery-item {
@@ -558,6 +728,44 @@ body.event-detail-page {
   overflow: hidden;
   border-radius: 10px;
   will-change: transform;
+}
+
+/* Event-specific font sizing for Student Community Day */
+body[data-event-slug="student-community-day"] .event-detail-summary-text {
+  font-size: 24px; /* Reduced further to ensure fit */
+  line-height: 1.6;
+}
+
+body[data-event-slug="student-community-day"] .event-detail-insight-card h2 {
+  font-size: 28px;
+}
+
+body[data-event-slug="student-community-day"] .event-detail-insight-card[data-insight-card="left"] .event-detail-insight-list {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+body[data-event-slug="student-community-day"] .event-detail-insight-card[data-insight-card="center"] .event-detail-insight-list {
+  font-size: 24px;
+  line-height: 40px;
+  padding: 30px 24px;
+}
+
+body[data-event-slug="student-community-day"] .event-detail-insight-card[data-insight-card="center"] .event-detail-person strong {
+  font-size: 23px;
+  line-height: 36px;
+  white-space: normal;
+}
+
+body[data-event-slug="student-community-day"] .event-detail-insight-card[data-insight-card="center"] .event-detail-person span {
+  font-size: 17px;
+  line-height: 24px;
+}
+
+body[data-event-slug="student-community-day"] .event-detail-insight-card[data-insight-card="right"] .event-detail-insight-list {
+  font-size: 22px;
+  line-height: 36px;
+  padding-left: 45px;
 }
 
 .event-detail-gallery-item img {
@@ -574,11 +782,9 @@ body.event-detail-page {
    RELATED EVENTS — heading at ~y=3038, cards at ~y=3156
    ═══════════════════════════════════════════ */
 .event-detail-related-section {
-  position: absolute;
-  left: 0;
-  top: 2990px;
-  width: 1920px;
-  padding-top: 48px;
+  position: relative;
+  width: 100%;
+  margin-top: 100px; /* Guarantees EXACTLY a 100px gap below the gallery, forever */
   z-index: 2;
 }
 

@@ -17,15 +17,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function renderEventDetail() {
-  const root = document.getElementById('event-detail-root');
+  const root = document.getElementById('event-detail-container') || document;
   const event = getSelectedEvent();
   if (!root || !event) return;
+  document.body.setAttribute('data-event-slug', event.slug);
 
   renderHero(root, event);
   renderMeta(root, event);
   renderInsights(root, event);
   renderGallery(root, event);
   renderRelatedEvents(root, event);
+
+  root.dataset.eventSlug = event.slug;
 
   document.title = `${event.title} | AWS Learning Club`;
 
@@ -127,7 +130,21 @@ function renderGallery(root, event) {
 
   if (section) section.hidden = false;
 
-  const SPEED = 0.6;
+  const headerSmall = root.querySelector('[data-gallery-small]');
+  const headerLarge = root.querySelector('[data-gallery-large]');
+  const headerTitle = root.querySelector('[data-gallery-event-title]');
+  const headerPara = root.querySelector('[data-gallery-paragraph]');
+
+  if (event.galleryHeader) {
+    if (headerSmall) headerSmall.textContent = event.galleryHeader.smallText;
+    if (headerLarge) headerLarge.textContent = event.galleryHeader.largeText;
+    if (headerTitle) headerTitle.textContent = event.galleryHeader.title;
+    if (headerPara) headerPara.textContent = event.galleryHeader.paragraph;
+  } else {
+    if (headerTitle) headerTitle.textContent = event.title;
+  }
+
+  const SPEED = 2.5; /* Increased to make the animation faster */
   const GAP = 20;
   let items = [];
   let animId = null;
@@ -140,7 +157,7 @@ function renderGallery(root, event) {
     const img = document.createElement('img');
     img.src = image;
     img.alt = `${event.title} gallery image`;
-    img.loading = 'lazy';
+    img.loading = 'eager'; /* Forces the browser to load them immediately instead of waiting for scroll */
 
     figure.appendChild(img);
     gallery.appendChild(figure);
