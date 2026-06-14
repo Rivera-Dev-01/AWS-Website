@@ -604,7 +604,7 @@ body.event-detail-page {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  padding: 40px 115px 40px; /* added top padding so it doesn't touch the top border */
+  padding: 40px 115px 40px calc(115px + (50vw - 50%)); /* added dynamic left padding */
   gap: 40px;
   box-sizing: border-box;
   width: 100%;
@@ -701,6 +701,8 @@ body.event-detail-page {
 
 .event-detail-gallery-border {
   margin: 0;
+  margin-left: calc(50% - 50vw);
+  width: calc(50vw + 50%);
   height: auto;
   min-height: 546px;
   padding-bottom: 50px;
@@ -714,8 +716,8 @@ body.event-detail-page {
 
 .event-detail-gallery {
   position: relative;
-  left: 115px;
-  width: calc(100% - 115px); /* Automatically scales within the 100% section width */
+  left: 0;
+  width: 100%; /* Spans the entire expanded border width */
   height: 489px;
   overflow: hidden;
   margin-top: 20px;
