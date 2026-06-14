@@ -585,6 +585,14 @@ body.events-page {
     }
 }
 
+/* Hide desktop-specific event cards on mobile/tablet viewports */
+@media (max-width: 1041px) {
+  .event-card.event-left,
+  .event-card.event-right {
+    display: none;
+  }
+}
+
 /* Hiding elements in desktop version */
 @media(min-width: 1042px) {
     .community-card-container-mobile{
