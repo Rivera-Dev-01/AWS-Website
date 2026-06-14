@@ -194,8 +194,7 @@ const eventDetailData = [
       '../assets/events/gallery-awscomday/image 114.jpg',
       '../assets/events/gallery-awscomday/image 115.jpg',
       '../assets/events/gallery-awscomday/image 116.jpg',
-      '../assets/events/gallery-awscomday/image 117.jpg',
-      '../assets/events/gallery-awscomday/image 118.jpg'
+      '../assets/events/gallery-awscomday/image 117.jpg'
     ],
     galleryHeader: {
       smallText: 'Moments that Defined Our',
