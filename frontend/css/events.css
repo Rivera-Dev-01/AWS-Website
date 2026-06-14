@@ -292,11 +292,12 @@ body.events-page {
   font-size: 35.469px;
   line-height: 53px;
   text-align: center;
-  background: linear-gradient(174.53deg, #EFF459 1.23%, #FF6F08 96.58%);
+  background: linear-gradient(to bottom, #ffb700, #f2af00, #ff6f08);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin: 0 auto;
   width: max-content;
   white-space: nowrap;
@@ -753,12 +754,12 @@ body.events-page {
       line-height: 112px;
       width: fit-content;
       height: 113px;
-      background: linear-gradient(180deg, #FFB700 0%, #F2AF00 44%, #FF6F08 78%);
+      background: linear-gradient(to bottom, #ffb700, #f2af00, #ff6f08);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       color: transparent;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       text-align: center;
       display: block;
     }
