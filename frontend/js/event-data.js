@@ -157,7 +157,8 @@ const eventDetailData = [
         title: 'Key Takeaways',
         items: [
           'Regional collaboration from diverse schools.',
-          'Inclusivity in tech community space for innovation, networking, and growth.',
+          'Inclusively in tech',
+          'Community space for innovation, networking, and growth.',
           'Immersive experience in tech talks and activities.'
         ]
       },

@@ -1875,6 +1875,29 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     background: #FFCD01;
   }
 
+  /* All pages: gold separator for Learning Outcome */
+  .event-detail-insight-card[data-insight-card="right"] h2::after {
+    content: '';
+    position: absolute;
+    right: 17.6px;
+    top: 27.44px;
+    width: 48.78px;
+    height: 1px;
+    background: #FFCD01;
+  }
+
+  /* Kiro-only: corrected gold line position for Learning Outcome */
+  body[data-event-slug="kiro-workshop"]
+  .event-detail-insight-card[data-insight-card="right"] h2::after {
+    right: 22.6px;
+  }
+
+  body[data-event-slug="kiro-workshop"]
+  .event-detail-insight-card[data-insight-card="right"]
+  .event-detail-insight-list {
+    top: -20px;
+  }
+
   .event-detail-insight-card[data-insight-card="left"] .event-detail-insight-list {
     position: relative;
     left: auto;
@@ -1891,7 +1914,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     font-weight: 500;
     display: flex;
     flex-direction: column;
-    gap: 6.6px;
+    gap: 2px;
   }
 
   .event-detail-insight-card[data-insight-card="left"] .event-detail-insight-list li {
@@ -2040,16 +2063,16 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
   }
 
   body[data-event-slug="byte-forward-hackathon"]
-  .event-detail-insight-card[data-insight-card="left"] h2::after {
-    display: none;
-  }
-
-  body[data-event-slug="byte-forward-hackathon"]
   .event-detail-insight-card[data-insight-card="right"] h2 {
     padding: 8px 15px 0 0;
     text-align: right;
     font-size: 17.413px;
     line-height: 1.2;
+  }
+
+  body[data-event-slug="byte-forward-hackathon"]
+  .event-detail-insight-card[data-insight-card="right"] h2::after {
+    right: 15px;
   }
 
   body[data-event-slug="byte-forward-hackathon"]
@@ -2068,7 +2091,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     border-radius: 0;
     display: flex;
     flex-direction: column;
-    gap: 6.6px;
+    gap: 2px;
   }
 
   body[data-event-slug="byte-forward-hackathon"]
@@ -2214,11 +2237,6 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
   }
 
   body[data-event-slug="student-community-day"]
-  .event-detail-insight-card[data-insight-card="left"] h2::after {
-    display: none;
-  }
-
-  body[data-event-slug="student-community-day"]
   .event-detail-insight-card[data-insight-card="right"] h2 {
     padding: 8px 15px 0 0;
     text-align: right;
@@ -2242,7 +2260,21 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     border-radius: 0;
     display: flex;
     flex-direction: column;
-    gap: 6.6px;
+    gap: 2px;
+  }
+
+  body[data-event-slug="student-community-day"]
+  .event-detail-insight-card[data-insight-card="left"]
+  .event-detail-insight-list li {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    height: auto;
+    min-height: auto;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px 10px 4px 32px;
   }
 
   body[data-event-slug="student-community-day"]
@@ -2268,9 +2300,9 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
   body[data-event-slug="student-community-day"]
   .event-detail-insight-card[data-insight-card="left"]
   .event-detail-insight-list li {
-    width: 177.801px;
+    width: 227.801px;
     height: 21.215px;
-    min-height: 21.215px;
+    min-height: 25.215px;
     padding: 0 10px 0 32px;
     margin: 0;
     background: rgba(255,255,255,0.59);
