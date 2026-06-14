@@ -5,14 +5,14 @@ const eventDetailData = [
     title: 'Kiro Workshop',
     subtitle: 'The AI Shift: From Cloud Fundamentals to Next-Gen Code Builders',
     quote: '“Build Smarter. Code Faster. Create with KIRO.”',
-    heroImage: '../assets/events/cards/kiro-poster.jpg',
-    relatedHeroImage: '../assets/events/kiro-workshop-img.png',
+    heroImage: '../assets/events/cards/kiro-poster.webp',
+    relatedHeroImage: '../assets/events/kiro-workshop-img.webp',
     summary: 'The cloud powers modern innovation. This event allowed students to get hands-on experience in AI-assisted development. In this interactive Kiro Workshop, they learned to build real, web-based applications using cutting-edge, spec-driven AI tools.',
     time: '1:00 PM - 5:00 PM',
     date: 'April 7, 2026',
     mobileDuration: '4 HOURS',
     mobileDurationSub: 'Hands on Experience',
-    mobileTitleImage: '../assets/events/cards/Mobile-Kiro.png',
+    mobileTitleImage: '../assets/events/cards/Mobile-Kiro.webp',
     mobileLocation: 'Jose Rizal University',
     mobileLocationSub: 'Bldg, H - 407',
     location: 'JRU Bldg. H, H - 407',
@@ -70,9 +70,9 @@ const eventDetailData = [
     title: 'Byte Forward Hackathon',
     subtitle: 'NCR Leg 2025',
     quote: '',
-    heroImage: '../assets/events/cards/ByteForwardHackathon.jpg',
-    mobileTitleImage: '../assets/events/cards/Mobile-Byte.png',
-    relatedHeroImage: '../assets/events/byteforward-img.png',
+    heroImage: '../assets/events/cards/ByteForwardHackathon.webp',
+    mobileTitleImage: '../assets/events/cards/Mobile-Byte.webp',
+    relatedHeroImage: '../assets/events/byteforward-img.webp',
     summary: 'The AWSLC JRU Chapter proudly competed in the Byte Forward Hackathon - NCR Leg 2025 under the team name “Hello World!”. Led by President Rizelle Bautista alongside executives Joaquin Hao, Johann Cuisia, and Fiona Cañas, the team brought exceptional creativity, teamwork, and the signature JRU spirit to the competition.',
     time: '24 Hours',
     date: 'August 7 & 8, 2025',
@@ -115,9 +115,9 @@ const eventDetailData = [
       }
     ],
     gallery: [
-      '../assets/events/cards/Hero-Byte-Event.jpg',
+      '../assets/events/cards/Hero-Byte-Event.webp',
       '../assets/landing-page/ByteForwardEvent.webp',
-      '../assets/events/cards/CommuityDay-ByteForward-Card.png'
+      '../assets/events/cards/CommuityDay-ByteForward-Card.webp'
     ],
     gallery: [
       '../assets/events/gallery-byteforward/image 119.jpg',
@@ -141,9 +141,9 @@ const eventDetailData = [
     mobileTitleHTML: 'Community Day<br><span class="mobile-title-sub">AWS Cloud Club Student</span>',
     subtitle: 'Mega Manila 2025',
     quote: '“Student Diversity is Cloud Accessibility.”',
-    heroImage: '../assets/events/cards/AWSCCStudentComDay.jpg',
-    mobileTitleImage: '../assets/events/cards/Mobile-CommunityNight.png',
-    relatedHeroImage: '../assets/events/student-com-day-img.png',
+    heroImage: '../assets/events/cards/AWSCCStudentComDay.webp',
+    mobileTitleImage: '../assets/events/cards/Mobile-CommunityNight.webp',
+    relatedHeroImage: '../assets/events/student-com-day-img.webp',
     summary: 'The AWS Cloud Club successfully held the Student Community Day: Mega Manila 2025 at the JRU Centennial Building Auditorium. Guided by the theme “Student Diversity is Cloud Accessibility,” the event connected students across the region for a day of collaborative learning. Participants gained valuable tech insights through expert-led sessions, activities, and computing workshops.',
     time: '8:30 AM - 3:00 PM',
     date: 'September 17, 2025',
@@ -185,9 +185,9 @@ const eventDetailData = [
       }
     ],
     gallery: [
-      '../assets/events/cards/Hero-CommunityNight-Event.jpg',
+      '../assets/events/cards/Hero-CommunityNight-Event.webp',
       '../assets/landing-page/StudentCommunityEvent.webp',
-      '../assets/events/backgrounds/HeroSectionCube-Card.png'
+      '../assets/events/backgrounds/HeroSectionCube-Card.webp'
     ],
     gallery: [
       '../assets/events/gallery-awscomday/image 113.jpg',

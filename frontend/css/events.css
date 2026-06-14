@@ -16,7 +16,7 @@
 }
 
 body.events-page {
-  background: url('../assets/events/backgrounds/Desktop-Event-Hero-Bg-Crisp.png') center / cover fixed no-repeat;
+  background: url('../assets/events/backgrounds/Desktop-Event-Hero-Bg-Crisp.webp') center / cover fixed no-repeat;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -47,7 +47,7 @@ body.events-page {
   min-height: 750px;
   border-radius: 24px;
   overflow: hidden;
-  background: url('../assets/events/cards/Desktop-Cube.png') center / 100% 100% no-repeat;
+  background: url('../assets/events/cards/Desktop-Cube.webp') center / 100% 100% no-repeat;
 }
 
 .events-hero-content {
@@ -648,7 +648,7 @@ body.events-page {
       margin: 0 auto 24px auto;
       padding: 0;
       background: linear-gradient(to bottom, #FFFF 0%, #084A8D 100%);
-      background: url('../assets/events/cards/Desktop-Event-Card.jpg');
+      background: url('../assets/events/cards/Desktop-Event-Card.webp');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;

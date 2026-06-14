@@ -1,6 +1,6 @@
 const insightIcons = {
   learn: '<img src="../assets/events/icons/File.svg" alt="Key Takeaways Icon" style="width: 48px; height: 48px; object-fit: contain;">',
-  people: '<img src="../assets/events/icons/profile-2user.png" alt="Community Icon" style="width: 48px; height: 48px; object-fit: contain;">',
+  people: '<img src="../assets/events/icons/profile-2user.webp" alt="Community Icon" style="width: 48px; height: 48px; object-fit: contain;">',
   spark: '<img src="../assets/events/icons/radar-2.svg" alt="Outcomes Icon" style="width: 48px; height: 48px; object-fit: contain;">'
 };
 

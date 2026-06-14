@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadComponent('header-placeholder', '../components/header.html')
     .then(() => {
       highlightActiveLink();
+      initMobileSidebar();
     });
 
   // Load dynamic footer
@@ -36,6 +37,47 @@ function highlightActiveLink() {
     }
   });
 }
+
+
+function initMobileSidebar() {
+  const hamburger = document.querySelector('.hamburger-btn');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.sidebar-overlay');
+  const closeBtn = document.querySelector('.sidebar-close');
+
+  if (!hamburger || !sidebar || !overlay) return;
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('visible');
+    hamburger.classList.add('hidden');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('visible');
+    hamburger.classList.remove('hidden');
+  }
+
+  hamburger.addEventListener('click', () => {
+    if (sidebar.classList.contains('open')) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeSidebar);
+  }
+
+  overlay.addEventListener('click', closeSidebar);
+
+  document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
+    item.addEventListener('click', closeSidebar);
+  });
+}
+
 
 // Vision & Mission dynamic mobile card stack toggle
 function selectCard(cardName) {

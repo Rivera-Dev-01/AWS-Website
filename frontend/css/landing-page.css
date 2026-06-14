@@ -1267,7 +1267,7 @@ body.landing-page {
 
     .what-we-do-section {
         padding: 60px 24px 80px;
-        background: url('../assets/landing-page/backgrounds/Mobile-WhatWeDo-Background.jpg') center/cover no-repeat;
+        background: url('../assets/landing-page/backgrounds/Mobile-WhatWeDo-Background.webp') center/cover no-repeat;
         min-height: auto;
         position: relative;
     }

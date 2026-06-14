@@ -45,7 +45,7 @@ body.event-detail-page {
   left: calc(50vw - 621px - 140px); /* 621px is half the navbar max-width. 140px is gap + button size (moved left by 60px total) */
   top: calc(6vh + 21px); /* Centers it vertically with the 100px tall navbar */
   border: none;
-  background: url('../assets/events/back-button.png') left center / auto 100% no-repeat;
+  background: url('../assets/events/back-button.webp') left center / auto 100% no-repeat;
   cursor: pointer;
   z-index: 1001; /* Above the navbar which is 1000 */
   padding: 0;
@@ -91,7 +91,7 @@ body.event-detail-page {
   align-items: center;
   justify-content: center;
   background: 
-    url('../assets/events/backgrounds/kiro-clouds-transparent.png') center / cover no-repeat,
+    url('../assets/events/backgrounds/kiro-clouds-transparent.webp') center / cover no-repeat,
     linear-gradient(150.36deg, rgba(255, 255, 255, 0.3) 23.68%, rgba(8, 74, 141, 0.3) 57.13%);
   backdrop-filter: blur(10px);
 }
@@ -237,7 +237,7 @@ body.event-detail-page {
   left: 0;
   width: 100%;
   height: 1540px; /* Reaches exactly to where the Gallery section starts (2120px) */
-  background: url('../assets/events/backgrounds/mid-bg-frame.png') center / 100% 100% no-repeat;
+  background: url('../assets/events/backgrounds/mid-bg-frame.webp') center / 100% 100% no-repeat;
   z-index: 0;
   pointer-events: none;
 }
@@ -979,7 +979,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     top: 0 !important;
     width: 100%;
     height: 1201px;
-    background: url('../assets/events/backgrounds/MobileEvent-Loader-BG.jpg') center top / 100% auto no-repeat;
+    background: url('../assets/events/backgrounds/MobileEvent-Loader-BG.webp') center top / 100% auto no-repeat;
     background-attachment: fixed !important;
     z-index: 0;
     pointer-events: none;
@@ -1002,7 +1002,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
 
   .event-detail-back {
     position: fixed;
-    top: 62px;
+    top: 58.5px;
     left: 37px;
     width: 26px;
     height: 26px;
@@ -1012,6 +1012,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     background: #1C3466;
     z-index: 1001;
     cursor: pointer;
+    transform: scale(1.5);
   }
 
   .event-detail-back * { display: block; }
@@ -1048,7 +1049,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     position: relative;
     width: 362px;
     height: 648px;
-    margin: 75px auto 0;
+    margin: 115px auto 0;
     left: 0px;
     border-radius: 10px;
     background: linear-gradient(180deg, #250f53 26.9%, #372759 41.1%, #250f53 59.3%);
@@ -1302,7 +1303,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     position: relative;
     width: 403px;
     height: 841px;
-    margin: 79px auto 0;
+    margin: 115px auto 0;
     left: 0px;
     overflow: hidden;
     border-radius: 20px;
@@ -1318,7 +1319,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     width: 374.11px;
     height: 352.99px;
     border-radius: 15px;
-    background: url('../assets/events/cards/Mobile-Byte.png') center / cover;
+    background: url('../assets/events/cards/Mobile-Byte.webp') center / cover;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     z-index: 1;
@@ -1513,7 +1514,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
   body[data-event-slug="student-community-day"] .event-detail-hero-mobile {
     width: 407px;
     height: 827px;
-    margin: 70px auto 0;
+    margin: 125px auto 0;
     background: linear-gradient(180deg, #00112F 0%, #021737 50%, #133B75 100%);
     border-radius: 10px;
   }
@@ -1794,7 +1795,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     width: 37px;
     height: 39px;
     margin: 20px auto 0;
-    background: url('../assets/events/backgrounds/cloud-icon-events.png') center / contain no-repeat;
+    background: url('../assets/events/backgrounds/cloud-icon-events.webp') center / contain no-repeat;
       transform: translateY(10px) scale(7);
   }
 
@@ -1817,7 +1818,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     margin: 10px 22px;
     width: auto;
     border-radius: 5.13px;
-    background-image: url('../assets/events/cards/Mobile-KeyTopics.png');
+    background-image: url('../assets/events/cards/Mobile-KeyTopics.webp');
     background-position: 70% center;
     background-size: cover;
     transform: translateX(-10px);
@@ -1828,7 +1829,7 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
     margin: 0 22px;
     width: auto;
     border-radius: 5.13px;
-    background-image: url('../assets/events/cards/Kiro-LearningOutcome.jpg');
+    background-image: url('../assets/events/cards/Kiro-LearningOutcome.webp');
     background-size: cover;
     transform: translateX(10px);
   }
@@ -2045,14 +2046,14 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
 
   body[data-event-slug="byte-forward-hackathon"]
   .event-detail-insight-card[data-insight-card="left"] {
-    background-image: url('../assets/events/cards/Mobile-KeyTopics.png');
+    background-image: url('../assets/events/cards/Mobile-KeyTopics.webp');
     background-position: 70% center;
     background-size: cover;
   }
 
   body[data-event-slug="byte-forward-hackathon"]
   .event-detail-insight-card[data-insight-card="right"] {
-    background-image: url('../assets/events/cards/Mobile-LearningOutcome.png');
+    background-image: url('../assets/events/cards/Mobile-LearningOutcome.webp');
     background-size: cover;
   }
 
@@ -2219,14 +2220,14 @@ body[data-event-slug="student-community-day"] .event-detail-insight-card[data-in
 
   body[data-event-slug="student-community-day"]
   .event-detail-insight-card[data-insight-card="left"] {
-    background-image: url('../assets/events/cards/Mobile-KeyTopics.png');
+    background-image: url('../assets/events/cards/Mobile-KeyTopics.webp');
     background-position: 70% center;
     background-size: cover;
   }
 
   body[data-event-slug="student-community-day"]
   .event-detail-insight-card[data-insight-card="right"] {
-    background-image: url('../assets/events/cards/Mobile-LearningOutcome.png');
+    background-image: url('../assets/events/cards/Mobile-LearningOutcome.webp');
     background-size: cover;
   }
 

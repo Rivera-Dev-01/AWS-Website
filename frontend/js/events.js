@@ -40,15 +40,15 @@ events.forEach((event, index) => {
         <img class="events-mascot" src="${event.mascot}" alt="mascot" />
         <div class="events-meta">
             <div class="events-meta-item">
-                <img src="../assets/events/calendar-icon.webp" alt="date" class="meta-icon" />
+                <img src="../assets/events/badges/calendar-icon.svg" alt="date" class="meta-icon" />
                 <p class="events-date">${event.date}</p>
             </div>
             <div class="events-meta-item">
-                <img src="../assets/events/time-icon.webp" alt="time" class="meta-icon" />
+                <img src="../assets/events/badges/clock-icon.svg" alt="time" class="meta-icon" />
                 <p class="events-time">${event.time}</p>
             </div>
             <div class="events-meta-item">
-                <img src="../assets/events/location-icon.webp" alt="location" class="meta-icon" />
+                <img src="../assets/events/badges/pin-icon.svg" alt="location" class="meta-icon" />
                 <p class="events-location">${event.location}</p>
             </div>
         </div>
