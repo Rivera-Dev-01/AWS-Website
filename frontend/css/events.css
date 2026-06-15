@@ -1,5 +1,4 @@
 /* Events Page - Mobile First */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Lexend:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 :root {
   --blue-dark: #1c3466;
@@ -9,8 +8,14 @@
   --font-poppins: 'Poppins', sans-serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body.events-page {
-  background: var(--page-bg);
+  background: url('../assets/events/backgrounds/Desktop-Event-Hero-Bg-Crisp.webp') center / cover fixed no-repeat;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -18,32 +23,36 @@ body.events-page {
   font-family: var(--font-poppins);
 }
 
+
 /* ── HERO SECTION ── */
 .events-hero {
   position: relative;
   width: 100%;
-  min-height: 580px;
   margin-top: -50px;
+  padding-top: 50px;
+  min-height: 580px;
   overflow: hidden;
-  background: url('../assets/events/backgrounds/Events-Page-HeroSection-Background.png') center top / cover no-repeat;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(255, 255, 255, 0.42), transparent 24%),
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.32), transparent 22%),
+    linear-gradient(180deg, rgba(224, 241, 253, 0.98), rgba(171, 210, 232, 0.94));
 }
 
 .events-hero-card {
   position: absolute;
-  left: 15px;
-  right: 15px;
-  bottom: 40px;
-  aspect-ratio: 820 / 906;
+  left: 40px;
+  right: 0px;
+  bottom: 70px;
+  min-height: 750px;
   border-radius: 24px;
   overflow: hidden;
-  background: url('../assets/events/backgrounds/HeroSectionCube-Card.png') center 20px / cover no-repeat;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.1));
+  background: url('../assets/events/cards/Desktop-Cube.webp') center / 100% 100% no-repeat;
 }
 
 .events-hero-content {
   position: relative;
   z-index: 2;
-  padding: 50px 30px 40px 30px;
+  padding: 60px 50px 40px 70px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -123,15 +132,15 @@ body.events-page {
 .events-hero-badges {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin: 10px 0 50px 0;
+  gap: 25px;
+  margin: -10px 0 50px 10px;
 }
 
 .hero-badge {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex: 1;
   position: relative;
 }
@@ -152,8 +161,8 @@ body.events-page {
   content: "";
   position: absolute;
   right: -10px;
-  width: 1px;
-  height: 24px;
+  width: 1.7px;
+  height: 40px;
   background: rgba(255, 255, 255, 0.3);
 }
 
@@ -186,6 +195,7 @@ body.events-page {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  margin-right: 10px;
 }
 
 .hero-badge-label {
@@ -219,14 +229,14 @@ body.events-page {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 50px;
+  padding: 10px 60px;
   border: 0.5px solid rgba(255,255,255,0.52);
-  border-radius: 20px;
+  border-radius: 30px;
   background: linear-gradient(to left, #ff6f08 14%, #ff8f00 55%, #FFB700);
   color: #fff;
   font-family: var(--font-poppins);
   font-weight: medium;
-  font-size: 14px;
+  font-size: 20px;
   text-decoration: none;
   cursor: pointer;
   box-shadow: inset -1px -1px 0px rgba(255,255,255,0.25);
@@ -282,13 +292,15 @@ body.events-page {
   font-size: 35.469px;
   line-height: 53px;
   text-align: center;
-  background: linear-gradient(174.53deg, #EFF459 1.23%, #FF6F08 96.58%);
+  background: linear-gradient(to bottom, #ffb700, #f2af00, #ff6f08);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin: 0 auto;
-  width: 271px;
+  width: max-content;
+  white-space: nowrap;
   height: 53px;
   transform: translateY(-30px);
 }
@@ -306,12 +318,16 @@ body.events-page {
 
 /* ── EVENT ARCHIVES ── */
 .events-archives {
-  background: url('../assets/events/backgrounds/Events-Archives-Background.png') center top / cover no-repeat;
+  background: linear-gradient(180deg, #e0f1fd 0%, #EEF6FC 100px, #EEF6FC 100%);
   padding: 40px 20px 60px 20px;
+  margin-top: -50px;
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
 }
 
 .events-archives-inner {
-  max-width: 400px;
+  max-width: 414px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -348,10 +364,12 @@ body.events-page {
 
 .tag-workshop {
   background: linear-gradient(180deg, #649cec 0%, #006aff 100%);
+  left: 55%;
 }
 
 .tag-hackathon {
   background: linear-gradient(180deg, rgba(100,156,236,0.64) 0%, #006aff 100%);
+  left: 55%;
 }
 
 .event-card-top {
@@ -383,7 +401,7 @@ body.events-page {
   gap: 4px;
 }
 
-.event-card-title {
+.event-card-title, .community-card-title {
   font-family: var(--font-poppins);
   font-weight: 600;
   font-size: 18px;
@@ -392,16 +410,16 @@ body.events-page {
   line-height: 1.2;
 }
 
-.event-card-subtitle {
+.event-card-subtitle, .community-card-subtitle {
   font-family: var(--font-poppins);
   font-weight: 500;
-  font-size: 10px;
+  font-size: 11px;
   color: #173574;
   margin: 0;
   line-height: 1.3;
 }
 
-.event-card-desc {
+.event-card-desc, .community-card-desc {
   font-family: var(--font-poppins);
   font-weight: 200;
   font-size: 9.5px;
@@ -493,28 +511,28 @@ body.events-page {
 }
 
 /* ── PROACTIVE ENGAGEMENT ── */
-.events-proactive {
-  background: url('../assets/events/backgrounds/Proactive-Engagement-Background.png') center top / cover no-repeat;
-  aspect-ratio: 534 / 654;
+.proactive-header {
+  margin: 50px auto 20px auto;
+  text-align: center;
   width: 100%;
 }
 
-.events-proactive-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  max-width: 400px;
+.proactive-header .section-title-outline {
+  transform: none; /* Prevents mobile overlap by overriding negative translateY */
   margin: 0 auto;
+  width: fit-content;
+  display: block;
 }
 
-.upcoming-label {
+.proactive-header .section-desc {
   font-family: var(--font-poppins);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 13px;
   color: rgba(28, 52, 102, 0.6);
-  margin: 0;
-  line-height: 1.1;
+  margin: 10px auto 0 auto;
+  line-height: 1.3;
+  max-width: 340px;
+  text-align: center;
 }
 
 /* ── RESPONSIVE ── */
@@ -556,6 +574,7 @@ body.events-page {
   }
 }
 
+
 /* Hiding elements in mobile version */
 @media(max-width: 768px){
     .event-card-img-desktop, .event-card-img-wrap-desktop{
@@ -566,13 +585,41 @@ body.events-page {
       display: none;
     }
 }
+
+/* Hide desktop-specific event cards on mobile/tablet viewports */
+@media (max-width: 1041px) {
+  .event-card.event-left,
+  .event-card.event-right {
+    display: none;
+  }
+}
+
+/* Hiding elements in desktop version */
+@media(min-width: 1042px) {
+    .community-card-container-mobile{
+      display: none;
+    }
+    .community-card-details{
+      display: none;
+    }
+}
   
 
 /* Desktop Version - Hero Section */
 @media(min-width: 1024px){
+    body.events-page {
+        background: #e0f1fd;
+    }
+
     .events-hero{
-        min-height: 110vh; 
-        margin-top: 0;
+        min-height: 800px;
+        height: 100vh;
+        margin-top: -120px;
+        padding-top: 120px;
+        background: #e0f1fd url('../assets/events/backgrounds/Desktop-Event-Hero-Bg.svg') top center / 100% auto no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .events-hero-content{
@@ -583,6 +630,10 @@ body.events-page {
     .events-hero-card{
         height: 700px;
         width: 1500px;
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
         margin: 0 auto;
         padding: 0 0 20px 20px;
     }
@@ -619,19 +670,50 @@ body.events-page {
     .event-card{
       width: 1481px;
       height: 393px;
-      margin-left: -550px;
+      margin: 0 auto 24px auto;
+      padding: 0;
       background: linear-gradient(to bottom, #FFFF 0%, #084A8D 100%);
-      background: url('../assets/events/backgrounds/events-archive-card-bg.png');
+      background: url('../assets/events/cards/Desktop-Event-Card.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
+      display: flex;
+      flex-direction: column;
     }
+
+    .events-archives-inner {
+      max-width: 1481px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+.event-card-top {
+  flex: 1;
+}
     
+.event-card-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
     .event-card-title{
       font-size: 45px;
+      font-weight: bold;
+      text-align: left;
+      margin-left: 224px;
+      margin-right: 420px;
     }
     
     .event-card-subtitle{
       font-size: 37px;
+      text-align: left;
+      margin-left: 224px;
+      margin-right: 420px;
+      line-height: 1.3;
     }
 
     .event-card-desc{
@@ -646,10 +728,13 @@ body.events-page {
       align-items: center;
       justify-content: center;
       color: #1C3466;
-      background: rgba(255, 255, 255, 0.70);
-      border-color: #1C3466;
-      border: 2px solid;
+      background: rgba(255, 255, 255, 1);
+      border: 2px solid #1C3466;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); 
+      margin-left: 224px;
+      margin-top: auto;
+      margin-bottom: 35px;
+      padding: 0;
     }
 
     .event-card-btn{
@@ -657,20 +742,25 @@ body.events-page {
     }
 
     .events-archives{
-      height: 1800px;
-      background: url('../assets/events/backgrounds/background-3-color.png');
+      padding-bottom: 60px;
+      background: linear-gradient(180deg, #e0f1fd 0%, #FFFFFF 150px, #FFFFFF 100%);
     }
 
     .section-title-outline{
-      margin-top: 120px;
+      margin: 120px auto 0 auto;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
       font-size: 75px;
+      line-height: 112px;
       width: fit-content;
       height: 113px;
-      background: linear-gradient(180deg, #FFB700 0%, #F2AF00 44%, #FF6F08 78%);
+      background: linear-gradient(to bottom, #ffb700, #f2af00, #ff6f08);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       color: transparent;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      text-align: center;
       display: block;
     }
 
@@ -678,11 +768,26 @@ body.events-page {
       font-size: 19px;
       max-width: 1900px;
       width: 800px;
-      margin: 0 auto;
+      margin: 10px auto 0 auto;
       display: block;
       text-align: center;
-      margin-left: -190px;
     }
+
+  .proactive-header {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .proactive-header .section-title-outline {
+     margin: 0 auto;
+     transform: none;
+  }
+
+  .proactive-header .section-desc {
+    font-size: 19px;
+    max-width: 800px;
+    margin: 15px auto 0 auto;
+  }
 
     .event-card-img-wrap {
       display: none;
@@ -691,35 +796,786 @@ body.events-page {
     .event-card-img-wrap-desktop{
       position: absolute;
       right: 0;
-      height: 385px;
+      top: 0;
       width: 400px;
-      margin-top: -70px;
+      height: 385px;
+      z-index: 3;
     }
 
     .event-card{
       position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 40px -15px rgba(28, 52, 102, 0.1);
+      opacity: 0;
+      animation: waterfallFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Refactored waterfall entrance delays using card classes */
+    .event-card.event-card-featured { animation-delay: 100ms; }
+    .event-card.event-right { animation-delay: 250ms; }
+    .event-card.event-left { animation-delay: 400ms; }
+
+    @keyframes waterfallFadeUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .tag-workshop, .tag-hackathon{
       background: none;
       border: none;
       font-size: 24px;
+      font-weight: 500;
       color: #1C3466;
       font-style: italic;
       box-shadow: none;
+      align-self: flex-start;
+      margin-left: 207px;
+      margin-top: 35px;
+      margin-bottom: 0px;
     }
 
-    .cloud-icon{
-      display: block;
-      margin: 0 auto;
+    .cloud-separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 44px;
+      width: 100%;
+      margin-top: -60px; /* Pulls it up as a bridge between sections */
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .cloud-line {
+      width: 197px;
+      height: 1.5px;
+    }
+
+    .cloud-line:first-child {
+      background: linear-gradient(270deg, rgba(56, 104, 204, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    }
+
+    .cloud-line:last-child {
+      background: linear-gradient(90deg, rgba(56, 104, 204, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    }
+
+    .cloud-icon-small {
+      width: 61px;
+      height: 41px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    }
+
+    .events-archives{
+      position: relative;
+      z-index: 1;
+    }
+
+    .event-date-card-container{
+      background: rgb(255, 255, 255, 0.60);
+      width: 150px;
+      height: 215px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 5px;
+      position: absolute;
+      top: 20%;
+      left: 3%;
+    }
+
+    .event-date-card-detail{
+      margin-top: 20px;
+      text-align: center;
+      font-family: 'Poppins', 'sans-serif';
+      font-weight: bold;
+      color: #1C3466;
+    }
+
+    .event-date-month{
+      font-size: 25px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .event-date-day{
+      font-size: 55px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.1;
+    }
+
+    .event-date-year{
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+    }
+
+    .event-blue-bar-container{
+      background: rgba(8, 69, 141, 0.60);
       margin-top: 30px;
+      width: 150px;
+      height: 90px;
+      border-radius: 5px;
+    }
+
+    .event-location-dates-container{
+      margin: 0;
+      position: absolute;
+      left: 17%;
+      top: 61%;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .event-time, .event-location{
+      font-family: 'Poppins', 'sans-serif';
+      font-size: 18px;
+      color: rgb(28, 52, 102, 0.70);
+    }
+
+    .event-date-containers-mobile{
+      display: none;
     }
 }
 
-/* Proactive Engagement Desktop Section */
-@media(min-width: 1024px){
-    .events-proactive{
-      margin-top: -100px;
-      background: url('../assets/events/backgrounds/background-3-color.png') center;
-    }
+/* Mobile Version Events Page Update */
+@media(max-width: 780px){
+  .event-date-card-container, .event-location-dates-container{
+    display: none;
+  }
+
+  .event-card {
+    width: 372px;
+    height: 290px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .event-card-title{
+    font-size: 21px;
+  }
+
+  .tag-workshop, .tag-hackathon{
+    position: absolute;
+    top: 16px;
+    left: 55%;
+    background: linear-gradient(-115deg, #649CEC 0%, #006AFF 100%);
+    font-size: 11.05px;
+    margin-bottom: 0;
+  }
+
+  .event-card-info{
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 25px;
+
+  }
+
+  .event-card-img-wrap{
+    width: 180px;
+    height: 126px;
+  }
+
+  .cloud-icon-small{
+    display: none;
+  }
+
+  .section-title-outline{
+    margin-top: 90px;
+  }
+
+  .event-title-mobile, 
+  .event-subtitle-mobile, 
+  .event-description-mobile{
+    font-family: 'Poppins';
+    text-align: center;
+  }
+
+  .event-title-mobile, .event-description-mobile{
+    font-size: 9px;
+    font-weight: lighter;
+  }
+
+  .event-subtitle-mobile{
+    font-size: 9px;
+    font-weight: normal;
+  }
+
+  .event-date-containers-mobile{
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .event-date-details-mobile{
+    position: relative;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+
+  .event-date-card-mobile{
+    margin-left: 0x;
+    background: #3868CC;
+    color: #FFFFFF;
+    flex: 1;
+    height: 91px;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .event-date-icon-ellipse{
+    margin-top: 10px;
+    position: relative;
+    background: linear-gradient(180deg, #6AA5F9 0%, #250F53 100%);
+    border-radius: 30px;
+    width: 31.56px;
+    height: 31.56px;
+    display: block;
+    box-shadow: 0px 4px 6px 0px rgb(27, 27, 27);
+  }
+
+  .event-date-icon-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calendar-icon{
+    width: 31.56px;
+    height: 31.56px;
+    display: block;
+    align-items: center;  
+    justify-content: center;
+  }
+
+  .events-hero-card{
+    width: 410px;
+    height: 453px;
+    min-height: 400px;
+    left: 10%;
+    transform: translateX(-3%);
+  }
+
+  .events-and-community-badge{
+    display: none;
+  }
+
+  .events-hero-subtitle{
+    font-size: 21px;
+  }
+
+  .events-hero-content{
+    right: 5%;
+    bottom: 7%;
+    height: 495px;
+  }
+
+  .events-hero-badges{
+    gap: 50px;
+  }
+
+  .hero-badge:not(:last-child)::after {
+    right: -30px;
+    height: 30px;
+    top: 15px;
+    width: 1.5px;
+    background: rgba(255, 255, 255, 0.36);
+  }
+
+  .events-hero-title{
+    line-height: 0.95;
+  }
+
+  .events-btn-primary{
+    width: 201px;
+    height: 34.71px;
+    font-size: 12px;
+    max-width: 500px;
+    padding: 10px;
+    padding-left: 40px;
+    position: absolute;
+    top: 79%;
+  }
+
+  .hero-badge{
+    flex-direction: column;
+  }
+
+  .hero-badge-sublabel{
+    font-size: 7px;
+  }
+
+  .hero-badge-text{
+    display: block;
+    text-align: center;
+    line-height: 0;
+  }
+
+  .hero-badge-icon{
+    width: 25.01px;
+    height: 25.01px;
+  }
+
+  /* ── SPLIT MOBILE LAYOUTS (event-split-left & event-split-right) ── */
+  .event-card.event-split-left,
+  .event-card.event-split-right {
+    --card-w: 380px;
+    --card-h: 450px;
+    --frame-w: 225px;
+    --img-h: 210px;
+    --gap-top: 8px;
+    --content-w: 148px;
+
+    position: relative;
+    width: var(--card-w);
+    height: var(--card-h);
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  /* ── SPLIT LEFT (Byte Forward) ── */
+  .event-card.event-split-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--frame-w);
+    height: var(--card-h);
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+    z-index: 0;
+  }
+
+  .event-card.event-split-left .event-card-img-wrap {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--frame-w);
+    height: var(--img-h);
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .event-card.event-split-left .event-card-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    z-index: 5;
+  }
+
+  .event-card.event-split-left .event-card-top {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .event-card.event-split-left .event-card-info {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: var(--content-w);
+    z-index: 5;
+    gap: 6px;
+    height: auto;
+    margin-top: 0;
+    text-align: left;
+    border-right: 1.5px solid rgba(28, 52, 102, 0.15);
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+
+  .event-card.event-split-left .event-date-containers-mobile {
+    position: absolute;
+    top: calc(var(--img-h) + var(--gap-top));
+    right: 0;
+    left: auto;
+    width: var(--frame-w);
+    padding: 6px 8px 10px 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    z-index: 1;
+    bottom: auto;
+    box-sizing: border-box;
+  }
+
+  /* ── SPLIT RIGHT (Community Day) ── */
+  .event-card.event-split-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--frame-w);
+    height: var(--card-h);
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+    z-index: 0;
+  }
+
+  .event-card.event-split-right .event-card-img-wrap {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--frame-w);
+    height: var(--img-h);
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .event-card.event-split-right .event-card-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: 0;
+    z-index: 5;
+  }
+
+  .event-card.event-split-right .event-card-top {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .event-card.event-split-right .event-card-info {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: var(--content-w);
+    z-index: 5;
+    gap: 6px;
+    height: auto;
+    margin-top: 0;
+    text-align: left;
+    border-left: 1.5px solid rgba(28, 52, 102, 0.15);
+    padding-left: 12px;
+    box-sizing: border-box;
+  }
+
+  .event-card.event-split-right .event-date-containers-mobile {
+    position: absolute;
+    top: calc(var(--img-h) + var(--gap-top));
+    left: 0;
+    right: auto;
+    width: var(--frame-w);
+    padding: 6px 8px 10px 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    z-index: 1;
+    bottom: auto;
+    box-sizing: border-box;
+  }
+
+  /* ── COMMON SPLIT LAYOUT CHILD STYLES ── */
+  .event-card.event-split-left .event-card-img-wrap img,
+  .event-card.event-split-right .event-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .event-card.event-split-left .event-card-title,
+  .event-card.event-split-right .event-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1c3466;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .event-card.event-split-left .event-card-subtitle,
+  .event-card.event-split-right .event-card-subtitle {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1c3466;
+    text-align: left;
+  }
+
+  .event-card.event-split-left .event-card-desc,
+  .event-card.event-split-right .event-card-desc {
+    display: block;
+    font-size: 9px;
+    font-weight: 300;
+    color: #1c3466;
+    text-align: left;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  .event-card.event-split-left .event-card-btn,
+  .event-card.event-split-right .event-card-btn {
+    display: inline-flex;
+    width: var(--content-w);
+    padding: 10px 0;
+    border-radius: 25px;
+    background: linear-gradient(to left, #ff6f08 14%, #ffb700 100%);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    justify-content: center;
+    margin-top: 12px;
+    align-self: flex-start;
+  }
+
+  .event-card.event-split-left .event-date-card-mobile,
+  .event-card.event-split-right .event-date-card-mobile {
+    margin-left: 0;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  /* Grid span for Location card (last-child) */
+  .event-card.event-split-left .event-date-card-mobile:last-child,
+  .event-card.event-split-right .event-date-card-mobile:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .event-card.event-split-left .event-date-icon-ellipse,
+  .event-card.event-split-right .event-date-icon-ellipse {
+    width: 28px;
+    height: 28px;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .event-card.event-split-left .calendar-icon,
+  .event-card.event-split-right .calendar-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .event-card.event-split-left .event-date-details-mobile,
+  .event-card.event-split-right .event-date-details-mobile {
+    text-align: left;
+    margin-top: 0;
+    gap: 1px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-card.event-split-left .event-title-mobile,
+  .event-card.event-split-right .event-title-mobile {
+    font-size: 9px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .event-card.event-split-left .event-subtitle-mobile,
+  .event-card.event-split-right .event-subtitle-mobile {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .event-card.event-split-left .event-description-mobile,
+  .event-card.event-split-right .event-description-mobile {
+    font-size: 9px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    line-height: 1.1;
+  }
+
+  .hero-badge-icon img{
+    height: 25.01px;
+  }
+
+  .community-card-container-mobile{
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 13px;
+    padding: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0px 7px 8.3px rgba(0,0,0,0.25);
+    width: 261px;
+    height: 319px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .community-card-img-container{
+    width: 222px;
+    height: 168px;
+    margin-bottom: 15px;
+  }
+
+  .com-day-img{
+    width: 222px;
+    height: 168px;
+  }
+
+  .community-date-container-mobile{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 222px;
+    height: 60px;
+    position: relative;
+  }
+
+  .community-date-card{
+    width: 120px;
+    height: 54px;
+    border-radius: 5px;
+    background: #3868CC;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    box-sizing: border-box;
+  }
+
+  .community-location-card {
+  background: #3868CC;
+  width: 222px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  }
+
+  .community-title-mobile, .community-desc-mobile{
+    font-family: 'Poppins';
+    font-size: 8px;
+    font-weight: lighter;
+    color: #FFFFFF;
+    
+  }
+
+  .community-subtitle-mobile{
+    font-family: 'Poppins';
+    font-size: 10px;
+    color: #FFFFFF;
+  }
+
+  .community-location-container{
+    width: 222px;
+  }
+
+  .community-location-card{
+    background: #3868CC;
+    width: 222px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  .community-icon-container{
+    background: linear-gradient(180deg, #6AA5F9 0%, #250F53 100%);
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+  }
+
+  .community-calendar-icon{
+    width: 14.73px;
+    height: 19.73px;
+    align-self: center;
+  }
+
+  .community-date-details-container{
+    line-height: 1.1;
+  }
+
+  .location-date-details-container{
+    margin-left: 35px;
+    margin-top: -13px;
+    line-height: 1.1;
+  }
+
+  .community-icon-ellipse{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: linear-gradient(180deg, #6AA5F9 0%, #250F53 100%);
+    border-radius: 20px;
+    width: 20px;
+  }
+
+  .community-card-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* aligns card and details to the top */
+    gap: 24px;
+  }
+
+  .community-card-details {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+  }
+  
+  .community-tag{
+    top: 16px;
+    left: 55%;
+    background: linear-gradient(-115deg, #649CEC 0%, #006AFF 100%);
+    font-size: 11.05px;
+    margin-bottom: 0;
+  }
+
+  .community-view-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: linear-gradient(161deg, #ff6f08 14%, #ffb700 55%);
+    color: #fff;
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    font-size: 9px;
+    text-decoration: none;
+    margin-top: auto;
+    align-self: flex-start;
+    box-shadow: 0px 2px 0.4px rgba(106,165,249,0.25), inset -0.7px -0.7px 0px rgba(255,255,255,0.25);
+    transition: opacity 0.3s; 
+    border: none;
+  }
 }

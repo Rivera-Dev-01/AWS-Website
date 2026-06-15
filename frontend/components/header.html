@@ -1,18 +1,50 @@
 <!-- Header component with logo and navigation -->
 <header class="site-header">
+    <!-- Mobile-only: Hamburger Button -->
+    <button class="hamburger-btn" aria-label="Toggle navigation menu">
+        <img src="../assets/shared/components/Mobile-NavIcon.webp" alt="">
+    </button>
+
+    <!-- Mobile-only: Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Mobile-only: Sidebar Drawer -->
+    <aside class="sidebar">
+        <button class="sidebar-close" aria-label="Close navigation menu">✕</button>
+        <div class="sidebar-logo">
+            <img src="../assets/shared/components/AWS-NewLogo.webp" alt="AWS Logo" class="sidebar-logo-img">
+        </div>
+        <div class="sidebar-branding">
+            <img src="../assets/shared/components/Nav-Overall-Branding.webp" alt="AWS Learning Club">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="landingPage.html" class="nav-item">
+                <img src="../assets/shared/components/Mobile-HomeNav.webp" alt="">
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <img src="../assets/shared/components/Mobile-AboutNav.webp" alt="">
+                <span>About Us</span>
+            </a>
+            <a href="events.html" class="nav-item">
+                <img src="../assets/shared/components/Mobile-EventsNav.webp" alt="">
+                <span>Events</span>
+            </a>
+            <a href="#" class="nav-item">
+                <img src="../assets/shared/components/Mobile-MembersNav.webp" alt="">
+                <span>Members</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Desktop header content -->
     <div class="header-container">
         <!-- Logo Section -->
         <div class="header-logo">
-            <img src="../assets/shared/components/AWS LOGO.webp" alt="AWS Logo" class="logo-img">
-            <div class="logo-text">
-                <div class="logo-main">
-                    <span class="logo-aws">AWS</span>
-                    <span class="logo-learning">Learning Club</span>
-                </div>
-                <div class="logo-chapter">- JRU Chapter</div>
-            </div>
+            <img src="../assets/shared/components/AWS-NewLogo.webp" alt="AWS Logo" class="logo-img">
+            <img src="../assets/shared/components/Nav-Overall-Branding.webp" alt="AWS Learning Club" class="branding-img">
         </div>
-        
+
         <!-- Navigation -->
         <nav class="header-nav">
             <a href="landingPage.html" class="nav-item">

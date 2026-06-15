@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   loadComponent('header-placeholder', '../components/header.html')
     .then(() => {
       highlightActiveLink();
-    });
+      initMobileSidebar();
+    })
+    .catch((err) => console.error('Header load failed:', err));
 
   // Load dynamic footer
-  loadComponent('footer-placeholder', '../components/footer.html');
+  loadComponent('footer-placeholder', '../components/footer.html')
+    .catch((err) => console.error('Footer load failed:', err));
 });
 
 
@@ -27,14 +30,58 @@ function highlightActiveLink() {
     // Standardize Home matching (handles index.html, landingPage.html, or root /)
     const isCurrentHome = currentPageName === '' || currentPageName === 'index.html' || currentPageName === 'landingPage.html';
     const isTargetHome = targetPageName === 'index.html' || targetPageName === 'landingPage.html';
+    const isCurrentEvents = currentPageName === 'event-detail.html' && targetPageName === 'events.html';
 
-    if ((isCurrentHome && isTargetHome) || currentPageName === targetPageName) {
+    if ((isCurrentHome && isTargetHome) || currentPageName === targetPageName || isCurrentEvents) {
       item.classList.add('active');
+      item.setAttribute('aria-current', 'page');
     } else {
       item.classList.remove('active');
+      item.removeAttribute('aria-current');
     }
   });
 }
+
+
+function initMobileSidebar() {
+  const hamburger = document.querySelector('.hamburger-btn');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.sidebar-overlay');
+  const closeBtn = document.querySelector('.sidebar-close');
+
+  if (!hamburger || !sidebar || !overlay) return;
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('visible');
+    hamburger.classList.add('hidden');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('visible');
+    hamburger.classList.remove('hidden');
+  }
+
+  hamburger.addEventListener('click', () => {
+    if (sidebar.classList.contains('open')) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeSidebar);
+  }
+
+  overlay.addEventListener('click', closeSidebar);
+
+  document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
+    item.addEventListener('click', closeSidebar);
+  });
+}
+
 
 // Vision & Mission dynamic mobile card stack toggle
 function selectCard(cardName) {
@@ -131,13 +178,13 @@ function slideDetailCard(cardId, titleId, descId, dataObj, newKey, clickedEl, ic
   }, 300); // Wait 300ms for exit animation to complete
 }
 
-function selectMobileDept(deptId) {
-  slideDetailCard('mobile-dept-detail-card', 'mobile-dept-detail-title', 'mobile-dept-detail-desc', mobileDeptData, deptId, event.currentTarget, 'mobile-dept-detail-icon');
+function selectMobileDept(deptId, el) {
+  slideDetailCard('mobile-dept-detail-card', 'mobile-dept-detail-title', 'mobile-dept-detail-desc', mobileDeptData, deptId, el || event.currentTarget, 'mobile-dept-detail-icon');
 }
 window.selectMobileDept = selectMobileDept;
 
-function selectMobileOffice(officeId) {
-  slideDetailCard('mobile-office-detail-card', 'mobile-office-detail-title', 'mobile-office-detail-desc', mobileOfficeData, officeId, event.currentTarget, 'mobile-office-detail-icon');
+function selectMobileOffice(officeId, el) {
+  slideDetailCard('mobile-office-detail-card', 'mobile-office-detail-title', 'mobile-office-detail-desc', mobileOfficeData, officeId, el || event.currentTarget, 'mobile-office-detail-icon');
 }
 window.selectMobileOffice = selectMobileOffice;
 
