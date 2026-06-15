@@ -1095,6 +1095,7 @@ body.events-page {
 
   .events-hero-badges{
     gap: 50px;
+    margin: -20px 0 30px 10px;
   }
 
   .hero-badge:not(:last-child)::after {
