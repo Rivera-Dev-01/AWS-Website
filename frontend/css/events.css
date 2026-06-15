@@ -1044,10 +1044,13 @@ body.events-page {
     position: relative;
     background: linear-gradient(180deg, #6AA5F9 0%, #250F53 100%);
     border-radius: 30px;
-    width: 31.56px;
-    height: 31.56px;
-    display: block;
+    width: 31px;
+    flex-shrink: 0;
+    height: 31px;
     box-shadow: 0px 4px 6px 0px rgb(27, 27, 27);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .event-date-icon-container{
@@ -1059,11 +1062,11 @@ body.events-page {
   }
 
   .calendar-icon{
-    width: 31.56px;
-    height: 31.56px;
-    display: block;
-    align-items: center;  
+    width: 100%;
+    height: 100%;
+    align-items: center;
     justify-content: center;
+    display: flex; 
   }
 
   .events-hero-card{
@@ -1529,6 +1532,7 @@ body.events-page {
     width: 25px;
     height: 25px;
     flex-shrink: 0;
+    box-shadow: 0px 4px 6px 0px rgb(27, 27, 27);
   }
 
   .community-card-wrapper {
