@@ -570,21 +570,10 @@ body.members-page {
     text-align: center;
   }
 
-  .sidebar-card-badge {
-    width: 61.171px;
-    height: 61.171px;
-    margin: 0 auto 12px;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #f9690c, #fbb515);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
 
   .sidebar-card-badge-img {
-    width: 100%;
-    height: 100%;
+    width: 30%;
+    height: 30%;
     object-fit: contain;
   }
 
