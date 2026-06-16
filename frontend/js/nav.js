@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   loadComponent('header-placeholder', '../components/header.html')
     .then(() => {
       highlightActiveLink();
-    });
+      initMobileSidebar();
+    })
+    .catch((err) => console.error('Header load failed:', err));
 
   // Load dynamic footer
-  loadComponent('footer-placeholder', '../components/footer.html');
+  loadComponent('footer-placeholder', '../components/footer.html')
+    .catch((err) => console.error('Footer load failed:', err));
 });
 
 
@@ -27,14 +30,58 @@ function highlightActiveLink() {
     // Standardize Home matching (handles index.html, landingPage.html, or root /)
     const isCurrentHome = currentPageName === '' || currentPageName === 'index.html' || currentPageName === 'landingPage.html';
     const isTargetHome = targetPageName === 'index.html' || targetPageName === 'landingPage.html';
+    const isCurrentEvents = currentPageName === 'event-detail.html' && targetPageName === 'events.html';
 
-    if ((isCurrentHome && isTargetHome) || currentPageName === targetPageName) {
+    if ((isCurrentHome && isTargetHome) || currentPageName === targetPageName || isCurrentEvents) {
       item.classList.add('active');
+      item.setAttribute('aria-current', 'page');
     } else {
       item.classList.remove('active');
+      item.removeAttribute('aria-current');
     }
   });
 }
+
+
+function initMobileSidebar() {
+  const hamburger = document.querySelector('.hamburger-btn');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.sidebar-overlay');
+  const closeBtn = document.querySelector('.sidebar-close');
+
+  if (!hamburger || !sidebar || !overlay) return;
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('visible');
+    hamburger.classList.add('hidden');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('visible');
+    hamburger.classList.remove('hidden');
+  }
+
+  hamburger.addEventListener('click', () => {
+    if (sidebar.classList.contains('open')) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeSidebar);
+  }
+
+  overlay.addEventListener('click', closeSidebar);
+
+  document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
+    item.addEventListener('click', closeSidebar);
+  });
+}
+
 
 // Vision & Mission dynamic mobile card stack toggle
 function selectCard(cardName) {
@@ -58,23 +105,23 @@ window.selectCard = selectCard; // Expose globally for HTML onclick trigger
 
 // Mobile Side-by-Side Drawer Logic
 const mobileDeptData = {
-  'software-web': { title: 'Software & Web Development', desc: 'Focuses on building technical proficiency in web and application development while enhancing coding skills through personal projects.', icon: '../assets/icons/SoftwareWeb.webp' },
-  'data-analytics': { title: 'Data Analytics', desc: 'Develops skills in complex data analysis to drive technological advancement and prepare members for data-driven industries.', icon: '../assets/icons/DataAnalytics.webp' },
-  'security': { title: 'Security', desc: 'Focuses on the critical field of cybersecurity, equipping members with the skills necessary to protect digital assets and implement security best practices.', icon: '../assets/icons/Security.webp' },
-  'cloud-computing': { title: 'Cloud Computing', desc: 'Masters cloud architecture and AWS services to prepare members for the digital economy through practical, real-world deployment.', icon: '../assets/icons/CloudComputing.webp' },
-  'ml-ai': { title: 'Machine Learning & AI', desc: 'Advances innovation in artificial intelligence and machine learning, encouraging members to conduct research and build real-world prototypes with AWS tools.', icon: '../assets/icons/MLAI.webp' },
-  'adv-infra': { title: 'Advanced Network & Infrastructure', desc: 'Strengthens understanding of modern networking systems and foundational infrastructure through technical assessments designed to build high-level engineering leaders.', icon: '../assets/icons/AdvInfra.webp' }
+  'software-web': { title: 'Software & Web Development', desc: 'Focuses on building technical proficiency in web and application development while enhancing coding skills through personal projects.', icon: '../assets/about/departments-offices/SoftwareWeb.webp' },
+  'data-analytics': { title: 'Data Analytics', desc: 'Develops skills in complex data analysis to drive technological advancement and prepare members for data-driven industries.', icon: '../assets/about/departments-offices/DataAnalytics.webp' },
+  'security': { title: 'Security', desc: 'Focuses on the critical field of cybersecurity, equipping members with the skills necessary to protect digital assets and implement security best practices.', icon: '../assets/about/departments-offices/Security.webp' },
+  'cloud-computing': { title: 'Cloud Computing', desc: 'Masters cloud architecture and AWS services to prepare members for the digital economy through practical, real-world deployment.', icon: '../assets/about/departments-offices/CloudComputing.webp' },
+  'ml-ai': { title: 'Machine Learning & AI', desc: 'Advances innovation in artificial intelligence and machine learning, encouraging members to conduct research and build real-world prototypes with AWS tools.', icon: '../assets/about/departments-offices/MLAI.webp' },
+  'adv-infra': { title: 'Advanced Network & Infrastructure', desc: 'Strengthens understanding of modern networking systems and foundational infrastructure through technical assessments designed to build high-level engineering leaders.', icon: '../assets/about/departments-offices/AdvInfra.webp' }
 };
 
 const mobileOfficeData = {
-  'Executive': { title: 'Executive', desc: 'The Executive Committee provides overall direction, coordination, and oversight for the organization. Due to limited availability of senior officers, executive roles are primarily supervisory, documentation-focused, and approval-based.', icon: '../assets/icons/Exec.webp' },
-  'Relations': { title: 'Relations', desc: 'Driving organizational growth and protecting its digital integrity by leading initiatives in resource acquisition, engaging content creation, strategic partnerships, professional correspondence, cybersecurity, and meticulous agreement alignment.', icon: '../assets/icons/Relations.webp' },
-  'Operations': { title: 'Operations', desc: 'Manages the Cloud Club\'s Operations and Events Office by directing strategic planning, resource allocation, event execution, quality assurance, risk mitigation, and team leadership to ensure seamless daily functioning and successful club experiences.', icon: '../assets/icons/Operations.webp' },
-  'Creatives': { title: 'Creatives', desc: 'Driving its visual identity and audience engagement by managing visual content creation, media enhancement, project documentation, and impactful presentations.', icon: '../assets/icons/Creatives.webp' },
-  'Marketing': { title: 'Marketing', desc: 'Amplifying the organization\'s online influence and community engagement through social media management, strategic publication materials, brand protection, and proactive security measures.', icon: '../assets/icons/Marketing.webp' },
-  'Finance': { title: 'Finance', desc: 'Safeguarding the organization\'s assets and ensuring university compliance by managing budgets, monitoring expenditures, and conducting financial forecasting to support strategic planning.', icon: '../assets/icons/Finance.webp' },
-  'Media': { title: 'Media', desc: 'Handles event photography and videography, coordinate officer pictorials, and organize media files. By delivering high-quality visual assets, they provide essential support to the creatives and marketing teams for post-event publicity.', icon: '../assets/icons/Mediaa.webp' },
-  'Technology': { title: 'Technology', desc: 'Key tasks include managing the AWS Skill Builder Program, training officers, and facilitating hands-on technical seminars. The committee also provides event technical support, proposes future tech initiatives, and recruits volunteers to maintain the website.', icon: '../assets/icons/Technology.webp' }
+  'Executive': { title: 'Executive', desc: 'The Executive Committee provides overall direction, coordination, and oversight for the organization. Due to limited availability of senior officers, executive roles are primarily supervisory, documentation-focused, and approval-based.', icon: '../assets/about/departments-offices/Exec.webp' },
+  'Relations': { title: 'Relations', desc: 'Driving organizational growth and protecting its digital integrity by leading initiatives in resource acquisition, engaging content creation, strategic partnerships, professional correspondence, cybersecurity, and meticulous agreement alignment.', icon: '../assets/about/departments-offices/Relations.webp' },
+  'Operations': { title: 'Operations', desc: 'Manages the Cloud Club\'s Operations and Events Office by directing strategic planning, resource allocation, event execution, quality assurance, risk mitigation, and team leadership to ensure seamless daily functioning and successful club experiences.', icon: '../assets/about/departments-offices/Operations.webp' },
+  'Creatives': { title: 'Creatives', desc: 'Driving its visual identity and audience engagement by managing visual content creation, media enhancement, project documentation, and impactful presentations.', icon: '../assets/about/departments-offices/Creatives.webp' },
+  'Marketing': { title: 'Marketing', desc: 'Amplifying the organization\'s online influence and community engagement through social media management, strategic publication materials, brand protection, and proactive security measures.', icon: '../assets/about/departments-offices/Marketing.webp' },
+  'Finance': { title: 'Finance', desc: 'Safeguarding the organization\'s assets and ensuring university compliance by managing budgets, monitoring expenditures, and conducting financial forecasting to support strategic planning.', icon: '../assets/about/departments-offices/Finance.webp' },
+  'Media': { title: 'Media', desc: 'Handles event photography and videography, coordinate officer pictorials, and organize media files. By delivering high-quality visual assets, they provide essential support to the creatives and marketing teams for post-event publicity.', icon: '../assets/about/departments-offices/Mediaa.webp' },
+  'Technology': { title: 'Technology', desc: 'Key tasks include managing the AWS Skill Builder Program, training officers, and facilitating hands-on technical seminars. The committee also provides event technical support, proposes future tech initiatives, and recruits volunteers to maintain the website.', icon: '../assets/about/departments-offices/Technology.webp' }
 };
 
 function slideDetailCard(cardId, titleId, descId, dataObj, newKey, clickedEl, iconId) {
@@ -131,13 +178,13 @@ function slideDetailCard(cardId, titleId, descId, dataObj, newKey, clickedEl, ic
   }, 300); // Wait 300ms for exit animation to complete
 }
 
-function selectMobileDept(deptId) {
-  slideDetailCard('mobile-dept-detail-card', 'mobile-dept-detail-title', 'mobile-dept-detail-desc', mobileDeptData, deptId, event.currentTarget, 'mobile-dept-detail-icon');
+function selectMobileDept(deptId, el) {
+  slideDetailCard('mobile-dept-detail-card', 'mobile-dept-detail-title', 'mobile-dept-detail-desc', mobileDeptData, deptId, el || event.currentTarget, 'mobile-dept-detail-icon');
 }
 window.selectMobileDept = selectMobileDept;
 
-function selectMobileOffice(officeId) {
-  slideDetailCard('mobile-office-detail-card', 'mobile-office-detail-title', 'mobile-office-detail-desc', mobileOfficeData, officeId, event.currentTarget, 'mobile-office-detail-icon');
+function selectMobileOffice(officeId, el) {
+  slideDetailCard('mobile-office-detail-card', 'mobile-office-detail-title', 'mobile-office-detail-desc', mobileOfficeData, officeId, el || event.currentTarget, 'mobile-office-detail-icon');
 }
 window.selectMobileOffice = selectMobileOffice;
 
