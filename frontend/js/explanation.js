@@ -1,0 +1,83 @@
+document.addEventListener('DOMContentLoaded', () => {
+  initFormValidation();
+  initBackNavigation();
+});
+
+function initFormValidation() {
+  const textarea = document.getElementById('explanationText');
+  const btnSave = document.getElementById('btnSave');
+
+  btnSave.addEventListener('click', (e) => {
+    e.preventDefault();
+    validateForm();
+  });
+
+  textarea.addEventListener('input', () => {
+    clearFieldError();
+  });
+}
+
+function validateForm() {
+  const textarea = document.getElementById('explanationText');
+  const btnSave = document.getElementById('btnSave');
+
+  if (!textarea.value.trim()) {
+    showFieldError();
+    btnSave.classList.add('constraint-btn');
+  } else {
+    btnSave.classList.remove('constraint-btn');
+    onValidSubmit();
+  }
+}
+
+function showFieldError() {
+  const textarea = document.getElementById('explanationText');
+  const group = textarea.closest('.form-group');
+  if (!group) return;
+  const errorEl = group.querySelector('.form-error');
+  if (errorEl) errorEl.classList.add('visible');
+}
+
+function clearFieldError() {
+  const textarea = document.getElementById('explanationText');
+  const group = textarea.closest('.form-group');
+  if (!group) return;
+  const errorEl = group.querySelector('.form-error');
+  if (errorEl) errorEl.classList.remove('visible');
+
+  const btnSave = document.getElementById('btnSave');
+  const hasErrors = document.querySelectorAll('.form-error.visible').length;
+  if (hasErrors === 0) {
+    btnSave.classList.remove('constraint-btn');
+  }
+}
+
+function onValidSubmit() {
+  const textarea = document.getElementById('explanationText');
+  const btnSave = document.getElementById('btnSave');
+
+  const data = {
+    explanation: textarea.value.trim(),
+  };
+
+  btnSave.textContent = 'Submitting...';
+  btnSave.disabled = true;
+
+  console.log('Explanation data ready for backend:', data);
+
+  setTimeout(() => {
+    btnSave.textContent = 'Save & Continue';
+    btnSave.disabled = false;
+    alert('Explanation submitted! (Next step not yet implemented)');
+  }, 1000);
+}
+
+function initBackNavigation() {
+  const backBtn = document.querySelector('.register-back');
+  if (backBtn) {
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = backBtn.getAttribute('href');
+    });
+  }
+}

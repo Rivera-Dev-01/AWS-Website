@@ -457,7 +457,7 @@ body.register-page {
 .form-error {
   display: none;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   margin-top: 4px;
 }
 
@@ -467,10 +467,10 @@ body.register-page {
 
 .error-icon {
   flex-shrink: 0;
-  width: 12.514px;
-  height: 12.514px;
-  background: var(--gradient-error);
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  width: 14px;
+  height: 14px;
+  background: url('../assets/members/badges/Warning-Icon.png') center / contain no-repeat;
+  display: inline-block;
 }
 
 .error-text {
@@ -590,369 +590,265 @@ body.register-page {
   .register-form {
     max-width: 100%;
   }
-}
 
+  /* Figma-style register layout overrides */
+  body.register-page {
+    height: 100vh;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
 
-/* Figma-style register layout overrides */
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-}
+  .register-main {
+    width: 992px;
+    height: 876px;
+    max-width: none;
+    position: relative;
+    transform: scale(0.9);
+    transform-origin: center;
+  }
 
-body.register-page {
-  height: 100vh;
-  padding: 0;
-  align-items: center;
-  justify-content: center;
-}
+  .register-card {
+    position: relative;
+    width: 992px;
+    height: 876px;
+    padding: 0;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
 
-.register-main {
-  width: 992px;
-  height: 876px;
-  max-width: none;
-  position: relative;
-  transform: scale(0.9);
-  transform-origin: center;
-}
+  .register-form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 
-.register-card {
-  position: relative;
-  width: 992px;
-  height: 876px;
-  padding: 0;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-}
+  .register-back {
+    position: absolute;
+    left: 31px;
+    top: 29.68px;
+  }
 
-.register-form {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+  .register-title {
+    position: absolute;
+    left: 50%;
+    top: 63px;
+    transform: translateX(-50%);
+    width: 117px;
+    height: 39px;
+    margin: 0;
+    font-size: 32px;
+    line-height: 39px;
+  }
 
-.register-back {
-  position: absolute;
-  left: 31px;
-  top: 29.68px;
-}
+  .register-progress {
+    position: absolute;
+    left: 304px;
+    top: 135px;
+    width: 384px;
+    height: 43px;
+    margin: 0;
+    gap: 22px;
+    max-width: none;
+  }
 
-.register-title {
-  position: absolute;
-  left: 50%;
-  top: 63px;
-  transform: translateX(-50%);
-  width: 117px;
-  height: 39px;
-  margin: 0;
-  font-size: 32px;
-  line-height: 39px;
-}
+  .progress-circle {
+    width: 43px;
+    height: 43px;
+    border-color: #fbe502;
+    background: #fbe502;
+  }
 
-.register-progress {
-  position: absolute;
-  left: 304px;
-  top: 135px;
-  width: 341px;
-  height: 43px;
-  margin: 0;
-  gap: 83px;
-  max-width: none;
-}
+  .progress-circle.filled {
+    border-color: #ff750b;
+    background: #ff750b;
+  }
 
-.progress-circle {
-  width: 43px;
-  height: 43px;
-  border-color: #fbe502;
-  background: #fbe502;
-}
+  .progress-line {
+    width: 83px;
+    flex: none;
+    border-color: #fbe502;
+  }
 
-.progress-circle.filled {
-  border-color: #ff750b;
-  background: #ff750b;
-}
+  .register-section-title {
+    position: absolute;
+    left: 173px;
+    top: 209px;
+    margin: 0;
+    font-size: 28px;
+    line-height: 42px;
+  }
 
-.progress-line {
-  max-width: 83px;
-  border-color: #fbe502;
-}
+  .dob-title {
+    position: absolute;
+    left: 103px;
+    top: 566px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
 
-.register-section-title {
-  position: absolute;
-  left: 173px;
-  top: 209px;
-  margin: 0;
-  font-size: 28px;
-  line-height: 42px;
-}
+  .form-row {
+    position: static;
+    display: block;
+    margin: 0;
+    flex-wrap: nowrap;
+  }
 
-.dob-title {
-  position: absolute;
-  left: 433px;
-  top: 536px;
-  margin: 0;
-  font-size: 20px;
-  line-height: 30px;
-}
+  .form-label {
+    margin: 0 0 5px;
+    padding-left: 10px;
+  }
 
-.form-row {
-  position: static;
-  display: block;
-  margin: 0;
-  flex-wrap: nowrap;
-}
+  .form-input,
+  .select-trigger {
+    height: 42px;
+    padding: 12px 18px 12px 25px;
+  }
 
-.form-label {
-  margin: 0 0 3px;
-}
+  .form-group-name {
+    position: absolute;
+    left: 112px;
+    top: 270px;
+    width: 594px;
+  }
 
-.form-input,
-.select-trigger {
-  height: 42px;
-  padding: 12px 18px 12px 25px;
-}
+  .form-group-photo {
+    position: absolute;
+    left: 779px;
+    top: 269px;
+  }
 
-.form-group-name {
-  position: absolute;
-  left: 112px;
-  top: 270px;
-  width: 594px;
-}
+  .form-group-student {
+    position: absolute;
+    left: 112px;
+    top: 368px;
+    width: 229px;
+  }
 
-.form-group-photo {
-  position: absolute;
-  left: 779px;
-  top: 269px;
-}
+  .form-group-email {
+    position: absolute;
+    left: 357px;
+    top: 371px;
+    width: 342px;
+  }
 
-.form-group-student {
-  position: absolute;
-  left: 112px;
-  top: 358px;
-  width: 229px;
-}
+  .form-group-year {
+    position: absolute;
+    left: 112px;
+    top: 464px;
+    width: 186px;
+  }
 
-.form-group-email {
-  position: absolute;
-  left: 357px;
-  top: 361px;
-  width: 342px;
-}
+  .form-group-program {
+    position: absolute;
+    left: 325px;
+    top: 464px;
+    width: 386px;
+  }
 
-.form-group-year {
-  position: absolute;
-  left: 112px;
-  top: 444px;
-  width: 186px;
-}
+  .photo-circle {
+    width: 130px;
+    height: 130px;
+    margin: 0;
+    background: #fe9001;
+    border: none;
+    box-shadow: 0 0 14.5px 8px rgba(254, 144, 1, 0.5);
+  }
 
-.form-group-program {
-  position: absolute;
-  left: 325px;
-  top: 444px;
-  width: 386px;
-}
+  .photo-placeholder {
+    left: 33px;
+    top: 40px;
+    width: 65px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+  }
 
-.photo-circle {
-  width: 130px;
-  height: 130px;
-  margin: 0;
-  background: #fe9001;
-  border: none;
-  box-shadow: 0 0 14.5px 8px rgba(254, 144, 1, 0.5);
-}
+  .photo-placeholder svg {
+    width: 65px;
+    height: 50px;
+    stroke: #fff;
+  }
 
-.photo-placeholder {
-  left: 33px;
-  top: 40px;
-  width: 65px;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-}
+  .photo-label {
+    margin-top: 15px;
+  }
 
-.photo-placeholder svg {
-  width: 65px;
-  height: 50px;
-  stroke: #fff;
-}
+  .photo-optional {
+    margin-top: 0;
+  }
 
-.photo-label {
-  margin-top: 15px;
-}
+  .dob-row {
+    position: absolute;
+    left: 112px;
+    top: 602px;
+    width: 610px;
+    display: flex;
+    gap: 20px;
+  }
 
-.photo-optional {
-  margin-top: 0;
-}
+  .form-group-day {
+    width: 157px;
+  }
 
-.dob-row {
-  position: absolute;
-  left: 112px;
-  top: 572px;
-  width: 610px;
-  display: flex;
-  gap: 20px;
-}
+  .form-group-month {
+    width: 248px;
+  }
 
-.form-group-day {
-  width: 157px;
-}
+  .form-group-year-select {
+    width: 166px;
+  }
 
-.form-group-month {
-  width: 248px;
-}
+  .consent-row {
+    position: absolute;
+    left: 137px;
+    top: 711.25px;
+    width: 544px;
+    margin: 0;
+  }
 
-.form-group-year-select {
-  width: 166px;
-}
+  .consent-label {
+    max-width: 544px;
+    margin: 0;
+  }
 
-.consent-row {
-  position: absolute;
-  left: 137px;
-  top: 671.25px;
-  width: 544px;
-  margin: 0;
-}
+  .consent-text {
+    line-height: 15px;
+  }
 
-.consent-label {
-  max-width: 544px;
-  margin: 0;
-}
+  .form-submit-row {
+    position: absolute;
+    left: 50%;
+    top: 801.5px;
+    transform: translateX(-50%);
+    margin: 0;
+  }
 
-.consent-text {
-  line-height: 15px;
-}
+  .btn-save {
+    height: 49px;
+    padding: 15px 25px;
+  }
 
-.form-submit-row {
-  position: absolute;
-  left: 50%;
-  top: 751.5px;
-  transform: translateX(-50%);
-  margin: 0;
-}
+  .form-error {
+    position: absolute;
+    left: 0;
+    top: 78px;
+    display: none;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    z-index: 20;
+    padding-left: 24px;
+  }
 
-.btn-save {
-  height: 49px;
-  padding: 15px 25px;
-}
+  .form-error.visible {
+    display: flex;
+  }
 
-.form-error {
-  position: absolute;
-  left: 0;
-  top: 48px;
-  margin: 0;
-}
-
-/* Figma-style form error positions */
-.form-error {
-  position: absolute;
-  left: 0;
-  top: 72px;
-  display: none;
-  align-items: center;
-  gap: 0;
-  margin: 0;
-  z-index: 20;
-}
-
-.form-error.visible {
-  display: flex;
-}
-
-.form-error .error-icon,
-.form-error .error-text {
-  position: absolute;
-}
-
-.form-error .error-icon {
-  left: 0;
-  top: 0;
-}
-
-.form-error .error-text {
-  top: 0;
-  white-space: nowrap;
-  line-height: 11px;
-}
-
-.form-error[data-for="fullName"] {
-  left: 24px;
-  top: 72.49px;
-}
-
-.form-error[data-for="fullName"] .error-text {
-  left: 15.07px;
-}
-
-.form-error[data-for="studentNumber"] {
-  left: 25px;
-  top: 72px;
-}
-
-.form-error[data-for="studentNumber"] .error-text {
-  left: 40.07px;
-}
-
-.form-error[data-for="jruEmail"] {
-  left: 22px;
-  top: 69px;
-}
-
-.form-error[data-for="jruEmail"] .error-text {
-  left: 37.07px;
-}
-
-.form-error[data-for="schoolYear"] {
-  left: 24px;
-  top: 76px;
-}
-
-.form-error[data-for="schoolYear"] .error-text {
-  left: 39.07px;
-}
-
-.form-error[data-for="program"] {
-  left: 26.46px;
-  top: 76px;
-}
-
-.form-error[data-for="program"] .error-text {
-  left: 41.54px;
-}
-
-.form-error[data-for="dobDay"] {
-  left: 25px;
-  top: 75px;
-}
-
-.form-error[data-for="dobDay"] .error-text {
-  left: 40.07px;
-}
-
-.form-error[data-for="dobMonth"] {
-  left: 23.46px;
-  top: 75px;
-}
-
-.form-error[data-for="dobMonth"] .error-text {
-  left: 38.54px;
-}
-
-.form-error[data-for="dobYear"] {
-  left: 21.96px;
-  top: 77.49px;
-}
-
-.form-error[data-for="dobYear"] .error-text {
-  left: 37.04px;
-}
-
-.form-error[data-for="consent"] {
-  left: 26.5px;
-  top: 46.75px;
-}
-
-.form-error[data-for="consent"] .error-text {
-  left: 42.07px;
+  .form-error[data-for="consent"] {
+    left: 0;
+    top: 52.75px;
+  }
 }

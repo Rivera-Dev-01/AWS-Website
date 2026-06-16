@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  initDropdowns();
   populateDateDropdowns();
+  initDropdowns();
   initPhotoUpload();
   initFormValidation();
   initBackNavigation();
@@ -213,7 +213,7 @@ function onValidSubmit() {
   setTimeout(() => {
     btnSave.textContent = 'Save & Continue';
     btnSave.disabled = false;
-    alert('Registration successful! (Backend not yet connected)');
+    window.location.href = 'explanation.html';
   }, 1000);
 }
 
