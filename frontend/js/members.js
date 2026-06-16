@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSidebarNav();
   initSearchInput();
   initIntersectionObserver();
+  initFooterObserver(); // New observer to check for footer intersection
 });
 
 function initSidebarNav() {
@@ -82,6 +83,28 @@ function initIntersectionObserver() {
   }, observerOptions);
 
   sections.forEach(section => observer.observe(section));
+}
+
+function initFooterObserver() {
+  const footer = document.getElementById('footer-placeholder');
+  const sidebar = document.querySelector('.members-sidebar');
+  if (!footer || !sidebar) return;
+
+  const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sidebar.classList.add('at-footer');
+      } else {
+        sidebar.classList.remove('at-footer');
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0,
+    rootMargin: '0px 0px -35px 0px' // Trigger when footer is within 35px of viewport bottom
+  });
+
+  footerObserver.observe(footer);
 }
 
 function initSearchInput() {
