@@ -25,10 +25,7 @@ function initSidebarNav() {
       const section = item.dataset.section;
       const targetId = sectionMap[section];
       if (targetId) {
-        const section = document.getElementById(targetId);
-        const main = document.getElementById('main-content');
-        const sectionTop = section.getBoundingClientRect().top - main.getBoundingClientRect().top + main.scrollTop;
-        main.scrollTo({ top: sectionTop, behavior: 'smooth' });
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
