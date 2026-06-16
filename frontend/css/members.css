@@ -984,7 +984,11 @@ body.members-page {
   .member-photo-inner{
     width: 100%;
     height: 100%;
+    background: rgba(217, 217, 217, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   }
+  
   .member-photo-wrapper{
     width: 149.09px;
     height: 149.24px;
