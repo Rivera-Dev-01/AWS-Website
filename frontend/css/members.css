@@ -951,6 +951,10 @@ body.members-page {
   .member-name, .member-position{
     color: #003678;
   }
+
+  .member-position{
+    font-style: italic;
+  }
   
   .founders-content{
     overflow-y: auto; 
@@ -975,5 +979,18 @@ body.members-page {
   .member-card{
     width: 182.46px;
     height: 282.85px;
+  }
+
+  .member-photo-inner{
+    width: 100%;
+    height: 100%;
+  }
+  .member-photo-wrapper{
+    width: 149.09px;
+    height: 149.24px;
+  }
+
+  .member-links{
+    display: none;
   }
 }
