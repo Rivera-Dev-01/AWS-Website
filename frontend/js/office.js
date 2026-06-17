@@ -1,5 +1,6 @@
-// Change this when deploying
-const API_BASE = 'http://localhost:8000';
+const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:8000'
+  : '';
 
 document.addEventListener('DOMContentLoaded', () => {
   initPills();
@@ -89,7 +90,7 @@ async function handleSubmit() {
     sessionStorage.removeItem('regBasic');
     sessionStorage.removeItem('regExplanation');
     sessionStorage.removeItem('regDept');
-    window.location.href = 'loading.html';
+    window.location.href = '/loading';
   } catch (err) {
     console.error('Network error:', err);
     btnSave.textContent = 'Submit';
