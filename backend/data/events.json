@@ -3,17 +3,17 @@
     {
       "id": 1,
       "name": "KIRO Workshop",
-      "image_url": "/assets/events/kiro-workshop-img.png"
+      "image_url": "frontend/assets/landing-page/KiroEvent.webp"
     },
     {
       "id": 2,
       "name": "Student Community Day",
-      "image_url": "/assets/events/student-com-day-img.png"
+      "image_url": "frontend/assets/landing-page/StudentCommunityEvent.webp"
     },
     {
       "id": 3,
       "name": "Byte Forward Hackathon",
-      "image_url": "/assets/events/byteforward-img.png"
+      "image_url": "frontend/assets/landing-page/ByteForwardEvent.webp"
     }
   ]
 }

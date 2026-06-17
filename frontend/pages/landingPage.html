@@ -166,7 +166,7 @@
                 <div class="events-grid">
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="../assets/landing-page/KiroEvent.webp" alt="Event" loading="lazy">
+                            <img id="event-img-1" src="../assets/landing-page/KiroEvent.webp" alt="Event" loading="lazy">                        
                         </div>
                         <div class="event-content">
                             <h3>FROM CLOUD FUNDAMENTALS TO NEXT-GEN CODE BUILDERS</h3>
@@ -176,7 +176,7 @@
 
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="../assets/landing-page/StudentCommunityEvent.webp" alt="Event" loading="lazy">
+                            <img id="event-img-2" src="../assets/landing-page/StudentCommunityEvent.webp" alt="Event" loading="lazy">                        
                         </div>
                         <div class="event-content">
                             <h3>AWS STUDENTS COMMUNITY DAY</h3>
@@ -186,7 +186,7 @@
 
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="../assets/landing-page/ByteForwardEvent.webp" alt="Event" loading="lazy">
+                            <img id="event-img-3" src="../assets/landing-page/ByteForwardEvent.webp" alt="Event" loading="lazy">                        
                         </div>
                         <div class="event-content">
                             <h3>AWS OFFICER JOINED BYTEFORWARD HACKATHON</h3>
@@ -553,5 +553,22 @@
     })();
     </script>
     <script src="../js/sponsors.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const API_BASE_URL = 'http://127.0.0.1:8000';
+
+    fetch(`${API_BASE_URL}/api/events`)
+        .then(res => res.json())
+        .then(events => {
+            events.forEach(event => {
+                const img = document.getElementById(`event-img-${event.id}`);
+                if (img) {
+                    img.src = `${API_BASE_URL}/${event.image_url}`;
+                }
+            });
+        })
+        .catch(err => console.error('Failed to load events:', err));
+});
+</script>
 </body>
 </html>
