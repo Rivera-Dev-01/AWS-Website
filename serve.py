@@ -1,6 +1,6 @@
 import json, os, re, http.server, socketserver, urllib.parse, socket
 
-PORT = 8000
+PORT = 3000
 
 
 class ReuseAddrServer(socketserver.TCPServer):
