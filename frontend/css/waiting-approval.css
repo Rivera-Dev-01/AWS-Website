@@ -1,5 +1,14 @@
 /* ── Waiting for Approval page ── */
 
+/* Hide header on desktop for registration flow */
+body.register-step-3 .site-header {
+  display: none;
+}
+
+body.register-step-3 #header-placeholder {
+  min-height: 0;
+}
+
 .approval-content {
   width: 100%;
   position: relative;

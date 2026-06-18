@@ -1,5 +1,14 @@
 /* ── Department page overrides ── */
 
+/* Hide header on desktop for registration flow */
+body.register-step-dept .site-header {
+  display: none;
+}
+
+body.register-step-dept #header-placeholder {
+  min-height: 0;
+}
+
 .dept-content {
   width: 100%;
   position: relative;
