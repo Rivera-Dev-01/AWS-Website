@@ -243,7 +243,7 @@ body.members-page {
   }
 
   .hero-content {
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: calc(100% - 48px);
@@ -1036,10 +1036,9 @@ body.members-page {
 
   .hero-mascot {
     position: relative;
-    top: 10%;
     left: 5%;
     z-index: 3;
-    width: 55%;
+    width: 70%;
     max-width: 500px;
     margin: 1.0rem auto 0;  
     display: block;
@@ -1076,7 +1075,7 @@ body.members-page {
   }
 
   .snap-section{
-    height: 170vh;
+    height: 130vh;
   }
 
   .member-title-mobile{
