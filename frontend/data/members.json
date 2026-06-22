@@ -8,7 +8,9 @@
         "linkedin": "https://www.linkedin.com/in/adjsevangelista/",
         "facebook": "#",
         "instagram": "#"
-      }
+      },
+      "subsection": 1,
+      "role": "Founder"
     },
     {
       "name": "Saturio, Lyndon Kaizer C.",
@@ -18,7 +20,9 @@
         "linkedin": "https://www.linkedin.com/in/lyndon-saturio-80356b275/",
         "facebook": "https://www.facebook.com/kai.saturio",
         "instagram": "https://www.instagram.com/galitakosagwapo_/"
-      }
+      },
+      "subsection": 3,
+      "role": "Co-Founder"
     },
     {
       "name": "Bautista, Rizelle B.",
@@ -28,7 +32,9 @@
         "linkedin": "https://www.linkedin.com/in/rizelle-b-968006286/"
       },
       "resume": "../assets/members/founders-photos/resume/Resume_Rizelle_Bautista - Rizelle Bautista.pdf",
-      "portfolio": "https://www.linkedin.com/in/rizelle-b-968006286/"
+      "portfolio": "https://www.linkedin.com/in/rizelle-b-968006286/",
+      "subsection": 2,
+      "role": "Co-Founder"
     },
     {
       "name": "Gandawali, Albosran",
@@ -37,7 +43,17 @@
       "socials": {
         "linkedin": "https://www.linkedin.com/in/albosran-gandawali-888b54281/"
       },
-      "resume": "../assets/members/founders-photos/resume/CV6_ALBOSRAN M GANDAWALI - Albosran Gandawali.pdf"
+      "resume": "../assets/members/founders-photos/resume/CV6_ALBOSRAN M GANDAWALI - Albosran Gandawali.pdf",
+      "subsection": 2,
+      "role": "Co-Founder"
+    },
+    {
+      "name": "Hao",
+      "position": "TBD",
+      "photo": "../assets/shared/components/AWS-NewLogo.webp",
+      "socials": {},
+      "subsection": 2,
+      "role": "Co-Founder"
     },
     {
       "name": "Rebullar, John Lenard",
@@ -45,7 +61,9 @@
       "photo": "../assets/members/founders-photos/Johnlenard Rebullar.png",
       "socials": {
         "linkedin": "http://www.linkedin.com/in/john-lenard-rebullar-9a9682218"
-      }
+      },
+      "subsection": 3,
+      "role": "Co-Founder"
     }
   ],
   "executives": [
@@ -57,7 +75,8 @@
         "linkedin": "https://www.linkedin.com/in/keith-speirs/",
         "facebook": "https://www.facebook.com/keith.speirs.52/"
       },
-      "resume": "../assets/members/executives-photos/resume/Keith Speirs - Resume - Keith Alan Speirs(1).pdf"
+      "resume": "../assets/members/executives-photos/resume/Keith Speirs - Resume - Keith Alan Speirs(1).pdf",
+      "subsection": 2
     },
     {
       "name": "Rivera, Miggy",
@@ -68,7 +87,8 @@
         "facebook": "https://www.facebook.com/RaiveRivera",
         "instagram": "https://www.instagram.com/raive.exp/"
       },
-      "resume": "../assets/members/executives-photos/resume/Rivera, Miggy G. - Resume - Miggy Rivera.pdf"
+      "resume": "../assets/members/executives-photos/resume/Rivera, Miggy G. - Resume - Miggy Rivera.pdf",
+      "subsection": 2
     },
     {
       "name": "Lolong, Khobe Clayn",
@@ -78,7 +98,8 @@
         "linkedin": "http://www.linkedin.com/in/khobe-clayne-lolong-16aa89379",
         "facebook": "https://www.facebook.com/kbcleyn.him",
         "instagram": "https://www.instagram.com/_khxcl/"
-      }
+      },
+      "subsection": 2
     },
     {
       "name": "Villaluna, Jullianna",
@@ -89,7 +110,8 @@
         "facebook": "https://www.facebook.com/yanyannnaaa",
         "instagram": "https://www.instagram.com/jllnnbv/"
       },
-      "resume": "../assets/members/executives-photos/resume/JULLIANNA VILLALUNA_RESUME - Jullianna Villaluna.pdf"
+      "resume": "../assets/members/executives-photos/resume/JULLIANNA VILLALUNA_RESUME - Jullianna Villaluna.pdf",
+      "subsection": 2
     },
     {
       "name": "Mondares, Matt Arron, M.",
@@ -100,7 +122,8 @@
         "facebook": "https://www.facebook.com/matt.mondares.1/",
         "instagram": "https://www.instagram.com/mattmondares/"
       },
-      "resume": "../assets/members/executives-photos/resume/Resume_Matt-Mondares (1) - Matt Mondares.pdf"
+      "resume": "../assets/members/executives-photos/resume/Resume_Matt-Mondares (1) - Matt Mondares.pdf",
+      "subsection": 2
     },
     {
       "name": "Arenas, Andre Carl",
@@ -109,7 +132,8 @@
       "socials": {
         "linkedin": "https://www.linkedin.com/in/andre-arenas-016bb437a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
         "facebook": "https://www.facebook.com/share/1EKnc5gMi7/?mibextid=wwXIfr"
-      }
+      },
+      "subsection": 2
     },
     {
       "name": "Marcial, Ellean",
@@ -119,7 +143,8 @@
         "linkedin": "https://www.linkedin.com/in/ellean-marcial-573ba227a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
         "facebook": "https://www.facebook.com/share/1JiVfkCsCS/?mibextid=wwXIfr",
         "instagram": "https://www.instagram.com/eleyngay?igsh=NHYwd21iNGY3cmts&utm_source=qr"
-      }
+      },
+      "subsection": 2
     },
     {
       "name": "Dival, Francesca Isabel M.",
@@ -129,7 +154,8 @@
         "linkedin": "http://www.linkedin.com/in/francesca-isabel-dival",
         "facebook": "https://www.facebook.com/share/1BBkiGnXuj/",
         "instagram": "https://www.instagram.com/francescadival?igsh=MWg3N3Rmc2I0dWQ1Yg=="
-      }
+      },
+      "subsection": 2
     }
   ],
   "associates": [
