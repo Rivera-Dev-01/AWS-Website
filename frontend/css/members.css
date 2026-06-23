@@ -1103,7 +1103,7 @@ body.members-page {
 		left: auto !important;
 		right: auto !important;
 		top: auto !important;
-		padding: 20px 133px 60px 360px !important
+		padding: 37px 133px 60px 460px !important
 	}
 }
 
@@ -1341,7 +1341,7 @@ body.members-page {
 		left: auto !important;
 		right: auto !important;
 		top: auto !important;
-		padding: 20px 133px 60px 360px !important;
+		padding: 37px 133px 60px 460px !important;
 	}
 
 	#section-executives .founders-content {
@@ -1362,9 +1362,7 @@ body.members-page {
 		top: -30px;
 	}
 
-	#section-executives .founders-subsection:nth-child(1) {
-		margin-top: -40px;
-	}
+
 
 	#section-founders .founders-subsection,
 	#section-executives .founders-subsection,
