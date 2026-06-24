@@ -1,1 +1,6 @@
-# robots.txt
+User-agent: *
+Allow: /
+Disallow: /loading
+Disallow: /waiting-approval
+
+Sitemap: https://awssbgjru.me/sitemap.xml
