@@ -949,7 +949,7 @@ body.members-page {
 
 	.founders-content {
 		overflow-y: auto;
-		padding-top: -30px
+		padding-top: -30px;
 	}
 
 	.founders-title {
@@ -961,7 +961,7 @@ body.members-page {
 	}
 
 	.founders-header {
-		margin-bottom: 0
+		margin-bottom: 0;
 	}
 
 	.founders-line {
@@ -1097,7 +1097,11 @@ body.members-page {
 	overflow: visible !important
 }
 
-
+#section-associates .founders-grid{
+	top: -10%;
+	position: relative;
+	display: grid;
+}
 
 @media (max-width:767px) {
 	#section-associates,
@@ -1123,7 +1127,7 @@ body.members-page {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-start
+	justify-content: flex-start;
 }
 
 /* FOUNDERS SECTION STYLES */
