@@ -1063,7 +1063,9 @@ body.members-page {
   }
 
   .snap-section {
-    height: 200vh;
+    min-height: 100vh;
+	height: auto;
+	overflow: hidden;
   }
 
   .member-title-mobile {
