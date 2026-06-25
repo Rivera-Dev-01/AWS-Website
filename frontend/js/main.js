@@ -63,7 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollReveal();
     initSpotlightCards();
     initLazyBackgrounds();
-    requestAnimationFrame(() => window.scrollTo(0, 0));
+    window.scrollTo(0, 0);
+    document.documentElement.style.scrollBehavior = "";
+
+    window.addEventListener("load", () => window.scrollTo(0, 0));
 });
 
 function initLandingPageCarousel() {

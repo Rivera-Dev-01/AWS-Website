@@ -1751,23 +1751,6 @@
             url(../assets/landing-page/backgrounds/Events-Forest-Archive-BG.webp) center top / cover no-repeat;
     }
 
-    .landing-page .chatbot-trigger {
-        right: max(10px, env(safe-area-inset-right));
-        bottom: max(12px, env(safe-area-inset-bottom));
-        transform: scale(0.9);
-        transform-origin: bottom right;
-    }
-
-    .landing-page .chatbot-trigger-inner {
-        width: 46px;
-        height: 46px;
-        justify-content: center;
-        padding: 0;
-    }
-
-    .landing-page .chatbot-trigger-label {
-        display: none;
-    }
 
     .partner-carousel-card {
         flex: 0 0 min(69vw, 248px);
